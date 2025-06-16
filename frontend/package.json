@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "antd": "^5.26.0",
+    "@fontsource/karla": "^5.2.6",
+    "@fontsource/lato": "^5.2.6",
+    "@phosphor-icons/react": "^2.1.10",
+    "antd": "^5.26.1",
     "next": "15.3.3",
     "next-auth": "^4.24.11",
+    "phosphor-react": "^1.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
