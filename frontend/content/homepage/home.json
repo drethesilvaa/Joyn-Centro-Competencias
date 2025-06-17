@@ -1,0 +1,31 @@
+{
+  "home": {
+    "title": "Bem-vindo",
+    "subtitle": "Subtítulo",
+    "ctaText": "Saber Mais",
+    "card1": "Card 1",
+    "card2": "Card 2",
+    "card3": "Card 3",
+    "card4": "Card 4"
+  },
+  "centros": {
+    "text": "",
+    "ctaText": "Ver Centros",
+    "quote": "Inovar é o nosso centro."
+  },
+  "joynAcademy": {
+    "text": "",
+    "ctaText": "Explorar Academy",
+    "topics": []
+  },
+  "mentores": {
+    "text": "",
+    "ctaText": "Conhecer Mentores",
+    "mentors": []
+  },
+  "eventos": {
+    "text": "",
+    "ctaText": "Ver Eventos",
+    "images": []
+  }
+}

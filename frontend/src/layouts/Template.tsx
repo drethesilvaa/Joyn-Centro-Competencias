@@ -14,7 +14,7 @@ export const Template = ({ children }: TemplateProps) => {
                 <header>
                     <Navbar />
                 </header>
-                <section>{children}</section>
+                <section className="custom-container">{children}</section>
                 <footer></footer>
             </main>
         </>
