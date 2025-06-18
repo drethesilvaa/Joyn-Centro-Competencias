@@ -1,31 +1,56 @@
 {
   "home": {
-    "title": "Bem-vindo",
-    "subtitle": "Subtítulo",
+    "title": "Bem vindos ao Centro de Competências da JOYN",
+    "subtitle": "Um núcleo estratégico dentro do grupo JOYN, dedicado a promover a excelência no desenvolvimento de soluções de IT.",
     "ctaText": "Saber Mais",
-    "card1": "Card 1",
-    "card2": "Card 2",
-    "card3": "Card 3",
-    "card4": "Card 4"
+    "card1": "/HomePage/meeting-7564969_1280.jpg",
+    "card2": "20+ Alunos",
+    "card3": "200+ Horas em Materiais",
+    "card4": "“Excelência técnica nasce da partilha e da prática colaborativa.”"
   },
   "centros": {
-    "text": "",
-    "ctaText": "Ver Centros",
-    "quote": "Inovar é o nosso centro."
+    "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n\nAtualmente, contamos com dois centros ativos:\n\n* Centro de Competência em .NET\n* Centro de Competência em Dados\n\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
+    "ctaText": "EXPLORAR OS CENTROS DE COMPETÊNCIA",
+    "quote": "“Mais do que equipas técnicas, os Centros de Competência são comunidades onde se constrói excelência, se partilha conhecimento e se cultiva inovação.”"
   },
   "joynAcademy": {
-    "text": "",
-    "ctaText": "Explorar Academy",
-    "topics": []
+    "text": "Aprender. Partilhar. Evoluir.\n\nA JOYN Academy é a plataforma onde o conhecimento técnico dos nossos Centros de Competência ganha vida. Aqui, reunimos formações, sessões práticas, conteúdos exclusivos e trilhos de aprendizagem alinhados com as melhores práticas da indústria.\n\nCriada para apoiar o crescimento contínuo dos nossos consultores, a JOYN Academy é o ponto de encontro para quem quer aprofundar competências, partilhar experiências e acompanhar a evolução da tecnologia.\n",
+    "ctaText": "Entrar na JOYN Academy",
+    "topics": [
+      {
+        "text": "Formações Técnicas Curadas"
+      },
+      {
+        "text": "Mentores Experientes e Ativos"
+      },
+      {
+        "text": "Trilhos de Certificação"
+      },
+      {
+        "text": "Acesso Permanente às Sessões Gravadas"
+      },
+      {
+        "text": "Atualizações Frequentes com as Novas Tecnologias"
+      }
+    ]
   },
   "mentores": {
-    "text": "",
-    "ctaText": "Conhecer Mentores",
-    "mentors": []
+    "text": "Na JOYN, cada Centro de Competências é orientado por profissionais altamente qualificados, com vasta experiência técnica e de liderança. Atualmente, destacamos dois dos nossos mentores principais:\n\n* Ricardo Santos - Líder Técnico do Centro de Competências .Net\n* Daniel Guarino - Líder Técnico do Centro de Competências de Dados\n\nEstes mentores desempenham um papel essencial na orientação estratégica das suas áreas, promovendo a excelência técnica, a partilha de conhecimento e o desenvolvimento contínuo das equipas.\n\nPara além destes, o ecossistema de mentoria da JOYN conta com outros profissionais experientes, cada um contribuindo com a sua visão e especialidade para os diversos centros de competência.\n",
+    "ctaText": "CONHECER OS NOSSOS MENTORES",
+    "mentors": [
+      {
+        "text": "Ricardo Santos",
+        "subtitle": "Senior Software Developer Team Leader"
+      },
+      {
+        "text": "Daniel Guarino",
+        "subtitle": "Solutions Architect"
+      }
+    ]
   },
   "eventos": {
-    "text": "",
-    "ctaText": "Ver Eventos",
+    "text": "Nos Centros de Competência JOYN, acreditamos que a partilha de experiências é essencial para o crescimento coletivo. \nOs nossos eventos — como workshops técnicos, talks inspiradoras e sessões práticas — são momentos chave para promover a inovação, fortalecer competências e criar uma comunidade unida e alinhada com as melhores práticas da indústria.\n\nEstes encontros são mais do que simples formações: são espaços de troca de ideias, descoberta de novas tecnologias e reforço do espírito de equipa.\n",
+    "ctaText": "Explorar Eventos do Centro",
     "images": []
   }
 }

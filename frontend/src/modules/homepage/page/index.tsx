@@ -8,6 +8,8 @@ import { HomepageMentores } from '../components/Mentores';
 import { HomepageEventos } from '../components/Eventos';
 import { HomepageJoynAcademy } from '../components/JoynAcademy';
 import { JSX } from 'react';
+import { useHomepageQuery } from '../hooks/useHomepageQuery';
+
 
 
 const homePageComponents: Record<string, JSX.Element> = {
@@ -20,9 +22,14 @@ const homePageComponents: Record<string, JSX.Element> = {
 
 const Homepage = () => {
 
-    const searchParams = useSearchParams();
-    const xParam = searchParams?.get('screen');
 
+    const searchParams = useSearchParams();
+    const { data, isLoading, error } = useHomepageQuery();
+
+    if (isLoading) return <p>Loading...</p>;
+    if (error || !data) return <p>Erro ao carregar dados</p>;
+
+    const xParam = searchParams?.get('screen');
     const children = homePageComponents[xParam || ""];
 
     if (children) {
@@ -33,10 +40,10 @@ const Homepage = () => {
         <HomepageTemplate>
             <div className="grid grid-cols-2 gap-6">
                 <div className='flex flex-col gap-6 justify-center'>
-                    <h1 className='heading-6xl'>Bem vindos ao Centro de Competências da JOYN </h1>
-                    <p className=''>Um núcleo estratégico dentro do grupo JOYN, dedicado a promover a excelência no desenvolvimento de soluções de IT.</p>
+                    <h1 className='heading-6xl'>{data.home?.title}</h1>
+                    <p className=''>{data.home?.subtitle}</p>
                     <div>
-                        <Button size='large' type="primary">Saber Mais</Button>
+                        <Button size='large' type="primary">{data.home?.ctaText}</Button>
                     </div>
                 </div>
                 <div className='grid grid-cols-2 gap-6'>

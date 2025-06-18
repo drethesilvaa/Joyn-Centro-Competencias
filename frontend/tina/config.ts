@@ -101,16 +101,7 @@ export default defineConfig({
                 fields: [
                   { type: "image", name: "image", label: "Image" },
                   { type: "string", name: "text", label: "Text" },
-                  {
-                    type: "string",
-                    name: "subtitle",
-                    label: "Subtitle",
-                    list: true,
-                    ui: {
-                      validate: (val) =>
-                        val?.length > 2 && "Max 2 subtitles allowed",
-                    },
-                  },
+                  { type: "string", name: "subtitle", label: "Subtitle" },
                 ],
               },
             ],
