@@ -1,21 +1,31 @@
-@import "tailwindcss";
-
-@import "@fontsource/lato";
-@import "@fontsource/lato/900.css";
-@import "@fontsource/lato/700.css";
-@import "@fontsource/lato/400.css";
-@import "@fontsource/karla";
+@import "tailwindcss" important;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-karla: "Karla", sans-serif;
+  --font-lato: "Lato", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  color: #181a1b;
+  font-family: var(--font-karla);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-lato);
+}
+
+@theme {
+  --color-primary: #101b23;
+  --color-secondary: #2f3847;
+  --color-accent: #56566c;
+  --color-foreground: #181a1b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +33,14 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+.ant-card-body {
+  padding: 0 !important;
+}
+
+.ant-menu{
+  width: 100%;
 }
 
 .heading-8xl {
@@ -65,7 +83,10 @@
   @apply leading-6 md:leading-8;
 }
 
-
 .custom-container {
-  @apply mx-auto w-[90%];
+  @apply mx-auto w-[80%];
+}
+
+.custom-gap-6 {
+  @apply gap-3 md:gap-6;
 }

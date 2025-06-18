@@ -9,14 +9,14 @@ interface TemplateProps {
 export const Template = ({ children }: TemplateProps) => {
 
     return (
-        <>
-            <main className="bg-linear-to-bl from-[#FCFCFC] to-[#F4F4F6] h-screen pt-10">
+        <div className="bg-gradient-to-bl from-[#FCFCFC] to-[#F4F4F6] min-h-screen pt-10">
+            <div className="custom-container">
                 <header>
                     <Navbar />
                 </header>
-                <section className="custom-container">{children}</section>
-                <footer></footer>
-            </main>
-        </>
+                <main>{children}</main>
+                {/* <footer>TODO: Add footer content here</footer> */}
+            </div>
+        </div>
     )
 }

@@ -6,6 +6,9 @@ export const useHomepageQuery = () =>
         queryKey: ["homepage"],
         queryFn: async () => {
             const res = await client.queries.homepage({ relativePath: "home.json" });
-            return res.data.homepage;
+
+            const data = res.data.homepage;
+
+            return data;
         },
     });

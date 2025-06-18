@@ -1,5 +1,6 @@
+import { HomepageDataProvider } from "@/providers/HomepageDataProvider";
 import Homepage from "../modules/homepage/page";
 
 export default function Home() {
-  return <Homepage />;
+  return <HomepageDataProvider><Homepage /></HomepageDataProvider>;
 }

@@ -5,6 +5,7 @@ import { Menu } from "antd";
 import type { MenuProps } from "antd";
 import { SignInIcon } from "@phosphor-icons/react/dist/ssr";
 import { usePathname, useRouter } from 'next/navigation';
+import Image from "next/image";
 
 const items: MenuProps['items'] = [
     { key: 'home', label: 'Home' },
@@ -58,23 +59,26 @@ const Navbar: React.FC = () => {
     return (
         <nav
             style={{
-                padding: "0 40px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
             }}
         >
             {/* Logo */}
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <img
-                    src="/logo.png" // replace with your logo path
-                    alt="JOY'N"
-                    style={{ height: 40 }}
+            <div className="basis-full" style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                    height={31}
+                    width={89}
+                    src="/joynLogo.png"
+                    alt="JOYN Logo"
+                    className="hover:cursor-pointer"
+                    onClick={() => { router.push("/") }}
                 />
             </div>
 
             {/* Menu */}
             <Menu
+                className="basis-full"
                 mode="horizontal"
                 onClick={handleMenuClick}
                 selectedKeys={[selectedKey]}

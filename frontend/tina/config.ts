@@ -42,13 +42,23 @@ export default defineConfig({
             name: "home",
             label: "Home",
             fields: [
-              { type: "string", name: "title", label: "Title" },
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+                ui: { component: "textarea" },
+              },
               { type: "string", name: "subtitle", label: "Subtitle" },
               { type: "string", name: "ctaText", label: "CTA Text" },
               { type: "image", name: "card1", label: "Card 1 (Image)" },
               { type: "string", name: "card2", label: "Card 2" },
               { type: "string", name: "card3", label: "Card 3" },
-              { type: "string", name: "card4", label: "Card 4" },
+              {
+                type: "string",
+                name: "card4",
+                label: "Card 4",
+                ui: { component: "textarea" },
+              },
             ],
           },
           {

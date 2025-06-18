@@ -1,12 +1,12 @@
 {
   "home": {
-    "title": "Bem vindos ao Centro de Competências da JOYN",
+    "title": "# Bem vindos ao  <br/><span style=\"color:#3C4249;\">Centro de Competências</span> <br/>da JOYN",
     "subtitle": "Um núcleo estratégico dentro do grupo JOYN, dedicado a promover a excelência no desenvolvimento de soluções de IT.",
     "ctaText": "Saber Mais",
     "card1": "/HomePage/meeting-7564969_1280.jpg",
     "card2": "20+ Alunos",
     "card3": "200+ Horas em Materiais",
-    "card4": "“Excelência técnica nasce da partilha e da prática colaborativa.”"
+    "card4": "> “**EXCELÊNCIA** *TÉCNICA NASCE*  *DA* **PARTILHA** *E DA*  *PRÁTICA*  **COLABORATIVA.**”\n"
   },
   "centros": {
     "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n\nAtualmente, contamos com dois centros ativos:\n\n* Centro de Competência em .NET\n* Centro de Competência em Dados\n\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
@@ -49,7 +49,7 @@
     ]
   },
   "eventos": {
-    "text": "Nos Centros de Competência JOYN, acreditamos que a partilha de experiências é essencial para o crescimento coletivo. \nOs nossos eventos — como workshops técnicos, talks inspiradoras e sessões práticas — são momentos chave para promover a inovação, fortalecer competências e criar uma comunidade unida e alinhada com as melhores práticas da indústria.\n\nEstes encontros são mais do que simples formações: são espaços de troca de ideias, descoberta de novas tecnologias e reforço do espírito de equipa.\n",
+    "text": "Nos Centros de Competência JOYN, acreditamos que a partilha de experiências é essencial para o crescimento coletivo.\nOs nossos eventos — como workshops técnicos, talks inspiradoras e sessões práticas — são momentos chave para promover a inovação, fortalecer competências e criar uma comunidade unida e alinhada com as melhores práticas da indústria.\n\nEstes encontros são mais do que simples formações: são espaços de troca de ideias, descoberta de novas tecnologias e reforço do espírito de equipa.\n",
     "ctaText": "Explorar Eventos do Centro",
     "images": []
   }

@@ -5,7 +5,8 @@ const AntThemeConfig: ThemeConfig = {
     fontFamily: "Lato, sans-serif",
     // @ts-expect-error: fontFamilyHeading is supported but not typed
     fontFamilyHeading: "Karla, serif",
-    colorPrimary: "#1677ff",
+    colorPrimary: "#56566c",
+    colorPrimaryHover: "#4d4d61",
   },
 };
 

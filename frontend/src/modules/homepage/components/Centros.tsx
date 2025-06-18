@@ -1,9 +1,18 @@
-import { ReactNode } from "react"
+"use client"
+
+import { useHomepageData } from "@/providers/HomepageDataProvider";
 
 interface TemplateProps {
 
 }
 
 export const HomepageCentros = ({ }: TemplateProps) => {
-    return <></>
+
+    const { data, isLoading, error } = useHomepageData();
+
+
+    return <div className="grid grid-cols-2">
+        <div>  </div>
+        <div>{data?.centros?.quote}</div>
+    </div>
 }
