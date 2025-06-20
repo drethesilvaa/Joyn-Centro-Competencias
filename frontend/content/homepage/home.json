@@ -9,27 +9,32 @@
     "card4": "> “**EXCELÊNCIA** *TÉCNICA NASCE*  *DA* **PARTILHA** *E DA*  *PRÁTICA*  **COLABORATIVA.**”\n"
   },
   "centros": {
-    "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n\nAtualmente, contamos com dois centros ativos:\n\n* Centro de Competência em .NET\n* Centro de Competência em Dados\n\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
+    "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n<br /><br />\nAtualmente, contamos com dois centros ativos:\n\n- Centro de Competência em .NET\n- Centro de Competência em Dados\n<br /><br />\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n<br /><br />\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
     "ctaText": "EXPLORAR OS CENTROS DE COMPETÊNCIA",
-    "quote": "“Mais do que equipas técnicas, os Centros de Competência são comunidades onde se constrói excelência, se partilha conhecimento e se cultiva inovação.”"
+    "quote": "“Mais do que equipas técnicas, os Centros de Competência são **comunidades** onde se constrói **excelência**, se partilha **conhecimento** e se cultiva **inovação**.”"
   },
   "joynAcademy": {
-    "text": "Aprender. Partilhar. Evoluir.\n\nA JOYN Academy é a plataforma onde o conhecimento técnico dos nossos Centros de Competência ganha vida. Aqui, reunimos formações, sessões práticas, conteúdos exclusivos e trilhos de aprendizagem alinhados com as melhores práticas da indústria.\n\nCriada para apoiar o crescimento contínuo dos nossos consultores, a JOYN Academy é o ponto de encontro para quem quer aprofundar competências, partilhar experiências e acompanhar a evolução da tecnologia.\n",
+    "text": "**Aprender. Partilhar. Evoluir.**\n<br/><br/>\nA JOYN Academy é a plataforma onde o conhecimento técnico dos nossos Centros de Competência ganha vida. Aqui, reunimos formações, sessões práticas, conteúdos exclusivos e trilhos de aprendizagem alinhados com as melhores práticas da indústria.\n<br/><br/>\nCriada para apoiar o crescimento contínuo dos nossos consultores, a JOYN Academy é o ponto de encontro para quem quer aprofundar competências, partilhar experiências e acompanhar a evolução da tecnologia.\n",
     "ctaText": "Entrar na JOYN Academy",
     "topics": [
       {
+        "iconName": "Brain",
         "text": "Formações Técnicas Curadas"
       },
       {
+        "iconName": "Student",
         "text": "Mentores Experientes e Ativos"
       },
       {
+        "iconName": "Certificate",
         "text": "Trilhos de Certificação"
       },
       {
+        "iconName": "Video",
         "text": "Acesso Permanente às Sessões Gravadas"
       },
       {
+        "iconName": "RocketLaunch",
         "text": "Atualizações Frequentes com as Novas Tecnologias"
       }
     ]

@@ -66,9 +66,19 @@ export default defineConfig({
             name: "centros",
             label: "Centros",
             fields: [
-              { type: "rich-text", name: "text", label: "Text" },
+              {
+                type: "string",
+                name: "text",
+                label: "Text",
+                ui: { component: "textarea" },
+              },
               { type: "string", name: "ctaText", label: "CTA Text" },
-              { type: "string", name: "quote", label: "Quote" },
+              {
+                type: "string",
+                name: "quote",
+                label: "Quote",
+                ui: { component: "textarea" },
+              },
             ],
           },
           {
@@ -76,7 +86,12 @@ export default defineConfig({
             name: "joynAcademy",
             label: "Joyn Academy",
             fields: [
-              { type: "rich-text", name: "text", label: "Text" },
+              {
+                type: "string",
+                name: "text",
+                label: "Text",
+                ui: { component: "textarea" },
+              },
               { type: "string", name: "ctaText", label: "CTA Text" },
               {
                 type: "object",
@@ -87,7 +102,7 @@ export default defineConfig({
                   itemProps: (item) => ({ label: item?.text || "Topic" }),
                 },
                 fields: [
-                  { type: "image", name: "image", label: "Image" },
+                  { type: "string", name: "iconName", label: "Icon Name" },
                   { type: "string", name: "text", label: "Text" },
                 ],
               },
@@ -98,7 +113,12 @@ export default defineConfig({
             name: "mentores",
             label: "Mentores",
             fields: [
-              { type: "rich-text", name: "text", label: "Text" },
+              {
+                type: "string",
+                name: "text",
+                label: "Text",
+                ui: { component: "textarea" },
+              },
               { type: "string", name: "ctaText", label: "CTA Text" },
               {
                 type: "object",
@@ -121,7 +141,12 @@ export default defineConfig({
             name: "eventos",
             label: "Eventos",
             fields: [
-              { type: "rich-text", name: "text", label: "Text" },
+              {
+                type: "string",
+                name: "text",
+                label: "Text",
+                ui: { component: "textarea" },
+              },
               { type: "string", name: "ctaText", label: "CTA Text" },
               {
                 type: "image",
