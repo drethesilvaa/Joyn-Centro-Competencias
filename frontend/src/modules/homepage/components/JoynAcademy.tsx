@@ -12,10 +12,10 @@ export const HomepageJoynAcademy = ({ }: TemplateProps) => {
 
 
     return <div>
-        <h2 className="heading-6xl italic">Joyn Academy</h2>
-        <div className="grid lg:grid-cols-2 items-center gap-6 mt-4">
+        <div className="grid lg:grid-cols-2 items-center gap-6 h-full ">
             <div>
-                <div className="">
+                <h2 className="heading-6xl italic">Joyn Academy</h2>
+                <div className="mt-4">
                     <MarkdownRenderer content={data?.joynAcademy?.text || ""} />
                 </div>
                 <div className="hidden lg:block mt-4">

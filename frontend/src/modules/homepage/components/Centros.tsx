@@ -14,10 +14,10 @@ export const HomepageCentros = ({ }: TemplateProps) => {
 
 
     return <div>
-        <h2 className="heading-6xl italic">Os Nossos Centros</h2>
-        <div className="grid lg:grid-cols-2 items-center custom-gap-6 mt-4">
+        <div className="grid lg:grid-cols-2 items-center custom-gap-6 h-full">
             <div>
-                <div className="">
+                <h2 className="heading-6xl italic">Os Nossos Centros</h2>
+                <div className="mt-4">
                     <MarkdownRenderer content={data?.centros?.text || ""} />
                 </div>
                 <div className="hidden lg:block mt-4">

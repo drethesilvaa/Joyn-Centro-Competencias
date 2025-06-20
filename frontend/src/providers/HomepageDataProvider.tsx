@@ -1,5 +1,6 @@
 // HomepageDataContext.tsx
 "use client";
+import PageLoader from "@/layouts/PageLoader";
 import { useHomepageQuery } from "@/modules/homepage/hooks/useHomepageQuery";
 import React, { createContext, useContext } from "react";
 
@@ -12,6 +13,7 @@ export const HomepageDataProvider = ({ children }: { children: React.ReactNode }
 
     return (
         <HomepageDataContext.Provider value={query}>
+            {query.isLoading && <PageLoader />}
             {children}
         </HomepageDataContext.Provider>
     );

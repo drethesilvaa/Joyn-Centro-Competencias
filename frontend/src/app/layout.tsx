@@ -8,12 +8,14 @@ const karla = Karla({
   variable: "--font-karla",
   subsets: ["latin"],
   weight: ["300", "400", "700"],
+  style: ["normal", "italic"]
 });
 
 const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
   weight: ["300", "400", "700"],
+  style: ["normal", "italic"]
 });
 
 export const metadata: Metadata = {

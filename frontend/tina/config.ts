@@ -149,10 +149,22 @@ export default defineConfig({
               },
               { type: "string", name: "ctaText", label: "CTA Text" },
               {
-                type: "image",
+                type: "object",
                 name: "images",
                 label: "Images (Max 4)",
                 list: true,
+                fields: [
+                  {
+                    type: "image",
+                    name: "src",
+                    label: "Image",
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                  },
+                ],
                 ui: {
                   validate: (val) => val?.length > 4 && "Max 4 images allowed",
                 },

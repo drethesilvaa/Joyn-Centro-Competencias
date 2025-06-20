@@ -40,7 +40,7 @@ export const HomepageTemplate = ({ children }: TemplateProps) => {
     const xParam = searchParams?.get('screen');
 
     return (
-        <div className='grid grid-flow-row auto-rows-max gap-24 py-16'>
+        <div className='grid grid-flow-row auto-rows-max gap-20 py-16 min-h-[90vh] content-between'>
             <div className="grid row-span-6 2xl:row-span-8">
                 {children}
             </div>
@@ -50,22 +50,27 @@ export const HomepageTemplate = ({ children }: TemplateProps) => {
                     return (
                         <Card
                             key={card.key}
-                            className={`
-                                w-full group p-4 transition-all duration-300 rounded-sm
+                            className={`flex items-center relative
+                                w-full group p-4 pr-8 transition-all duration-300 rounded-sm
                                 ${isActive ? "bg-secondary text-white shadow-lg" : ""}
                             `}
                         >
                             <div className="flex items-center gap-2">
                                 {card.icon}
                                 <h1 className="uppercase font-semibold">{card.title}</h1>
-                            </div>
-                            <div className="opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-40 transition-all duration-300">
-                                Card content
-                                <div className='flex justify-end'>
-                                    <Button
-                                        icon={<ArrowRightIcon />}
-                                        onClick={() => router.push(`/?screen=${homePageScreens[card.key]}`)}
-                                    />
+
+                                <div className="
+                                    absolute w-full z-10 right-0
+                                    opacity-0 max-h-0 overflow-hidden 
+                                    group-hover:opacity-100 group-hover:max-h-40
+                                    transition-all duration-300 px-4
+                                ">
+                                    <div className='flex justify-end'>
+                                        <Button
+                                            icon={<ArrowRightIcon />}
+                                            onClick={() => router.push(`/?screen=${homePageScreens[card.key]}`)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </Card>

@@ -1,4 +1,5 @@
 @import "tailwindcss" important;
+@import "nprogress/nprogress.css";
 
 :root {
   --background: #ffffff;
@@ -39,8 +40,21 @@ h6 {
   padding: 0 !important;
 }
 
-.ant-menu{
+.ant-menu {
   width: 100%;
+  li {
+    margin-left: unset;
+  }
+}
+
+ol,
+ul,
+menu {
+  list-style: disc;
+
+  li {
+    margin-left: 20px;
+  }
 }
 
 .heading-8xl {
@@ -89,4 +103,46 @@ h6 {
 
 .custom-gap-6 {
   @apply gap-3 md:gap-6;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  animation: animloader 2s ease-in-out infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+#nprogress .bar {
+  background: #56566c !important;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #56566c, 0 0 5px #56566c !important;
 }

@@ -38,8 +38,6 @@ const Homepage = () => {
         return <HomepageTemplate>{children}</HomepageTemplate>
     }
 
-    console.log(data)
-
     return (
         <HomepageTemplate>
             <div className="grid lg:grid-cols-2 custom-gap-6">
