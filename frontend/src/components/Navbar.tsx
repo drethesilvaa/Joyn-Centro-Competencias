@@ -72,14 +72,8 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav
-            style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-            }}
-        >
-            <div className="basis-full" style={{ display: "flex", alignItems: "center" }}>
+        <nav className="grid grid-cols-2">
+            <div style={{ display: "flex", alignItems: "center" }}>
                 <Image
                     height={31}
                     width={89}

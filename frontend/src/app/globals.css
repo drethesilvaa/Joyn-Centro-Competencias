@@ -40,8 +40,11 @@ h6 {
   padding: 0 !important;
 }
 
+.ant-menu-root{
+  width: 100%;
+}
+
 .ant-menu {
-  /* width: 100%; */
   li {
     margin-left: unset;
   }
