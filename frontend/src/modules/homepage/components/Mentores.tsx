@@ -16,7 +16,7 @@ export const HomepageMentores = ({ }: TemplateProps) => {
     return <div>
         <div className="grid lg:grid-cols-2 items-center custom-gap-6 h-full">
             <div>
-                <h2 className="heading-6xl italic">Os Mentores</h2>
+                <h2 className="heading-6xl italic">Os Líderes</h2>
                 <div className="mt-4">
                     <MarkdownRenderer content={data?.mentores?.text || ""} />
                 </div>

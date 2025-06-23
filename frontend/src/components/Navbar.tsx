@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
             mentores: '/mentores',
             eventos: '/eventos',
             politicas: '/politicas',
+            gamification: '/gamification',
             login: '/auth/signin',
         };
 
@@ -47,6 +48,7 @@ const Navbar: React.FC = () => {
         { key: 'artigos', label: 'Artigos' },
         { key: 'cc', label: 'Centros de Competência' },
         { key: 'mentores', label: 'Mentores' },
+        { key: 'gamification', label: 'Gamification' },
         { key: 'eventos', label: 'Eventos' },
         { key: 'politicas', label: 'Políticas' },
     ];

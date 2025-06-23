@@ -1,3 +1,3 @@
 export default function Artigos() {
-    return <></>;
+    return <>oLA</>;
 }

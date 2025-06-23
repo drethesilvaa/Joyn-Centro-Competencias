@@ -16,7 +16,7 @@ import { useHomepageData } from '@/providers/HomepageDataProvider';
 
 const homePageComponents: Record<string, JSX.Element> = {
     "nossos-centros": <HomepageCentros />,
-    mentores: <HomepageMentores />,
+    lideres: <HomepageMentores />,
     eventos: <HomepageEventos />,
     "joyn-academy": <HomepageJoynAcademy />,
 };

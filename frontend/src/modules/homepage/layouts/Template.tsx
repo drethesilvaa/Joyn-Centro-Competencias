@@ -23,9 +23,9 @@ const cardData = [
         title: "JOYN ACADEMY",
     },
     {
-        key: "mentores",
+        key: "lideres",
         icon: <ChalkboardIcon size={32} />,
-        title: "OS MENTORES",
+        title: "OS Líderes",
     },
     {
         key: "eventos",

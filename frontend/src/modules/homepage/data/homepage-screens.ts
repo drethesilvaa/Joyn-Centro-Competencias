@@ -1,6 +1,6 @@
 export const homePageScreens: Record<string, string> = {
   centros: "nossos-centros",
-  mentores: "mentores",
+  lideres: "lideres",
   eventos: "eventos",
   joynAcademy: "joyn-academy",
 };
