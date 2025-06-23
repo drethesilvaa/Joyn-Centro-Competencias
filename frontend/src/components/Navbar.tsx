@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Menu } from "antd";
@@ -6,19 +6,7 @@ import type { MenuProps } from "antd";
 import { SignInIcon } from "@phosphor-icons/react/dist/ssr";
 import { usePathname, useRouter } from 'next/navigation';
 import Image from "next/image";
-
-const items: MenuProps['items'] = [
-    { key: 'home', label: 'Home' },
-    { key: 'artigos', label: 'Artigos' },
-    { key: 'cc', label: 'Centros de Competência' },
-    { key: 'mentores', label: 'Mentores' },
-    { key: 'eventos', label: 'Eventos' },
-    { key: 'politicas', label: 'Políticas' },
-    {
-        key: 'login',
-        icon: <SignInIcon size={18} weight="bold" />,
-    },
-];
+import { useSession, signOut } from "next-auth/react";
 
 const pathToMenuKey: Record<string, string> = {
     '/': 'home',
@@ -27,16 +15,15 @@ const pathToMenuKey: Record<string, string> = {
     '/mentores': 'mentores',
     '/eventos': 'eventos',
     '/politicas': 'politicas',
-    '/login': 'login',
+    '/auth/signin': 'login',
 };
 
 const Navbar: React.FC = () => {
-
-
     const router = useRouter();
     const pathname = usePathname();
-
     const selectedKey = pathToMenuKey[pathname || "home"] || 'home';
+
+    const { data: session, status } = useSession();
 
     const handleMenuClick: MenuProps['onClick'] = (e) => {
         const keyToPath: Record<string, string> = {
@@ -46,7 +33,7 @@ const Navbar: React.FC = () => {
             mentores: '/mentores',
             eventos: '/eventos',
             politicas: '/politicas',
-            login: '/login',
+            login: '/auth/signin',
         };
 
         const destination = keyToPath[e.key];
@@ -55,6 +42,34 @@ const Navbar: React.FC = () => {
         }
     };
 
+    const items: MenuProps['items'] = [
+        { key: 'home', label: 'Home' },
+        { key: 'artigos', label: 'Artigos' },
+        { key: 'cc', label: 'Centros de Competência' },
+        { key: 'mentores', label: 'Mentores' },
+        { key: 'eventos', label: 'Eventos' },
+        { key: 'politicas', label: 'Políticas' },
+    ];
+
+    if (status === "unauthenticated" || status === "loading") {
+        items.push({
+            key: 'login',
+            icon: <SignInIcon size={18} weight="bold" />,
+            label: 'Entrar',
+        });
+    }
+
+    if (status === "authenticated" && session?.user) {
+        items.push({
+            key: 'user',
+            label: session.user.name,
+            children: [
+                {
+                    label: <span className="block" onClick={() => signOut({ callbackUrl: "/" })}>Sair</span>, key: 'LogOut'
+                },
+            ]
+        })
+    }
 
     return (
         <nav
@@ -64,7 +79,6 @@ const Navbar: React.FC = () => {
                 justifyContent: "space-between",
             }}
         >
-            {/* Logo */}
             <div className="basis-full" style={{ display: "flex", alignItems: "center" }}>
                 <Image
                     height={31}
@@ -76,22 +90,22 @@ const Navbar: React.FC = () => {
                 />
             </div>
 
-            {/* Menu */}
-            <Menu
-                className="basis-full"
-                mode="horizontal"
-                onClick={handleMenuClick}
-                selectedKeys={[selectedKey]}
-                items={items}
-                style={{
-                    flex: 1,
-                    justifyContent: "flex-end",
-                    borderBottom: "none",
-                    background: "transparent",
-                }}
-            />
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                <Menu
+                    className="basis-full"
+                    mode="horizontal"
+                    onClick={handleMenuClick}
+                    selectedKeys={[selectedKey]}
+                    items={items}
+                    style={{
+                        flex: 1,
+                        justifyContent: "flex-end",
+                        borderBottom: "none",
+                        background: "transparent",
+                    }}
+                />
+            </div>
         </nav>
-
     );
 };
 

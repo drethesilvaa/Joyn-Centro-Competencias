@@ -41,7 +41,7 @@ h6 {
 }
 
 .ant-menu {
-  width: 100%;
+  /* width: 100%; */
   li {
     margin-left: unset;
   }
@@ -146,3 +146,5 @@ menu {
 #nprogress .peg {
   box-shadow: 0 0 10px #56566c, 0 0 5px #56566c !important;
 }
+
+
