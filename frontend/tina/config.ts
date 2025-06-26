@@ -502,6 +502,58 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "artigos",
+        label: "Artigos",
+        path: "content/artigos",
+        ui: {
+          itemProps: (item) => {
+            return { label: item?.title || "New Article" };
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "subTitle",
+            label: "Sub Title",
+          },
+          {
+            type: "string",
+            name: "author",
+            label: "Author",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "authorRole",
+            label: "Author Role",
+          },
+          {
+            type: "image",
+            name: "authorPic",
+            label: "Author Picture",
+          },
+          {
+            type: "image",
+            name: "articleImage",
+            label: "Article Image",
+          },
+          {
+            type: "string",
+            name: "content",
+            label: "Content",
+            ui: {
+              component: "textarea",
+            },
+          },
+        ],
+      },
     ],
   },
 });

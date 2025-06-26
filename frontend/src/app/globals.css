@@ -27,6 +27,7 @@ h6 {
   --color-secondary: #2f3847;
   --color-accent: #56566c;
   --color-foreground: #181a1b;
+  --color-box-grey: #dcdce0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,7 +41,7 @@ h6 {
   padding: 0 !important;
 }
 
-.ant-menu-root{
+.ant-menu-root {
   width: 100%;
 }
 
@@ -149,5 +150,3 @@ menu {
 #nprogress .peg {
   box-shadow: 0 0 10px #56566c, 0 0 5px #56566c !important;
 }
-
-

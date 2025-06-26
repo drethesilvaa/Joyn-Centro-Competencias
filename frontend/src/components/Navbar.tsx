@@ -45,12 +45,7 @@ const Navbar: React.FC = () => {
 
     const items: MenuProps['items'] = [
         { key: 'home', label: 'Home' },
-        { key: 'artigos', label: 'Artigos' },
-        { key: 'cc', label: 'Centros de Competência' },
-        { key: 'mentores', label: 'Mentores' },
-        { key: 'gamification', label: 'Gamification' },
-        { key: 'eventos', label: 'Eventos' },
-        { key: 'politicas', label: 'Políticas' },
+
     ];
 
     if (status === "unauthenticated" || status === "loading") {
@@ -62,15 +57,22 @@ const Navbar: React.FC = () => {
     }
 
     if (status === "authenticated" && session?.user) {
-        items.push({
-            key: 'user',
-            label: session.user.name,
-            children: [
-                {
-                    label: <span className="block" onClick={() => signOut({ callbackUrl: "/" })}>Sair</span>, key: 'LogOut'
-                },
-            ]
-        })
+        items.push(
+            { key: 'artigos', label: 'Artigos' },
+            { key: 'cc', label: 'Centros de Competência' },
+            { key: 'mentores', label: 'Mentores' },
+            { key: 'gamification', label: 'Gamification' },
+            { key: 'eventos', label: 'Eventos' },
+            { key: 'politicas', label: 'Políticas' },
+            {
+                key: 'user',
+                label: session.user.name,
+                children: [
+                    {
+                        label: <span className="block" onClick={() => signOut({ callbackUrl: "/" })}>Sair</span>, key: 'LogOut'
+                    },
+                ]
+            })
     }
 
     return (
