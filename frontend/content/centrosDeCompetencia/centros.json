@@ -35,7 +35,124 @@
   },
   "centrosDeCompetencia": [
     {
-      "title": "Centro de Competências .NET"
+      "title": "Centro de Competências .NET",
+      "description": "O Centro de Competências .NET é uma iniciativa dedicada a promover a aprendizagem contínua, a partilha de conhecimento e o crescimento\nprofissional dos de todos os consultores na área de .NET.\n<br/><br/>\nAtravés de uma abordagem diversificada, eventos estruturados e discussões impulsionadas pela comunidade, o Centro de Competências tem como\nobjetivo capacitar consultores de todos os níveis de experiência, assegurando o desenvolvimento de competências a longo prazo e a inovação no\necossistema .NET.",
+      "learning": [
+        {
+          "title": "Adaptado a Diferentes Níveis de Experiência",
+          "description": "- Oferecer percursos de aprendizagem para juniores (0-2 anos), intermédios (3-7 anos) e seniores (8+ anos).\n- Garantir progressão contínua, abrangendo desde os fundamentos até conteúdos avançados.\n"
+        },
+        {
+          "title": "Aprendizagem Contínua & Desenvolvimento Profissional",
+          "description": "- Criar um ecossistema de aprendizagem estruturado e flexível, adequado a todas as fases da carreira dos consultores.\n- Disponibilizar recursos online para apoiar a aprendizagem independente"
+        },
+        {
+          "title": "Métodos de Partilha de Conhecimento Preferidos & Abordagem de Entrega",
+          "topics": [
+            {
+              "topicTitle": "Sessões Presenciais: O Pilar do Envolvimento & Networking",
+              "topicDetails": [
+                {
+                  "iconName": "Question",
+                  "description": "Painéis de Discussão"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Lightning Talks"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Networking & Discussões Abertas"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Tech Talks"
+                }
+              ]
+            },
+            {
+              "topicTitle": "Sessões Virtuais para Maior Acessibilidade",
+              "topicDetails": [
+                {
+                  "iconName": "Question",
+                  "description": "Transmissão em direto de Tech Talks e Painéis (sempre que possível)."
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Sessões de Perguntas & Respostas via WhatsApp."
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Acesso a Sessões Gravadas & Materiais (Google Classroom) para estudo assíncrono."
+                }
+              ]
+            },
+            {
+              "topicTitle": "Aprendizagem Prática: Aplicação de Competências & Desenvolvimento Técnico",
+              "topicDetails": [
+                {
+                  "iconName": "Question",
+                  "description": "Workshops de Programação & Sessões Práticas"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Programas de Mentoria"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Certificações Online"
+                }
+              ]
+            },
+            {
+              "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
+              "topicDetails": [
+                {
+                  "iconName": "Question",
+                  "description": "Comunidade WhatsApp",
+                  "url": "URL"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "JOYN Academy",
+                  "url": "URL"
+                },
+                {
+                  "iconName": "Question",
+                  "description": "Discord",
+                  "url": "URL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "feedback": {
+        "description": "Para assegurar a evolução contínua do Centro de Aprendizagem, serão implementadas estratégias de recolha de feedback:",
+        "topics": [
+          {
+            "iconName": "Question",
+            "title": "Inquéritos (Google Forms, WhatsApp Polls)"
+          },
+          {
+            "iconName": "Question",
+            "title": "Ferramentas de Interação Ao Vivo "
+          },
+          {
+            "iconName": "Question",
+            "title": "Partilha de Resultados Insights regulares para garantir que o feedback impulsiona melhorias futuras"
+          }
+        ]
+      },
+      "incentivos": {
+        "description": "Para estimular a participação ativa, os membros mais envolvidos serão reconhecidos com:",
+        "topics": [
+          {
+            "iconName": "Question",
+            "title": "Gamification"
+          }
+        ]
+      }
     }
   ]
 }

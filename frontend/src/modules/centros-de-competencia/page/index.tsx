@@ -4,6 +4,8 @@ import { PagesLayout } from "@/layouts/PagesLayout";
 import { useCentrosCompetenciaQuery } from "../hooks/useCentrosCompetenciaQuery";
 import { Anchor } from "antd";
 import { useEffect, useRef, useState } from "react";
+import { Objectives } from "../components/Objectives";
+import { CentroDeCompetencia } from "../components/CentroDeCompetencia";
 
 export const CentrosDeCompetenciaPage = () => {
 
@@ -16,40 +18,66 @@ export const CentrosDeCompetenciaPage = () => {
         setTargetOffset(topRef.current?.clientHeight);
     }, []);
 
+    const createId = (title: string, index: number) => {
+        if (!title) return `centro-${index}`;
+        return title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    };
+
+    const anchorItems = [
+        { key: 'objetivos', href: '#objetivos', title: 'Objetivos' },
+        ...(query.data?.centrosDeCompetencia?.map((centro, index) => {
+            const id = createId(centro?.title || '', index);
+            return {
+                key: id,
+                href: `#${id}`,
+                title: centro?.title || `Centro ${index + 1}`
+            };
+        }) || [])
+    ];
 
     if (query.isLoading) return <p>Loading</p>
 
-    return <PagesLayout
-        pageTitle={query.data?.header?.title || ""}
-        pageDescription={query.data?.header?.description || ""}
-        pageImage={query.data?.header?.imageToSwapForVideo || ""}
-        pageImageAlt="">
-
-        <div className="grid grid-cols-12">
-            <div className="col-span-10">
-                <div
-                    id="part-1"
-                    style={{ height: '100vh', background: 'rgba(255,0,0,0.02)', marginTop: '30vh' }}
-                >
-                    Part 1
+    return (
+        <PagesLayout
+            pageTitle={query.data?.header?.title || ""}
+            pageDescription={query.data?.header?.description || ""}
+            pageImage={query.data?.header?.imageToSwapForVideo || ""}
+            pageImageAlt=""
+        >
+            <div className="grid grid-cols-12 mt-14 gap-6">
+                <div className="xl:hidden col-span-12 mb-6 ">
+                    <Anchor
+                        className="body-xl overflow-x-auto bg-gradient-to-bl from-[#FCFCFC] to-[#F4F4F6] pt-5"
+                        replace
+                        direction="horizontal"
+                        items={anchorItems}
+                    />
                 </div>
-                <div id="part-2" style={{ height: '100vh', background: 'rgba(0,255,0,0.02)' }}>
-                    Part 2
+                <div className="col-span-12 xl:col-span-10 grid gap-20">
+                    <div id="objetivos">
+                        <Objectives content={query.data?.objectives} />
+                    </div>
+                    {query.data?.centrosDeCompetencia?.map((centro, index) => {
+                        const id = createId(centro?.title || '', index);
+                        return (
+                            <div key={index} id={id}>
+                                <CentroDeCompetencia content={centro} />
+                            </div>
+                        );
+                    })}
                 </div>
-                <div id="part-3" style={{ height: '100vh', background: 'rgba(0,0,255,0.02)' }}>
-                    Part 3
+                <div className="hidden xl:block xl:col-span-2">
+                    <Anchor
+                        className="body-xl sticky top-10"
+                        replace
+                        direction="vertical"
+                        items={anchorItems}
+                    />
                 </div>
             </div>
-            <Anchor
-                className="col-span-2"
-                replace
-                items={[
-                    { key: 'part-1', href: '#part-1', title: 'Part 1' },
-                    { key: 'part-2', href: '#part-2', title: 'Part 2' },
-                    { key: 'part-3', href: '#part-3', title: 'Part 3' },
-                ]}
-            />
-        </div>
-
-    </PagesLayout>
+        </PagesLayout>
+    );
 }

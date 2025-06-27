@@ -35,7 +35,7 @@ export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, p
                         src={pageImage || ""}
                         alt={`${pageImageAlt} photo`}
                     />
-                    <div className="body-2xl 2xl:max-w-1/2">
+                    <div className="body-xl 2xl:max-w-1/2">
                         <MarkdownRenderer content={pageDescription || ""} />
                     </div>
                     <div className="clear-both 2xl:hidden"></div>
