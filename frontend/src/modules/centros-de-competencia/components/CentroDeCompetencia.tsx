@@ -1,8 +1,9 @@
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { getPhosphorIcon } from "@/utils/getPhosphorIcon";
-import { ArrowRightIcon, GraduationCapIcon, MegaphoneIcon, QuotesIcon, UsersThreeIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon, GraduationCapIcon, MegaphoneIcon, QuotesIcon, UsersThreeIcon, ChartDonutIcon } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "antd";
 import { Fragment } from "react";
+import { ChartsGrid } from "./ChartsGrid";
 
 interface ObjectivesProps {
     content: any
@@ -28,7 +29,6 @@ interface topic {
 
 
 export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
-    console.log(content)
     return (
         <>
             <h2 className="heading-5xl font-semibold">{content.title}</h2>
@@ -41,13 +41,21 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                         <MarkdownRenderer content={content.description || ""} />
                     </div>
                 </div>
+                {content?.charts && content?.charts?.length > 0 && (
+                    <div className="flex gap-6 items-start">
+                        <div>
+                            <ChartDonutIcon weight="fill" size={65} />
+                        </div>
+                        <ChartsGrid charts={content.charts || []} />
+                    </div>
+                )}
                 <div className="flex gap-6 items-start">
                     <div>
                         <GraduationCapIcon weight="fill" size={65} />
                     </div>
                     <div className="grid gap-12">
                         {content?.learning?.map((l: learningtype) => (
-                            <div className="grid gap-6">
+                            <div className="grid gap-6" key={l.title}>
                                 <h3 className="heading-3xl font-semibold">{l.title}</h3>
                                 {l.description && <MarkdownRenderer content={l.description || ""} />}
                                 {l.topics && l.topics?.length > 0 && (
@@ -56,11 +64,11 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                                             <Fragment key={topic?.topicTitle}>
                                                 <li className="font-semibold mt-6">{topic?.topicTitle}</li>
                                                 <div className="flex gap-6 py-6 justify-evenly">
-                                                    {topic?.topicDetails?.map((detail) => {
+                                                    {topic?.topicDetails?.map((detail, i) => {
                                                         const Icon = getPhosphorIcon(detail?.iconName);
                                                         return (
-                                                            <div className="grid items-start justify-items-center gap-3">
-                                                                <Icon size={32} weight="bold" />
+                                                            <div className="grid items-start justify-items-center gap-3" key={i}>
+                                                                <Icon size={32} />
                                                                 <p className="text-center">{detail?.description}</p>
                                                                 {detail?.url && <Button color="primary" variant="solid" icon={<ArrowRightIcon />} />}
                                                             </div>
@@ -75,56 +83,60 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                         ))}
                     </div>
                 </div>
-                <div className="flex gap-6 items-start">
-                    <div>
-                        <MegaphoneIcon weight="fill" size={65} />
-                    </div>
-                    <div className="grid gap-3">
-                        <h3 className="heading-3xl font-semibold">Feedback & Melhoria Contínua</h3>
-                        {content.feedback?.description && <MarkdownRenderer content={content.feedback?.description || ""} />}
-                        <div className="grid gap-6">
-                            {content.feedback?.topics?.map((topic: topic) => {
-                                const Icon = getPhosphorIcon(topic?.iconName);
+                {content.feedback && (
+                    <div className="flex gap-6 items-start">
+                        <div>
+                            <MegaphoneIcon weight="fill" size={65} />
+                        </div>
+                        <div className="grid gap-3">
+                            <h3 className="heading-3xl font-semibold">Feedback & Melhoria Contínua</h3>
+                            {content.feedback?.description && <MarkdownRenderer content={content.feedback?.description || ""} />}
+                            <div className="grid gap-6">
+                                {content.feedback?.topics?.map((topic: topic) => {
+                                    const Icon = getPhosphorIcon(topic?.iconName);
 
-                                return (
-                                    <div className="flex gap-3 rounded-md items-center" key={topic.title}>
-                                        <div>
-                                            <span className="flex items-center p-2 bg-accent text-white rounded-xl">
-                                                <Icon size={24} />
-                                            </span>
+                                    return (
+                                        <div className="flex gap-3 rounded-md items-center" key={topic.title}>
+                                            <div>
+                                                <span className="flex items-center p-2 bg-accent text-white rounded-xl">
+                                                    <Icon size={24} />
+                                                </span>
+                                            </div>
+                                            <p className="body-xl">{topic?.title}</p>
                                         </div>
-                                        <p className="body-xl">{topic?.title}</p>
-                                    </div>
-                                )
-                            })}
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                    <div>
-                        <UsersThreeIcon weight="fill" size={65} />
-                    </div>
-                    <div className="grid gap-3">
-                        <h3 className="heading-3xl font-semibold">Incentivos & Envolvimento da Comunidade</h3>
-                        {content.incentivos?.description && <MarkdownRenderer content={content.incentivos?.description || ""} />}
-                        <div className="grid gap-6">
-                            {content.incentivos?.topics?.map((topic: topic) => {
-                                const Icon = getPhosphorIcon(topic?.iconName);
+                )}
+                {content.incentivos && (
+                    <div className="flex gap-6 items-start">
+                        <div>
+                            <UsersThreeIcon weight="fill" size={65} />
+                        </div>
+                        <div className="grid gap-3">
+                            <h3 className="heading-3xl font-semibold">Incentivos & Envolvimento da Comunidade</h3>
+                            {content.incentivos?.description && <MarkdownRenderer content={content.incentivos?.description || ""} />}
+                            <div className="grid gap-6">
+                                {content.incentivos?.topics?.map((topic: topic) => {
+                                    const Icon = getPhosphorIcon(topic?.iconName);
 
-                                return (
-                                    <div className="flex gap-3 rounded-md items-center" key={topic.title}>
-                                        <div>
-                                            <span className="flex items-center p-2 bg-accent text-white rounded-xl">
-                                                <Icon size={24} />
-                                            </span>
+                                    return (
+                                        <div className="flex gap-3 rounded-md items-center" key={topic.title}>
+                                            <div>
+                                                <span className="flex items-center p-2 bg-accent text-white rounded-xl">
+                                                    <Icon size={24} />
+                                                </span>
+                                            </div>
+                                            <p className="body-xl">{topic?.title}</p>
                                         </div>
-                                        <p className="body-xl">{topic?.title}</p>
-                                    </div>
-                                )
-                            })}
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                 {/* {content?.topics?.map((topic: any) => {

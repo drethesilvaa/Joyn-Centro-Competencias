@@ -8,27 +8,27 @@
   "objectives": {
     "topics": [
       {
-        "iconName": "Question",
+        "iconName": "Trophy",
         "description": "Promover a Excelência Técnica"
       },
       {
-        "iconName": "Question",
+        "iconName": "Users",
         "description": "Facilitar a Colaboração e a Partilha de Conhecimento"
       },
       {
-        "iconName": "Question",
+        "iconName": "Lightning",
         "description": "Acelerar o Desenvolvimento\nde Competências e Certificações"
       },
       {
-        "iconName": "Question",
+        "iconName": "Lightbulb",
         "description": "Fomentar a Inovação e a Experiência"
       },
       {
-        "iconName": "Question",
+        "iconName": "CheckCircle",
         "description": "Apoiar a Entrega de Soluções de Alta Qualidade"
       },
       {
-        "iconName": "Question",
+        "iconName": "Heart",
         "description": "Aumentar o Sentimento de Pertença"
       }
     ]
@@ -37,6 +37,78 @@
     {
       "title": "Centro de Competências .NET",
       "description": "O Centro de Competências .NET é uma iniciativa dedicada a promover a aprendizagem contínua, a partilha de conhecimento e o crescimento\nprofissional dos de todos os consultores na área de .NET.\n<br/><br/>\nAtravés de uma abordagem diversificada, eventos estruturados e discussões impulsionadas pela comunidade, o Centro de Competências tem como\nobjetivo capacitar consultores de todos os níveis de experiência, assegurando o desenvolvimento de competências a longo prazo e a inovação no\necossistema .NET.",
+      "charts": [
+        {
+          "title": "Years of experience with .Net technologies ",
+          "chartType": "pie",
+          "values": [
+            {
+              "name": "Less than 1 year",
+              "value": 11
+            },
+            {
+              "name": "1-3 years",
+              "value": 6
+            },
+            {
+              "name": "4-7 years",
+              "value": 8
+            },
+            {
+              "name": "8+ years",
+              "value": 12
+            }
+          ]
+        },
+        {
+          "title": "Years of experience as Developer",
+          "chartType": "pie",
+          "values": [
+            {
+              "name": "Less than 1 year",
+              "value": 4
+            },
+            {
+              "name": "1-3 years",
+              "value": 3
+            },
+            {
+              "name": "4-7 years",
+              "value": 11
+            },
+            {
+              "name": "8+ years",
+              "value": 19
+            }
+          ]
+        },
+        {
+          "title": "Overall proficiency in .Net",
+          "chartType": "bar",
+          "values": [
+            {
+              "name": "Novice",
+              "value": 12
+            },
+            {
+              "name": "Beginner",
+              "value": 1
+            },
+            {
+              "name": "Intermediate",
+              "value": 6
+            },
+            {
+              "name": "Advanced",
+              "value": 12
+            },
+            {
+              "name": "Expert",
+              "value": 6
+            }
+          ]
+        }
+      ],
       "learning": [
         {
           "title": "Adaptado a Diferentes Níveis de Experiência",
@@ -53,19 +125,19 @@
               "topicTitle": "Sessões Presenciais: O Pilar do Envolvimento & Networking",
               "topicDetails": [
                 {
-                  "iconName": "Question",
+                  "iconName": "ChatsCircle",
                   "description": "Painéis de Discussão"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "Lightning",
                   "description": "Lightning Talks"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "UsersFour",
                   "description": "Networking & Discussões Abertas"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "GooglePodcastsLogo",
                   "description": "Tech Talks"
                 }
               ]
@@ -74,15 +146,15 @@
               "topicTitle": "Sessões Virtuais para Maior Acessibilidade",
               "topicDetails": [
                 {
-                  "iconName": "Question",
+                  "iconName": "FilmStrip",
                   "description": "Transmissão em direto de Tech Talks e Painéis (sempre que possível)."
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "ChatsTeardrop",
                   "description": "Sessões de Perguntas & Respostas via WhatsApp."
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "Broadcast",
                   "description": "Acesso a Sessões Gravadas & Materiais (Google Classroom) para estudo assíncrono."
                 }
               ]
@@ -91,15 +163,15 @@
               "topicTitle": "Aprendizagem Prática: Aplicação de Competências & Desenvolvimento Técnico",
               "topicDetails": [
                 {
-                  "iconName": "Question",
+                  "iconName": "Lectern",
                   "description": "Workshops de Programação & Sessões Práticas"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "ChalkboardTeacher",
                   "description": "Programas de Mentoria"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "Certificate",
                   "description": "Certificações Online"
                 }
               ]
@@ -108,17 +180,17 @@
               "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
               "topicDetails": [
                 {
-                  "iconName": "Question",
+                  "iconName": "WhatsappLogo",
                   "description": "Comunidade WhatsApp",
                   "url": "URL"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "Chalkboard",
                   "description": "JOYN Academy",
                   "url": "URL"
                 },
                 {
-                  "iconName": "Question",
+                  "iconName": "DiscordLogo",
                   "description": "Discord",
                   "url": "URL"
                 }
@@ -131,15 +203,15 @@
         "description": "Para assegurar a evolução contínua do Centro de Aprendizagem, serão implementadas estratégias de recolha de feedback:",
         "topics": [
           {
-            "iconName": "Question",
+            "iconName": "Poll",
             "title": "Inquéritos (Google Forms, WhatsApp Polls)"
           },
           {
-            "iconName": "Question",
+            "iconName": "ChatCircle",
             "title": "Ferramentas de Interação Ao Vivo "
           },
           {
-            "iconName": "Question",
+            "iconName": "ChartLine",
             "title": "Partilha de Resultados Insights regulares para garantir que o feedback impulsiona melhorias futuras"
           }
         ]
@@ -148,11 +220,105 @@
         "description": "Para estimular a participação ativa, os membros mais envolvidos serão reconhecidos com:",
         "topics": [
           {
-            "iconName": "Question",
+            "iconName": "GameController",
             "title": "Gamification"
           }
         ]
       }
+    },
+    {
+      "title": "Centro de Competências Dados",
+      "description": "O **Centro de Competências de Dados** é uma iniciativa dedicada a promover a aprendizagem contínua, a partilha de conhecimento e o crescimento profissional de todos os consultores na área de Dados. Através de uma abordagem diversificada, eventos estruturados e discussões impulsionadas pela comunidade, o Centro de Competências tem como objetivo capacitar consultores de todos os níveis de experiência, assegurando o desenvolvimento de competências a longo prazo e a inovação no ecossistema de dados.",
+      "charts": [
+        {
+          "title": "Years of experience with data technologies ",
+          "chartType": "pie",
+          "values": [
+            {
+              "name": "Less than 1 year",
+              "value": 10
+            },
+            {
+              "name": "1-3 years",
+              "value": 11
+            },
+            {
+              "name": "4-7 years",
+              "value": 10
+            },
+            {
+              "name": "8+ years",
+              "value": 13
+            }
+          ]
+        },
+        {
+          "title": "Years of experience as developer",
+          "chartType": "pie",
+          "values": [
+            {
+              "name": "Less than 1 year",
+              "value": 8
+            },
+            {
+              "name": "1-3 years",
+              "value": 9
+            },
+            {
+              "name": "4-7 years",
+              "value": 9
+            },
+            {
+              "name": "8+ years",
+              "value": 18
+            }
+          ]
+        },
+        {
+          "title": "Overall proficiency in data",
+          "chartType": "bar",
+          "values": [
+            {
+              "name": "Novice",
+              "value": 8
+            },
+            {
+              "name": "Begginer",
+              "value": 11
+            },
+            {
+              "name": "Intermediate",
+              "value": 11
+            },
+            {
+              "name": "Advanced",
+              "value": 11
+            },
+            {
+              "name": "Expert",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "learning": [
+        {
+          "title": "Preparação para certificações",
+          "description": "**Objetivo** Fornecer apoio aos colaboradores que desejam obter certificações técnicas através de simulações de \nexames, material de estudo e sessões de grupo. \n<br/><br/>\n**Certificações Iniciais Disponíveis**\n- AZ-900 (Microsoft Azure Fundamentals)\n- DP-900 (Microsoft Azure Data Fundamentals)\n- DP-600 (Fabric Analytics Engineer Associate)\n- Databricks Certified Data Engineer Associate\n<br/>\n**Metodologia**\n- Material de estudo disponível na plataforma\n- Simulações de exames\n- Sessões online de estudo em grupo\n"
+        },
+        {
+          "title": "Painel de Notícias",
+          "description": "**Objetivo** Manter a comunidade informada e ativa através da partilha de notícias e tendências do setor.\n<br/><br/>\n**Temas em Destaque**\n- Tendências emergentes na área de dados (exemplo: DeepSeek)\n- Inovações tecnológicas e novas abordagens\n\n"
+        },
+        {
+          "title": "Consolidação de Conhecimentos em ferramentas de data",
+          "description": "**Objetivo** Disponibilizar formações e recursos sobre ferramentas essenciais para a análise e engenharia de dados.\n<br/><br/>\n**Foco em**\n- Databricks                     \n- DataFactory/Azure Synapse                      \n- Python/SQL                      \n- Dashboards\n<br/>\n\n**Propósito** Aumentar a maturidade no uso dessas ferramentas/linguagens através da aprendizagem prática.\n"
+        },
+        {
+          "title": "Coaching e Mentoria",
+          "description": "**Objetivo** Apoiar os colaboradores no desenvolvimento de competências específicas através de acompanhamento\n individualizado por um mentor a ser definido, dependendo do tema de trabalho. Pode haver participação do\n mentor na reunião de Personal Development Plan. \n<br /><br />\n**Metodologia**\n- Avaliação inicial para identificação de necessidades\n- Atribuição de um mentor especializado\n- Avaliação final para medir o progresso\n<br />\n**Métrica de Sucesso** Percentagem de progresso dos participantes ao final do programa.\n"
+        }
+      ]
     }
   ]
 }
