@@ -31,7 +31,7 @@ export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, p
                         height={435}
                         className="object-cover w-[35vw] max-w-[400px] rounded-2xl 
                                  float-right ml-6 mb-4 
-                                 2xl:absolute 2xl:top-0 2xl:right-0 2xl:float-none 2xl:ml-0 2xl:mb-0 2xl:max-w-none brightness-90"
+                                 2xl:absolute 2xl:top-0 2xl:right-0 2xl:float-none 2xl:ml-0 2xl:mb-0 2xl:max-w-[30vw] brightness-90"
                         src={pageImage || ""}
                         alt={`${pageImageAlt} photo`}
                     />
