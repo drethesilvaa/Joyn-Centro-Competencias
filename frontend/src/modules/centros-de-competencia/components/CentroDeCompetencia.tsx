@@ -4,6 +4,7 @@ import { ArrowRightIcon, GraduationCapIcon, MegaphoneIcon, QuotesIcon, UsersThre
 import { Button } from "antd";
 import { Fragment } from "react";
 import { ChartsGrid } from "./ChartsGrid";
+import { useRouter } from "next/navigation";
 
 interface ObjectivesProps {
     content: any
@@ -27,8 +28,14 @@ interface topic {
     title: string;
 }
 
+const openInNewTab = (url: string) => {
+    window.open(url, '_blank');
+};
 
 export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
+
+    const router = useRouter()
+
     return (
         <>
             <h2 className="heading-5xl font-semibold">{content.title}</h2>
@@ -70,7 +77,7 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                                                             <div className="grid items-start justify-items-center gap-3" key={i}>
                                                                 <Icon size={32} />
                                                                 <p className="text-center">{detail?.description}</p>
-                                                                {detail?.url && <Button color="primary" variant="solid" icon={<ArrowRightIcon />} />}
+                                                                {detail?.url && <Button onClick={() => openInNewTab(detail?.url || "")} color="primary" variant="solid" icon={<ArrowRightIcon />} />}
                                                             </div>
                                                         )
                                                     })}
@@ -137,29 +144,6 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                         </div>
                     </div>
                 )}
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                {/* {content?.topics?.map((topic: any) => {
-                    const iconName = topic?.iconName;
-                    let Icon = PhosphorIcons.Question;
-
-                    if (
-                        typeof iconName === "string" &&
-                        iconName in PhosphorIcons
-                    ) {
-                        Icon = (PhosphorIcons as any)[iconName];
-                    }
-                    return (
-                        <div className="grid gap-3 p-3 bg-white shadow-sm rounded-md justify-items-start">
-                            <div>
-                                <span className="flex items-center p-2 bg-secondary text-white rounded-xl">
-                                    <Icon size={24} />
-                                </span>
-                            </div>
-                            <p className="body-xl">{topic?.description}</p>
-                        </div>
-                    )
-                })} */}
             </div>
         </>
     )

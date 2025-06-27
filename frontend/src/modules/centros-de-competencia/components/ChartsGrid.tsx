@@ -1,4 +1,5 @@
-import { Chart, ChartModal } from "@/components/Charts";
+import ChartModal from "@/components/Charts/Charts";
+import { Chart } from "@/components/Charts/data/interfaces";
 
 export const ChartsGrid = ({ charts }: { charts: Chart[] }) => {
     if (!charts || charts.length === 0) {

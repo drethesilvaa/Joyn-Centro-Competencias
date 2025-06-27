@@ -1,191 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    BarChart, 
-    Bar, 
-    LineChart, 
-    Line, 
-    PieChart, 
-    Pie, 
-    Cell,
-    XAxis, 
-    YAxis, 
-    CartesianGrid, 
-    Tooltip, 
-    Legend, 
-    ResponsiveContainer 
-} from 'recharts';
 import { XIcon } from '@phosphor-icons/react/dist/ssr';
+import { ChartModalProps } from './data/interfaces';
+import { FullBarChart, MiniBarChart } from './components/BarChart';
+import { FullLineChart, MiniLineChart } from './components/LineChart';
+import { FullPieChart, MiniPieChart } from './components/PieChart';
 
-// Types
-interface ChartValue {
-    name: string;
-    value: number;
-}
 
-export interface Chart {
-    title?: string;
-    chartType: 'bar' | 'line' | 'pie';
-    values: ChartValue[];
-}
-
-interface ChartModalProps {
-    chart: Chart;
-    className?: string;
-}
-
-// Color palette
-const CHART_COLORS = [
-    '#101b23', '#004552', '#007472', '#2f3847', 
-    '#56566c', '#847690', '#3b464f', '#28131f'
-];
-
-// Mini Chart Components (simplified versions)
-const MiniBarChart = ({ data }: { data: ChartValue[] }) => (
-    <ResponsiveContainer width="100%" height={120}>
-        <BarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-            <Bar dataKey="value" fill={CHART_COLORS[0]} radius={[2, 2, 0, 0]} />
-        </BarChart>
-    </ResponsiveContainer>
-);
-
-const MiniLineChart = ({ data }: { data: ChartValue[] }) => (
-    <ResponsiveContainer width="100%" height={120}>
-        <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-            <Line 
-                type="monotone" 
-                dataKey="value" 
-                stroke={CHART_COLORS[1]} 
-                strokeWidth={2}
-                dot={false}
-            />
-        </LineChart>
-    </ResponsiveContainer>
-);
-
-const MiniPieChart = ({ data }: { data: ChartValue[] }) => (
-    <ResponsiveContainer width="100%" height={120}>
-        <PieChart>
-            <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                outerRadius={40}
-                fill="#8884d8"
-                dataKey="value"
-            >
-                {data.map((entry, index) => (
-                    <Cell 
-                        key={`cell-${index}`} 
-                        fill={CHART_COLORS[index % CHART_COLORS.length]} 
-                    />
-                ))}
-            </Pie>
-        </PieChart>
-    </ResponsiveContainer>
-);
-
-// Full Chart Components (detailed versions)
-const FullBarChart = ({ data, title }: { data: ChartValue[], title?: string }) => (
-    <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis 
-                dataKey="name" 
-                tick={{ fontSize: 12 }}
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                height={80}
-            />
-            <YAxis tick={{ fontSize: 12 }} />
-            <Tooltip 
-                contentStyle={{ 
-                    backgroundColor: '#f8f9fa', 
-                    border: '1px solid #dee2e6',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
-                }}
-            />
-            <Legend />
-            <Bar 
-                dataKey="value" 
-                fill={CHART_COLORS[0]}
-                radius={[4, 4, 0, 0]}
-            />
-        </BarChart>
-    </ResponsiveContainer>
-);
-
-const FullLineChart = ({ data, title }: { data: ChartValue[], title?: string }) => (
-    <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis 
-                dataKey="name" 
-                tick={{ fontSize: 12 }}
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                height={80}
-            />
-            <YAxis tick={{ fontSize: 12 }} />
-            <Tooltip 
-                contentStyle={{ 
-                    backgroundColor: '#f8f9fa', 
-                    border: '1px solid #dee2e6',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
-                }}
-            />
-            <Legend />
-            <Line 
-                type="monotone" 
-                dataKey="value" 
-                stroke={CHART_COLORS[1]}
-                strokeWidth={3}
-                dot={{ fill: CHART_COLORS[1], strokeWidth: 2, r: 4 }}
-                activeDot={{ r: 6, stroke: CHART_COLORS[1], strokeWidth: 2 }}
-            />
-        </LineChart>
-    </ResponsiveContainer>
-);
-
-const FullPieChart = ({ data, title }: { data: ChartValue[], title?: string }) => (
-    <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
-            <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                outerRadius={120}
-                fill="#8884d8"
-                dataKey="value"
-            >
-                {data.map((entry, index) => (
-                    <Cell 
-                        key={`cell-${index}`} 
-                        fill={CHART_COLORS[index % CHART_COLORS.length]} 
-                    />
-                ))}
-            </Pie>
-            <Tooltip 
-                contentStyle={{ 
-                    backgroundColor: '#f8f9fa', 
-                    border: '1px solid #dee2e6',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
-                }}
-            />
-            <Legend />
-        </PieChart>
-    </ResponsiveContainer>
-);
-
-// Main Chart Modal Component
-export const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
+const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const { chartType, values, title } = chart;
 
@@ -248,7 +70,7 @@ export const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
                     {renderMiniChart()}
                     {/* Overlay to indicate it's clickable */}
                     <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-all duration-200 rounded flex items-center justify-center">
-                        <motion.div 
+                        <motion.div
                             className="opacity-0 hover:opacity-100 bg-white bg-opacity-90 rounded-full p-2 shadow-lg"
                             initial={{ scale: 0 }}
                             whileHover={{ scale: 1 }}
@@ -287,11 +109,11 @@ export const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
                             initial={{ scale: 0.8, opacity: 0, y: 50 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.8, opacity: 0, y: 50 }}
-                            transition={{ 
-                                type: "spring", 
-                                damping: 25, 
+                            transition={{
+                                type: "spring",
+                                damping: 25,
                                 stiffness: 300,
-                                duration: 0.4 
+                                duration: 0.4
                             }}
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -323,7 +145,7 @@ export const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
 
                             {/* Footer with data summary */}
                             <div className="px-6 pb-6">
-                                <motion.div 
+                                <motion.div
                                     className="bg-gray-50 rounded-lg p-4"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -361,3 +183,5 @@ export const ChartModal = ({ chart, className = "" }: ChartModalProps) => {
         </>
     );
 };
+
+export default ChartModal
