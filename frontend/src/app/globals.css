@@ -149,8 +149,19 @@ menu {
 }
 
 #nprogress .bar {
-  background: #56566c !important;
+  background: #3e90be !important;
 }
 #nprogress .peg {
-  box-shadow: 0 0 10px #56566c, 0 0 5px #56566c !important;
+  box-shadow: 0 0 10px #3e90be, 0 0 5px #3e90be !important;
+}
+
+.articles {
+
+  .ant-card-meta-title{
+    @apply text-wrap text-foreground
+  }
+
+  .ant-card-meta-description {
+    @apply line-clamp-3;
+  }
 }

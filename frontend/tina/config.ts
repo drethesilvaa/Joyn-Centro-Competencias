@@ -503,6 +503,41 @@ export default defineConfig({
         ],
       },
       {
+        name: "pageArtigos",
+        label: "Pagina Artigos",
+        path: "content/pageArtigos",
+        format: "json",
+        ui: {
+          allowedActions: { create: false, delete: false },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "string",
+            name: "videoUrl",
+            label: "Video URL",
+          },
+          {
+            type: "image",
+            name: "imageToSwapForVideo",
+            label: "Image to Swap for Video",
+          },
+        ],
+      },
+      {
         name: "artigos",
         label: "Artigos",
         path: "content/artigos",
