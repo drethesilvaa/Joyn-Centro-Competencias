@@ -41,7 +41,7 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
             <h2 className="heading-5xl font-semibold">{content.title}</h2>
             <div className="mt-6 grid gap-16">
                 <div className="flex gap-6 items-start">
-                    <div>
+                    <div className="sticky top-5">
                         <QuotesIcon weight="fill" size={65} />
                     </div>
                     <div className="body-xl">
@@ -50,14 +50,14 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                 </div>
                 {content?.charts && content?.charts?.length > 0 && (
                     <div className="flex gap-6 items-start">
-                        <div>
+                        <div className="sticky top-5">
                             <ChartDonutIcon weight="fill" size={65} />
                         </div>
                         <ChartsGrid charts={content.charts || []} />
                     </div>
                 )}
                 <div className="flex gap-6 items-start">
-                    <div>
+                    <div className="sticky top-5">
                         <GraduationCapIcon weight="fill" size={65} />
                     </div>
                     <div className="grid gap-12">
@@ -69,7 +69,7 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                                     <ul>
                                         {l.topics.map((topic) => (
                                             <Fragment key={topic?.topicTitle}>
-                                                <li className="font-semibold mt-6">{topic?.topicTitle}</li>
+                                                <p className="font-semibold mt-6">{topic?.topicTitle}</p>
                                                 <div className="flex gap-6 py-6 justify-evenly">
                                                     {topic?.topicDetails?.map((detail, i) => {
                                                         const Icon = getPhosphorIcon(detail?.iconName);
@@ -92,7 +92,7 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                 </div>
                 {content.feedback && (
                     <div className="flex gap-6 items-start">
-                        <div>
+                        <div className="sticky top-5">
                             <MegaphoneIcon weight="fill" size={65} />
                         </div>
                         <div className="grid gap-3">
@@ -119,7 +119,7 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                 )}
                 {content.incentivos && (
                     <div className="flex gap-6 items-start">
-                        <div>
+                        <div className="sticky top-5">
                             <UsersThreeIcon weight="fill" size={65} />
                         </div>
                         <div className="grid gap-3">

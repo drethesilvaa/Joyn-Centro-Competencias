@@ -120,74 +120,20 @@
         },
         {
           "title": "Métodos de Partilha de Conhecimento Preferidos & Abordagem de Entrega",
+          "description": "**Sessões Presenciais: O Pilar do Envolvimento & Networking**\n- Painéis de Discussão\n- Lightning Talks\n- Networking & Discussões Abertas\n- Tech Talks\n\n**Sessões Virtuais para Maior Acessibilidade**\n- Transmissão em direto de Tech Talks e Painéis (sempre que possível).\n- Sessões de Perguntas & Respostas via WhatsApp.\n- Acesso a Sessões Gravadas & Materiais (Google Classroom) para estudo assíncrono.\n\n**Aprendizagem Prática: Aplicação de Competências & Desenvolvimento Técnico**\n- Workshops de Programação & Sessões Práticas\n- Programas de Mentoria\n- Certificações Online",
           "topics": [
-            {
-              "topicTitle": "Sessões Presenciais: O Pilar do Envolvimento & Networking",
-              "topicDetails": [
-                {
-                  "iconName": "ChatsCircle",
-                  "description": "Painéis de Discussão"
-                },
-                {
-                  "iconName": "Lightning",
-                  "description": "Lightning Talks"
-                },
-                {
-                  "iconName": "UsersFour",
-                  "description": "Networking & Discussões Abertas"
-                },
-                {
-                  "iconName": "GooglePodcastsLogo",
-                  "description": "Tech Talks"
-                }
-              ]
-            },
-            {
-              "topicTitle": "Sessões Virtuais para Maior Acessibilidade",
-              "topicDetails": [
-                {
-                  "iconName": "FilmStrip",
-                  "description": "Transmissão em direto de Tech Talks e Painéis (sempre que possível)."
-                },
-                {
-                  "iconName": "ChatsTeardrop",
-                  "description": "Sessões de Perguntas & Respostas via WhatsApp."
-                },
-                {
-                  "iconName": "Broadcast",
-                  "description": "Acesso a Sessões Gravadas & Materiais (Google Classroom) para estudo assíncrono."
-                }
-              ]
-            },
-            {
-              "topicTitle": "Aprendizagem Prática: Aplicação de Competências & Desenvolvimento Técnico",
-              "topicDetails": [
-                {
-                  "iconName": "Lectern",
-                  "description": "Workshops de Programação & Sessões Práticas"
-                },
-                {
-                  "iconName": "ChalkboardTeacher",
-                  "description": "Programas de Mentoria"
-                },
-                {
-                  "iconName": "Certificate",
-                  "description": "Certificações Online"
-                }
-              ]
-            },
             {
               "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
               "topicDetails": [
                 {
                   "iconName": "WhatsappLogo",
                   "description": "Comunidade WhatsApp",
-                  "url": "URL"
+                  "url": "https://chat.whatsapp.com/DdUoi2EHvfPHYbhY3zIQZO"
                 },
                 {
                   "iconName": "Chalkboard",
                   "description": "JOYN Academy",
-                  "url": "URL"
+                  "url": "https://academy.joyn-group.com/login/index.php"
                 },
                 {
                   "iconName": "DiscordLogo",
@@ -317,6 +263,31 @@
         {
           "title": "Coaching e Mentoria",
           "description": "**Objetivo** Apoiar os colaboradores no desenvolvimento de competências específicas através de acompanhamento\n individualizado por um mentor a ser definido, dependendo do tema de trabalho. Pode haver participação do\n mentor na reunião de Personal Development Plan. \n<br /><br />\n**Metodologia**\n- Avaliação inicial para identificação de necessidades\n- Atribuição de um mentor especializado\n- Avaliação final para medir o progresso\n<br />\n**Métrica de Sucesso** Percentagem de progresso dos participantes ao final do programa.\n"
+        },
+        {
+          "title": "Métodos de Partilha de Conhecimento Preferidos & Abordagem de Entrega",
+          "topics": [
+            {
+              "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
+              "topicDetails": [
+                {
+                  "iconName": "WhatsappLogo",
+                  "description": "Comunidade WhatsApp",
+                  "url": "https://chat.whatsapp.com/EYsX0eHzOdgDYzE95y2RMb"
+                },
+                {
+                  "iconName": "Chalkboard",
+                  "description": "JOYN Academy",
+                  "url": "https://academy.joyn-group.com/login/index.php"
+                },
+                {
+                  "iconName": "DiscordLogo",
+                  "description": "Discord",
+                  "url": "URL"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

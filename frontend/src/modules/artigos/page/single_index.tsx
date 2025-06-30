@@ -3,6 +3,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useArtigoByFilename } from "../hooks/useArtigoByFilename";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";
+import { AppBreadcrumb } from "@/components/Breadcrumb";
 
 export default function ArtigoPage() {
     const params = useParams();
@@ -31,6 +32,7 @@ export default function ArtigoPage() {
 
     return (
         <div className="py-16">
+            <AppBreadcrumb />
             <div className="flex justify-end min-h-[40vh] flex-col bg-cover bg-center rounded-t-xl lg:rounded-xl relative"
                 style={{ backgroundImage: `url(${artigo?.articleImage})` }}>
 
