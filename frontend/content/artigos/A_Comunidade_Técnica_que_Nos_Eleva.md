@@ -1,5 +1,5 @@
 ---
-title: 'Centros de Competência JOYN: A Comunidade Técnica que Nos Eleva'
+title: Centros de Competência JOYN <br /> A Comunidade Técnica que Nos Eleva
 subTitle: >-
   Num setor onde a transformação tecnológica é constante, a capacidade de
   evoluir não pode ser uma resposta reativa — tem de ser parte da estratégia. É
@@ -22,7 +22,7 @@ content: >-
   <br /> <br/>
 
 
-  *** Uma Visão Integrada de Futuro ***
+  ## Uma Visão Integrada de Futuro 
 
 
   Os Centros de Competência nasceram com um propósito claro: tornar-se núcleos
@@ -43,14 +43,15 @@ content: >-
   consistente, é fundamental para sustentar o nosso crescimento.
 
 
+  <br /> <br/>
 
-  *** Objetivos que Geram Valor Real ***
+  ## Objetivos que Geram Valor Real
 
 
   A criação dos Centros de Competência está sustentada por seis grandes pilares:
 
 
-  1. Excelência Técnica
+  1. **Excelência Técnica** <br/>
 
   Através de formações, adoção de boas práticas e recursos atualizados
   procuramos garantir que as nossas equipas estão sempre alinhadas com os
@@ -58,7 +59,7 @@ content: >-
   eficientes e ajustadas às exigências do mercado.
 
 
-  2. Colaboração e Partilha
+  2. **Colaboração e Partilha** <br/>
 
   Os centros são espaços onde o conhecimento pode ser partilhado de forma
   orgânica — seja através de sessões técnicas, eventos temáticos ou simples
@@ -66,7 +67,7 @@ content: >-
   evolução para todos.
 
 
-  3. Formação Contínua e Certificações
+  3. **Formação Contínua e Certificações** <br/>
 
   A aprendizagem não termina com a integração numa equipa. Pelo contrário,
   começa aí. Os Centros de Competência promovem o crescimento profissional em
@@ -74,7 +75,7 @@ content: >-
   reconhecidas e oferecendo percursos formativos adequados a diferentes perfis.
 
 
-  4. Inovação e Atualização Constante
+  4. **Inovação e Atualização Constante** <br/>
 
   Num universo em que novas ferramentas e frameworks surgem todos os dias, é
   essencial manter o contacto com a vanguarda tecnológica. Os centros funcionam
@@ -82,7 +83,7 @@ content: >-
   emergentes e se desafiam os limites da criatividade técnica.
 
 
-  5. Qualidade na Entrega
+  5. **Qualidade na Entrega** <br/>
 
   Ao definirmos metodologias claras e ao padronizarmos práticas de
   desenvolvimento, contribuímos para entregas mais seguras, mais rápidas e com
@@ -90,7 +91,7 @@ content: >-
   ADN técnico.
 
 
-  6. Sentido de Comunidade
+  6. **Sentido de Comunidade** <br/>
 
   Para além do conhecimento, os Centros de Competência também cultivam algo
   essencial: o sentimento de pertença. São espaços onde cada consultor se sente
@@ -98,8 +99,9 @@ content: >-
   Isso fortalece laços, motiva equipas e eleva o compromisso de todos.
 
 
+  <br /> <br/>
 
-  *** Uma Iniciativa Feita Por Todos, Para Todos ***
+  ## Uma Iniciativa Feita Por Todos, Para Todos
 
 
   A participação ativa dos nossos colaboradores é a base do sucesso desta
@@ -120,8 +122,9 @@ content: >-
   suas comunidades.
 
 
+  <br /> <br/>
 
-  *** O Que Está a Caminho ***
+  ## O Que Está a Caminho
 
 
   Os Centros de Competência já dinamizaram diversas sessões, promovendo a
@@ -140,8 +143,9 @@ content: >-
   interativas aplicadas a projetos reais.
 
 
+  <br /> <br/>
 
-  *** Compromisso com o Crescimento Sustentado ***
+  ## Compromisso com o Crescimento Sustentado
 
 
   Os Centros de Competência são mais do que uma nova estrutura de formação:

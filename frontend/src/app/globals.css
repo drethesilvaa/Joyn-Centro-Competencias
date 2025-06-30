@@ -65,6 +65,10 @@ menu {
   }
 }
 
+ol {
+  list-style: decimal;
+}
+
 .heading-8xl {
   @apply text-5xl md:text-8xl;
 }
@@ -156,12 +160,39 @@ menu {
 }
 
 .articles {
-
-  .ant-card-meta-title{
-    @apply text-wrap text-foreground
+  .ant-card-meta-title {
+    @apply text-wrap text-foreground;
   }
 
   .ant-card-meta-description {
     @apply line-clamp-3;
+  }
+}
+
+.markdown-style {
+  h1 {
+    @apply text-xl md:text-3xl font-bold mb-5;
+  }
+  h2 {
+    @apply text-lg md:text-2xl font-semibold mb-4;
+  }
+  h3 {
+    @apply text-sm md:text-xl font-semibold mb-3;
+  }
+
+  p {
+    @apply my-3;
+  }
+
+  ol,
+  ul,
+  menu {
+    li {
+      @apply my-2;
+
+      p {
+        @apply my-0;
+      }
+    }
   }
 }

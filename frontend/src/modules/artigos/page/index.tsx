@@ -5,8 +5,13 @@ import { usePageArtigosQuery } from "../hooks/usePageArtigosQuery";
 import { Avatar, Card } from 'antd';
 import { ArticleIcon } from "@phosphor-icons/react";
 import { motion } from 'framer-motion';
+import { useRouter } from "next/navigation";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 export const ArtigosPage = () => {
+
+
+    const router = useRouter()
 
     const { Meta } = Card;
 
@@ -34,12 +39,14 @@ export const ArtigosPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 articles mt-20">
                     {allArtigos.map(artigo => (
                         <Card
+                            key={artigo?.id}
                             cover={
                                 <motion.div
                                     className="relative cursor-pointer overflow-hidden"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ duration: 0.2 }}
+                                    onClick={() => router.push("/artigos/" + artigo?._sys?.filename)}
                                 >
                                     <motion.span
                                         className="absolute w-full h-full z-[1] flex items-center justify-center"
@@ -69,7 +76,7 @@ export const ArtigosPage = () => {
                             <Meta
                                 className="p-4"
                                 avatar={<Avatar src={artigo?.authorPic} />}
-                                title={artigo?.title}
+                                title={<MarkdownRenderer content={artigo?.title || ""} />}
                                 description={artigo?.subTitle}
                             />
                         </Card>
@@ -86,6 +93,6 @@ export const ArtigosPage = () => {
                     </button>
                 )}
             </>
-        </PagesLayout>
+        </PagesLayout >
     )
 }
