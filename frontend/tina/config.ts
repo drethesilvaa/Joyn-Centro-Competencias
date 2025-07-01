@@ -543,8 +543,9 @@ export default defineConfig({
         label: "Artigos",
         path: "content/artigos",
         ui: {
-          itemProps: (item) => {
-            return { label: item?.title || "New Article" };
+          filename: {
+            readonly: false,
+            slugify: (values) => `${values?.title || "new-article"}`,
           },
         },
         fields: [
