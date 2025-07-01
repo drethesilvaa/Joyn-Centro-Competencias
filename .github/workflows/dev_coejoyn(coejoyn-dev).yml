@@ -35,7 +35,7 @@ jobs:
         run: |
           cd frontend
           npm install
-          npm run build --if-present --no-lint
+          npm run build -- --no-lint
           npm run test --if-present
 
       - name: Zip artifact for deployment
