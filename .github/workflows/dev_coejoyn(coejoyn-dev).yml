@@ -25,13 +25,15 @@ jobs:
           cd frontend
           npm install
 
-      - name: Build Next.js app
+      - name: Build Next.js app with Tina
         env:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          TINA_BRANCH: dev
+          NEXT_PUBLIC_TINA_BRANCH: dev
         run: |
           cd frontend
           npm run build
@@ -39,6 +41,7 @@ jobs:
       - name: Create deployment package
         run: |
           cd frontend
+          mkdir -p deployment-package
           cp -r .next ./deployment-package/
           cp -r public ./deployment-package/ 2>/dev/null || true
           cp package*.json ./deployment-package/
