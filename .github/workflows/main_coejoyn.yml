@@ -3,7 +3,9 @@ name: Build and deploy Next.js Tina CMS app to Azure Web App - coejoyn (Producti
 on:
   push:
     branches:
-      - main
+      - main       
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
