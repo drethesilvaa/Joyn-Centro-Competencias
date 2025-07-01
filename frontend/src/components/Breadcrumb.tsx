@@ -25,10 +25,10 @@ export function AppBreadcrumb() {
 
         return {
           title: isLast ? (
-            <span className="font-semibold text-gray-700">{label}</span>
+            <span className="font-semibold text-gray-700">{decodeURIComponent(label.replace("_", " "))}</span>
           ) : (
             <Link href={href} className="text-blue-600 hover:text-blue-800">
-              {label}
+              {decodeURIComponent(label)}
             </Link>
           ),
         };

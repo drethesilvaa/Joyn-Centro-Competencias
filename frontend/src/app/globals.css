@@ -195,4 +195,10 @@ ol {
       }
     }
   }
+
+  .ant-breadcrumb {~
+    ol li {
+      margin-left: unset;
+    }
+  }
 }
