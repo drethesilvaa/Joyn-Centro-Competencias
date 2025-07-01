@@ -39,6 +39,7 @@ jobs:
           NEXT_PUBLIC_TINA_BRANCH: dev
         run: |
           cd frontend
+          npm install
           npm ci
           npm run build -- --no-lint
           cp -r public .next/standalone/public
