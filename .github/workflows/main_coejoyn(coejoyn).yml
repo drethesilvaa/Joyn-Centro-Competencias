@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure Web App - coejoyn(coejoyn-dev)
+name: Build and deploy Node.js app to Azure Web App - coejoyn prod
 
 on:
   # push:
@@ -35,8 +35,8 @@ jobs:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          TINA_BRANCH: dev
-          NEXT_PUBLIC_TINA_BRANCH: dev
+          TINA_BRANCH: main
+          NEXT_PUBLIC_TINA_BRANCH: main
         run: |
           cd frontend
           npm install
@@ -55,7 +55,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment: dev
+    environment: prod
 
     steps:
       - name: Download artifact from build job
@@ -71,6 +71,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: "coejoyn"
-          slot-name: "coejoyn-dev"
+          slot-name: "coejoyn"
           package: .
           publish-profile: ${{ secrets.__publishingprofilesecretname__ }}

@@ -591,6 +591,134 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "mentores",
+        label: "Mentores",
+        path: "content/mentores",
+        format: "json",
+        ui: {
+          allowedActions: { create: false, delete: false },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "pageTitle",
+            label: "Page Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "pageDescription",
+            label: "Page Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "image",
+            name: "pageImage",
+            label: "Page Image",
+          },
+          {
+            type: "string",
+            name: "pageImageAlt",
+            label: "Page Image Alt Text",
+          },
+          {
+            type: "string",
+            name: "videoUrl",
+            label: "Video URL",
+          },
+          {
+            type: "object",
+            name: "centro",
+            label: "Centro",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "titulo",
+                label: "Título",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "lideres",
+                label: "Líderes",
+                list: true,
+                fields: [
+                  {
+                    type: "image",
+                    name: "photo",
+                    label: "Foto",
+                  },
+                  {
+                    type: "string",
+                    name: "nome",
+                    label: "Nome",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "email",
+                    label: "Email",
+                  },
+                  {
+                    type: "string",
+                    name: "stack",
+                    label: "Stack",
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Description",
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+              {
+                type: "object",
+                name: "mentores",
+                label: "Mentores",
+                list: true,
+                fields: [
+                  {
+                    type: "image",
+                    name: "photo",
+                    label: "Foto",
+                  },
+                  {
+                    type: "string",
+                    name: "nome",
+                    label: "Nome",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "email",
+                    label: "Email",
+                  },
+                  {
+                    type: "string",
+                    name: "stack",
+                    label: "Stack",
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Description",
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });
