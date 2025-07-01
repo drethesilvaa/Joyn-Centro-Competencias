@@ -32,8 +32,8 @@ jobs:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          TINA_BRANCH: dev
-          NEXT_PUBLIC_TINA_BRANCH: dev
+          TINA_BRANCH: main
+          NEXT_PUBLIC_TINA_BRANCH: main
         run: |
           cd frontend
           npm run build
