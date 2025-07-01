@@ -1,17 +1,10 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Next.js app to Azure Web App - coejoyn (Optimized)
+name: Build and deploy Next.js Tina CMS app to Azure Web App - coejoyn (Production)
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
-env:
-  NODE_VERSION: "22.x"
-  WORKING_DIRECTORY: "./frontend"
 
 jobs:
   build:
@@ -24,33 +17,70 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: "22"
           cache: "npm"
-          cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/package-lock.json
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Cache Next.js build
+        uses: actions/cache@v3
+        with:
+          path: |
+            frontend/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-${{ hashFiles('frontend/**/*.js', 'frontend/**/*.jsx', 'frontend/**/*.ts', 'frontend/**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-
 
       - name: Install dependencies
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: npm ci
-
-      - name: Build application
-        working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
-          npm run build
+          cd frontend
+          npm ci
+
+      - name: Build application with Tina CMS
         env:
           CI: true
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          TINA_BRANCH: main
+          NEXT_PUBLIC_TINA_BRANCH: main
+        run: |
+          cd frontend
+          npm run build
 
       - name: Create deployment package
-        working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
-          # Include all necessary files for production
-          zip -r ../deployment.zip \
-            .next \
-            node_modules \
-            public \
-            package.json \
-            package-lock.json \
-            next.config.* \
-            .env.local
+          cd frontend
+
+          # Create deployment directory
+          mkdir -p deployment-package
+
+          # Copy built application
+          cp -r .next ./deployment-package/
+
+          # Copy public assets (if exists)
+          if [ -d "public" ]; then
+            cp -r public ./deployment-package/
+          fi
+
+          # Copy package files
+          cp package.json ./deployment-package/
+          cp package-lock.json ./deployment-package/
+
+          # Copy Next.js config (if exists)
+          if ls next.config.* 1> /dev/null 2>&1; then
+            cp next.config.* ./deployment-package/
+          fi
+
+          # Install only production dependencies
+          cd deployment-package
+          npm ci --only=production --ignore-scripts
+
+          # Create zip for deployment
+          cd ..
+          zip -r ../deployment.zip deployment-package/
 
       - name: Upload deployment package
         uses: actions/upload-artifact@v4
@@ -81,5 +111,5 @@ jobs:
         with:
           app-name: "coejoyn"
           slot-name: "Production"
-          package: .
+          package: ./deployment-package
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_316CED56A4DA4B3DB4F77A021156013A }}
