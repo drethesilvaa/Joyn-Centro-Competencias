@@ -166,7 +166,8 @@ export default defineConfig({
                   },
                 ],
                 ui: {
-                  validate: (val) => val?.length > 4 && "Max 4 images allowed",
+                  validate: (val) =>
+                    val?.length > 4 ? "Max 4 images allowed" : undefined,
                 },
               },
             ],
