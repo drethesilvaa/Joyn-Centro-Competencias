@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { client } from "../../../../tina/__generated__/client";
 
 export const useArtigosInfiteQuery = (limit = 10) => {

@@ -30,7 +30,7 @@ export const MiniPieChart = ({ data }: { data: ChartValue[] }) => (
     </ResponsiveContainer>
 );
 
-export const FullPieChart = ({ data, title }: { data: ChartValue[], title?: string }) => (
+export const FullPieChart = ({ data }: { data: ChartValue[], title?: string }) => (
     <ResponsiveContainer width="100%" height={400}>
         <PieChart>
             <Pie

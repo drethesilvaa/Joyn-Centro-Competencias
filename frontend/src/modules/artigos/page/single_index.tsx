@@ -1,5 +1,5 @@
 "use client"
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useArtigoByFilename } from "../hooks/useArtigoByFilename";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";

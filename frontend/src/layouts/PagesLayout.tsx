@@ -1,9 +1,6 @@
 import { ReactNode } from "react"
-import Navbar from "../components/Navbar"
-import { AppProgressBar } from "@/components/AppProgressBar"
 import Image from "next/image"
 import MarkdownRenderer from "@/components/MarkdownRenderer"
-import { PlayCircleIcon } from "@phosphor-icons/react/dist/ssr"
 
 
 interface TemplateProps {

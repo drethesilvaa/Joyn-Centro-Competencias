@@ -19,7 +19,7 @@ export const MiniBarChart = ({ data }: { data: ChartValue[] }) => (
 );
 
 
-export const FullBarChart = ({ data, title }: { data: ChartValue[], title?: string }) => (
+export const FullBarChart = ({ data }: { data: ChartValue[], title?: string }) => (
     <ResponsiveContainer width="100%" height={400}>
         <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
             <CartesianGrid strokeDasharray="3 3" />

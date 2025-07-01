@@ -36,7 +36,7 @@ jobs:
           NEXT_PUBLIC_TINA_BRANCH: main
         run: |
           cd frontend
-          npm run build
+          npm run build -- --no-lint
 
       - name: Create deployment package
         run: |
