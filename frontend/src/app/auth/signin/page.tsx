@@ -2,16 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { signIn, getProviders, ClientSafeProvider, useSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import PageLoader from "@/layouts/PageLoader";
 
 export default function SignIn() {
     const [providers, setProviders] = useState<Record<string, ClientSafeProvider> | null>(null);
     const { status } = useSession();
     const router = useRouter();
-
-    const searchParams = useSearchParams();
-    const error = searchParams?.get("error");
 
     useEffect(() => {
         if (status === "authenticated") {
@@ -27,12 +24,11 @@ export default function SignIn() {
         if (
             status === "unauthenticated" &&
             providers &&
-            providers["google"] &&
-            !error 
+            providers["google"]
         ) {
             signIn("google");
         }
-    }, [providers, status, error]);
+    }, [providers, status]);
 
     return (
         <PageLoader />

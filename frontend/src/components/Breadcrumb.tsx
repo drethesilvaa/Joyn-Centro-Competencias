@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export function AppBreadcrumb() {
   const pathname = usePathname();
 
-  const pathSegments = pathname
+  const pathSegments = (pathname || "")
     .split("/")
     .filter((segment) => segment.length > 0);
 
