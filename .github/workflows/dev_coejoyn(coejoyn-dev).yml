@@ -63,6 +63,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: "coejoyn"
-          slot-name: "coejoyn-coejoyn-dev"
+          slot-name: "coejoyn-dev"
           package: .
           publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
