@@ -30,13 +30,8 @@ jobs:
 
       - name: npm install, build, and test
         env:
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          TINA_BRANCH: dev
-          NEXT_PUBLIC_TINA_BRANCH: dev
         run: |
           cd frontend
           npm install
