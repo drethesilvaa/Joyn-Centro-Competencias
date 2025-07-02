@@ -4,13 +4,10 @@ import path from "path";
 import matter from "gray-matter";
 import { Article } from "@/types/articles";
 
-interface RouteParams {
-  params: {
-    slug: string;
-  };
-}
-
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     const { slug } = params;
 
