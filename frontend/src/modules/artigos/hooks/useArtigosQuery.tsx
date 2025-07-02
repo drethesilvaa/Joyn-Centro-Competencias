@@ -1,29 +1,17 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { client } from "../../../../tina/__generated__/client";
+import { ArticlesListResponse } from "@/types/articles";
+import { useQuery } from "@tanstack/react-query";
 
-export const useArtigosInfiteQuery = (limit = 10) => {
-    return useInfiniteQuery({
-        queryKey: ["artigos-infinite", limit],
-        queryFn: async ({ pageParam = "" }) => {
-            try {
-                const res = await client.queries.artigosConnection({
-                    first: limit,
-                    after: pageParam
-                });
-
-                return {
-                    data: res?.data?.artigosConnection?.edges?.map(edge => edge?.node),
-                    nextCursor: res.data.artigosConnection.pageInfo.hasNextPage
-                        ? res.data.artigosConnection.pageInfo.endCursor
-                        : undefined,
-                    hasNextPage: res.data.artigosConnection.pageInfo.hasNextPage
-                };
-            } catch (error) {
-                console.error("artigosConnection not available, falling back to manual pagination");
-                throw error;
-            }
-        },
-        getNextPageParam: (lastPage) => lastPage.nextCursor,
-        initialPageParam: "",
-    });
+const fetchArticles = async (): Promise<ArticlesListResponse> => {
+    const response = await fetch('/api/articles');
+    if (!response.ok) {
+        throw new Error(`Failed to fetch articles: ${response.statusText}`);
+    }
+    return response.json();
 };
+
+export const useArtigosQuery = () =>
+    useQuery({
+        queryKey: ["articles"],
+        queryFn: fetchArticles,
+        staleTime: 5 * 60 * 1000, // 5 minutes
+    });

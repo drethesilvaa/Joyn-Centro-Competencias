@@ -1,9 +1,9 @@
 "use client"
 import { useParams } from "next/navigation";
-import { useArtigoByFilename } from "../hooks/useArtigoByFilename";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";
 import { AppBreadcrumb } from "@/components/Breadcrumb";
+import { useArticleQuery } from "../hooks/useArticleQuery";
 
 export default function ArtigoPage() {
     const params = useParams();
@@ -11,7 +11,7 @@ export default function ArtigoPage() {
 
     const id = encodedId ? decodeURIComponent(encodedId) : '';
 
-    const { data: artigo, isLoading } = useArtigoByFilename(id as string);
+    const { data: artigo, isLoading } = useArticleQuery(id as string);
 
     if (isLoading) return <p>Loading</p>
 
