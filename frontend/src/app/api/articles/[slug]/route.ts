@@ -1,3 +1,4 @@
+// src/app/api/articles/[slug]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
@@ -6,10 +7,11 @@ import { Article } from "@/types/articles";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = params;
+    // Await the params since they're now async in Next.js 15
+    const { slug } = await params;
 
     if (!slug || typeof slug !== "string") {
       return NextResponse.json(
@@ -58,7 +60,7 @@ export async function GET(
 
     return NextResponse.json(article);
   } catch (error) {
-    console.error(`Error fetching article ${params.slug}:`, error);
+    console.error(`Error fetching article:`, error);
     return NextResponse.json(
       { error: "Failed to load article" },
       { status: 500 }
