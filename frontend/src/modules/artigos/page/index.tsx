@@ -1,4 +1,5 @@
 "use client"
+
 import { PagesLayout } from "@/layouts/PagesLayout"
 import { useArtigosQuery } from "../hooks/useArtigosQuery";
 import { Avatar, Card } from 'antd';

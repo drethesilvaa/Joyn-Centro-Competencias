@@ -1,4 +1,5 @@
 "use client"
+
 import { useParams } from "next/navigation";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";
