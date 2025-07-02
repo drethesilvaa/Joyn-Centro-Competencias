@@ -17,9 +17,11 @@ export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, p
         <div className="min-h-[90vh] grid content-between py-16">
             <div className="custom-gap-6 relative 2xl:grid 2xl:grid-cols-12">
                 {/* Title - responsive positioning */}
-                <div className="mb-6 2xl:mb-0 2xl:col-span-4 2xl:max-w-none">
-                    <h1 className="heading-6xl font-bold max-w-md ">{pageTitle}</h1>
-                </div>
+                {pageTitle && (
+                    <div className="mb-6 2xl:mb-0 2xl:col-span-4 2xl:max-w-none">
+                        <h1 className="heading-6xl font-bold max-w-md ">{pageTitle}</h1>
+                    </div>
+                )}
 
                 {/* Content container - responsive layout */}
                 <div className="p-6 bg-box-grey rounded-2xl 2xl:col-span-11 ">
@@ -32,9 +34,11 @@ export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, p
                         src={pageImage || ""}
                         alt={`${pageImageAlt} photo`}
                     />
-                    <div className="body-xl 2xl:max-w-1/2">
-                        <MarkdownRenderer content={pageDescription || ""} />
-                    </div>
+                    {pageDescription && (
+                        <div className="body-xl 2xl:max-w-1/2 markdown-style ">
+                            <MarkdownRenderer content={pageDescription || ""} />
+                        </div>
+                    )}
                     <div className="clear-both 2xl:hidden"></div>
                 </div>
             </div>

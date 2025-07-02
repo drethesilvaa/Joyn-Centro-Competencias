@@ -15,6 +15,7 @@ const pathToMenuKey: Record<string, string> = {
     '/mentores': 'mentores',
     '/eventos': 'eventos',
     '/politicas': 'politicas',
+    '/gamification': 'gamification',
     '/auth/signin': 'login',
 };
 

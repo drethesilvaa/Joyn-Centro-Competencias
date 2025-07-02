@@ -1,3 +1,5 @@
+import { PoliticasPage } from "@/modules/politicas/page";
+
 export default function Politicas() {
-    return <></>;
+    return <PoliticasPage />;
 }
