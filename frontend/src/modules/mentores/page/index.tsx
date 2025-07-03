@@ -1,6 +1,10 @@
 "use client"
 
 import { PagesLayout } from "@/layouts/PagesLayout"
+import { m } from "framer-motion"
+import Image from "next/image"
+import { Fragment } from "react"
+import MentorCard from "../components/MentorCard"
 
 const pageMentores = {
     pageTitle: "Mentores",
@@ -8,6 +12,57 @@ const pageMentores = {
     videoUrl: "https://www.youtube.com/watch?v=example-video-id",
     imageToSwapForVideo: "/mentores/pexels-vanessa-garcia-6325984.jpg",
     imageAlt: "alt"
+}
+
+const mentoresData = {
+    centros: [{
+        title: "Centro de Competência .NET",
+        lider: {
+            name: "Ricardo Santos",
+            photo: "/HomePage/ricardosantos.png",
+            description: ""
+        },
+        mentores: [{
+            name: "Gilberto Barros",
+            email: "gilberto.barros@fyld.pt",
+            stack: "C# .Net e MS SQL Server",
+            photo: "/mentores/gilberto-barros.png",
+            description: "C#, .Net framework, Queries e Stored Procedures SQL, Webservices Soap, regras de negócio ligadas a seguradoras."
+        },
+        {
+            name: "Pietro Bottino",
+            email: "pietro.bottino@fyld.pt",
+            stack: ".Net, SQLServer, ReactJs, Angular",
+            photo: "/mentores/pietrobottino.png",
+            description: ".Net, SQL Server, ReactJs, Lógica"
+        }
+        ]
+    },
+    {
+        title: "Centro de Competência de Dados",
+        lider: {
+            name: "Daniel Guarino",
+            photo: "/HomePage/danielguarino.png",
+            description: ""
+        },
+        mentores: [{
+            name: "Emanoella Oliveira",
+            email: "914134718",
+            stack: "SSIS, SSAS, Azure Data Factory, Power BI",
+            photo: "/mentores/emanoellaoliveira.png",
+            description: "Storytelling de dados com Power BI"
+        },
+        {
+            name: "Bruno Duarte",
+            email: "963518047 / bruno.duarte@fyld.pt",
+            stack: "Azure Data Factory, Azure Synapse, Databricks, Azure Data Lake Storage, Power BI",
+            photo: "/mentores/brunoduarte.png",
+            description: "Power BI"
+        }
+        ]
+    }
+
+    ]
 }
 
 export const MentoresPage = () => {
@@ -22,7 +77,22 @@ export const MentoresPage = () => {
             pageImage={pageMentores?.imageToSwapForVideo || ""}
             pageImageAlt={pageMentores?.imageAlt || ""}
         >
-            <></>
+            <div className="py-6 grid gap-10">
+                {mentoresData.centros?.map((centro, k) => {
+                    return (
+                        <div key={k}>
+                            <h2 className="heading-5xl font-semibold">{centro.title}</h2>
+                            <div className="flex gap-6 items-baseline mt-4">
+                                <MentorCard isLeader={true} person={centro.lider} />
+                                {centro.mentores.map((mentor, mk) => (
+                                    <MentorCard key={mk} person={mentor} />
+                                ))}
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
 
         </PagesLayout>
     )
