@@ -236,7 +236,7 @@ ol {
 }
 
 .flip-image-back {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   transform: rotateY(180deg);
   display: flex;
   align-items: center;

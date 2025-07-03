@@ -5,7 +5,7 @@ import { XIcon } from '@phosphor-icons/react/dist/ssr';
 interface DialogProps {
     isOpen: boolean;
     onClose: () => void;
-    title: string;
+    title?: string;
     children: ReactNode;
 }
 
@@ -43,19 +43,28 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, title, children }) => 
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                            <h2 className="text-2xl font-bold text-gray-800">
-                                {title}
-                            </h2>
-                            <motion.button
-                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                                onClick={onClose}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <XIcon className="w-6 h-6 text-gray-500" />
-                            </motion.button>
-                        </div>
+                        {title ? (
+                            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                                <h2 className="text-2xl font-bold text-gray-800">
+                                    {title}
+                                </h2>
+                                <motion.button
+                                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                    onClick={onClose}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <XIcon className="w-6 h-6 text-gray-500" />
+                                </motion.button>
+                            </div>
+                        ) : <motion.button
+                            className="p-2 hover:bg-gray-100 rounded-full transition-colors absolute right-1 top-1"
+                            onClick={onClose}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <XIcon className="w-4 h-4 text-gray-500" />
+                        </motion.button>}
 
                         {/* Dialog Body */}
                         <div className="p-6">

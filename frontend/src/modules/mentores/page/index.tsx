@@ -19,43 +19,106 @@ const mentoresData = {
         title: "Centro de Competência .NET",
         lider: {
             name: "Ricardo Santos",
+            email: "",
+            stack: [],
             photo: "/HomePage/ricardosantos.png",
             description: ""
         },
         mentores: [{
             name: "Gilberto Barros",
             email: "gilberto.barros@fyld.pt",
-            stack: "C# .Net e MS SQL Server",
+            stack: [{
+                name: "C#",
+                percent: 90,
+            },
+            {
+                name: ".Net",
+                percent: 90,
+            }, {
+                name: "MS SQL Server",
+                percent: 90,
+            }],
             photo: "/mentores/gilberto-barros.png",
             description: "C#, .Net framework, Queries e Stored Procedures SQL, Webservices Soap, regras de negócio ligadas a seguradoras."
         },
         {
             name: "Pietro Bottino",
             email: "pietro.bottino@fyld.pt",
-            stack: ".Net, SQLServer, ReactJs, Angular",
+            stack: [{
+                name: ".Net",
+                percent: 90,
+            },
+            {
+                name: "ReactJs",
+                percent: 90,
+            },
+            {
+                name: "Angular",
+                percent: 90,
+            },
+            {
+                name: "SQLServer",
+                percent: 90,
+            }],
             photo: "/mentores/pietrobottino.png",
             description: ".Net, SQL Server, ReactJs, Lógica"
-        }
+        },
         ]
     },
     {
         title: "Centro de Competência de Dados",
         lider: {
             name: "Daniel Guarino",
+            email: "",
+            stack: [],
             photo: "/HomePage/danielguarino.png",
             description: ""
         },
         mentores: [{
             name: "Emanoella Oliveira",
             email: "914134718",
-            stack: "SSIS, SSAS, Azure Data Factory, Power BI",
+            stack: [{
+                name: "SSIS",
+                percent: 90,
+            },
+            {
+                name: "SSAS",
+                percent: 90,
+            },
+            {
+                name: "Azure Data Factory",
+                percent: 90,
+            },
+            {
+                name: " Power BI",
+                percent: 90,
+            }],
             photo: "/mentores/emanoellaoliveira.png",
             description: "Storytelling de dados com Power BI"
         },
         {
             name: "Bruno Duarte",
             email: "963518047 / bruno.duarte@fyld.pt",
-            stack: "Azure Data Factory, Azure Synapse, Databricks, Azure Data Lake Storage, Power BI",
+            stack: [{
+                name: "Azure Data Factory",
+                percent: 90,
+            },
+            {
+                name: "Databricks",
+                percent: 90,
+            },
+            {
+                name: "Azure Synapse",
+                percent: 90,
+            },
+            {
+                name: " Azure Data Lake Storage",
+                percent: 90,
+            },
+            {
+                name: "Power BI",
+                percent: 90,
+            }],
             photo: "/mentores/brunoduarte.png",
             description: "Power BI"
         }
@@ -81,11 +144,12 @@ export const MentoresPage = () => {
                 {mentoresData.centros?.map((centro, k) => {
                     return (
                         <div key={k}>
-                            <h2 className="heading-5xl font-semibold">{centro.title}</h2>
+                            <h2 className="heading-5xl font-semibold ">Mentores do <span className="font-medium">{centro.title} </span></h2>
+
                             <div className="flex gap-6 items-baseline mt-4">
                                 <MentorCard isLeader={true} person={centro.lider} />
                                 {centro.mentores.map((mentor, mk) => (
-                                    <MentorCard key={mk} person={mentor} />
+                                    <MentorCard isLeader={false} key={mk} person={mentor} />
                                 ))}
                             </div>
                         </div>

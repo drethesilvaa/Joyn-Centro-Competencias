@@ -32,8 +32,8 @@ export const GamificationPage = () => {
                     <div>
                         <h2 className="heading-5xl font-semibold">Pontos</h2>
                         <ul className="pt-4">
-                            {data?.pontos.map(content => (
-                                <li>{content}</li>
+                            {data?.pontos.map((content, k) => (
+                                <li key={k}>{content}</li>
                             ))}
                         </ul>
                     </div>
@@ -42,14 +42,14 @@ export const GamificationPage = () => {
                         <h3 className="heading-2xl font-semibold pt-4">Como atribuir medalhas:</h3>
                         <p className="pt-4">Envia um e-mail para {data?.reconhece.email}:</p>
                         <ul>
-                            {data?.reconhece.passos.map(content => (
-                                <li>{content}</li>
+                            {data?.reconhece.passos.map((content, k) => (
+                                <li key={k}>{content}</li>
                             ))}
                         </ul>
                         <h3 className="heading-2xl font-semibold pt-4">Regras:</h3>
                         <ul className="pt-4">
-                            {data?.reconhece.regras.map(content => (
-                                <li>{content}</li>
+                            {data?.reconhece.regras.map((content, k) => (
+                                <li key={k}>{content}</li>
                             ))}
                         </ul>
                     </div>
