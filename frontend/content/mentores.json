@@ -1,3 +1,124 @@
 {
-  "pageTitle": "Mentores"
+  "centros": [
+    {
+      "title": "Centro de Competência .NET",
+      "lider": {
+        "name": "Ricardo Santos",
+        "email": "Lider do Centro de .NET / rsantos@growin.com",
+        "stack": [],
+        "photo": "/HomePage/ricardosantos.png",
+        "description": ""
+      },
+      "mentores": [
+        {
+          "name": "Gilberto Barros",
+          "email": "gilberto.barros@fyld.pt",
+          "stack": [
+            {
+              "name": "C#",
+              "percent": 90
+            },
+            {
+              "name": ".Net",
+              "percent": 90
+            },
+            {
+              "name": "MS SQL Server",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/gilberto-barros.png",
+          "description": "C#, .Net framework, Queries e Stored Procedures SQL, Webservices Soap, regras de negócio ligadas a seguradoras."
+        },
+        {
+          "name": "Pietro Bottino",
+          "email": "pietro.bottino@fyld.pt",
+          "stack": [
+            {
+              "name": ".Net",
+              "percent": 90
+            },
+            {
+              "name": "ReactJs",
+              "percent": 90
+            },
+            {
+              "name": "Angular",
+              "percent": 90
+            },
+            {
+              "name": "SQLServer",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/pietrobottino.png",
+          "description": ".Net, SQL Server, ReactJs, Lógica"
+        }
+      ]
+    },
+    {
+      "title": "Centro de Competência de Dados",
+      "lider": {
+        "name": "Daniel Guarino",
+        "email": "Lider do Centro de Dados / daniel.guarino@fyld.pt",
+        "stack": [],
+        "photo": "/HomePage/danielguarino.png",
+        "description": ""
+      },
+      "mentores": [
+        {
+          "name": "Emanoella Oliveira",
+          "email": "914134718",
+          "stack": [
+            {
+              "name": "SSIS",
+              "percent": 90
+            },
+            {
+              "name": "SSAS",
+              "percent": 90
+            },
+            {
+              "name": "Azure Data Factory",
+              "percent": 90
+            },
+            {
+              "name": " Power BI",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/emanoellaoliveira.png",
+          "description": "Storytelling de dados com Power BI"
+        },
+        {
+          "name": "Bruno Duarte",
+          "email": "963518047 / bruno.duarte@fyld.pt",
+          "stack": [
+            {
+              "name": "Azure Data Factory",
+              "percent": 90
+            },
+            {
+              "name": "Databricks",
+              "percent": 90
+            },
+            {
+              "name": "Azure Synapse",
+              "percent": 90
+            },
+            {
+              "name": " Azure Data Lake Storage",
+              "percent": 90
+            },
+            {
+              "name": "Power BI",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/brunoduarte.png",
+          "description": "Power BI"
+        }
+      ]
+    }
+  ]
 }

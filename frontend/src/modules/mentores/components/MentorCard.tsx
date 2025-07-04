@@ -85,7 +85,9 @@ const MentorCard: React.FC<MentorCardProps> = ({ person, isLeader }) => {
                         <div className="back-content">
                             <h3>{person.name}</h3>
                             <p>{person.email}</p>
-                            <Button onClick={openModal} className='read-more-btn'>Read More</Button>
+                            {!isLeader && (
+                                <Button onClick={openModal} className='read-more-btn'>Read More</Button>
+                            )}
                         </div>
                     </div>
                 </motion.div>

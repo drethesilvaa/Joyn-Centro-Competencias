@@ -1,10 +1,8 @@
 "use client"
 
 import { PagesLayout } from "@/layouts/PagesLayout"
-import { m } from "framer-motion"
-import Image from "next/image"
-import { Fragment } from "react"
 import MentorCard from "../components/MentorCard"
+import { useMentoresQuery } from "../hooks/useMentoresQuery"
 
 const pageMentores = {
     pageTitle: "Mentores",
@@ -14,123 +12,10 @@ const pageMentores = {
     imageAlt: "alt"
 }
 
-const mentoresData = {
-    centros: [{
-        title: "Centro de Competência .NET",
-        lider: {
-            name: "Ricardo Santos",
-            email: "",
-            stack: [],
-            photo: "/HomePage/ricardosantos.png",
-            description: ""
-        },
-        mentores: [{
-            name: "Gilberto Barros",
-            email: "gilberto.barros@fyld.pt",
-            stack: [{
-                name: "C#",
-                percent: 90,
-            },
-            {
-                name: ".Net",
-                percent: 90,
-            }, {
-                name: "MS SQL Server",
-                percent: 90,
-            }],
-            photo: "/mentores/gilberto-barros.png",
-            description: "C#, .Net framework, Queries e Stored Procedures SQL, Webservices Soap, regras de negócio ligadas a seguradoras."
-        },
-        {
-            name: "Pietro Bottino",
-            email: "pietro.bottino@fyld.pt",
-            stack: [{
-                name: ".Net",
-                percent: 90,
-            },
-            {
-                name: "ReactJs",
-                percent: 90,
-            },
-            {
-                name: "Angular",
-                percent: 90,
-            },
-            {
-                name: "SQLServer",
-                percent: 90,
-            }],
-            photo: "/mentores/pietrobottino.png",
-            description: ".Net, SQL Server, ReactJs, Lógica"
-        },
-        ]
-    },
-    {
-        title: "Centro de Competência de Dados",
-        lider: {
-            name: "Daniel Guarino",
-            email: "",
-            stack: [],
-            photo: "/HomePage/danielguarino.png",
-            description: ""
-        },
-        mentores: [{
-            name: "Emanoella Oliveira",
-            email: "914134718",
-            stack: [{
-                name: "SSIS",
-                percent: 90,
-            },
-            {
-                name: "SSAS",
-                percent: 90,
-            },
-            {
-                name: "Azure Data Factory",
-                percent: 90,
-            },
-            {
-                name: " Power BI",
-                percent: 90,
-            }],
-            photo: "/mentores/emanoellaoliveira.png",
-            description: "Storytelling de dados com Power BI"
-        },
-        {
-            name: "Bruno Duarte",
-            email: "963518047 / bruno.duarte@fyld.pt",
-            stack: [{
-                name: "Azure Data Factory",
-                percent: 90,
-            },
-            {
-                name: "Databricks",
-                percent: 90,
-            },
-            {
-                name: "Azure Synapse",
-                percent: 90,
-            },
-            {
-                name: " Azure Data Lake Storage",
-                percent: 90,
-            },
-            {
-                name: "Power BI",
-                percent: 90,
-            }],
-            photo: "/mentores/brunoduarte.png",
-            description: "Power BI"
-        }
-        ]
-    }
-
-    ]
-}
 
 export const MentoresPage = () => {
 
-    // const { data: pageMentores, isLoading } = usePageMentoresQuery()
+    const { data: mentoresData, isLoading } = useMentoresQuery()
 
     return (
 
@@ -140,17 +25,19 @@ export const MentoresPage = () => {
             pageImage={pageMentores?.imageToSwapForVideo || ""}
             pageImageAlt={pageMentores?.imageAlt || ""}
         >
-            <div className="py-6 grid gap-10">
-                {mentoresData.centros?.map((centro, k) => {
+            <div className="py-14 grid gap-10">
+                {mentoresData?.centros?.map((centro, k) => {
                     return (
                         <div key={k}>
-                            <h2 className="heading-5xl font-semibold ">Mentores do <span className="font-medium">{centro.title} </span></h2>
+                            <h2 className="heading-5xl font-semibold text-center ">Mentores do <span className="font-medium">{centro.title} </span></h2>
 
-                            <div className="flex gap-6 items-baseline mt-4">
+                            <div className="grid justify-items-center gap-6 items-baseline my-10">
                                 <MentorCard isLeader={true} person={centro.lider} />
-                                {centro.mentores.map((mentor, mk) => (
-                                    <MentorCard isLeader={false} key={mk} person={mentor} />
-                                ))}
+                                <div className="flex gap-6">
+                                    {centro.mentores.map((mentor, mk) => (
+                                        <MentorCard isLeader={false} key={mk} person={mentor} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     )
