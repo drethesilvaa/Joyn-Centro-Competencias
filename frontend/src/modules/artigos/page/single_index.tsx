@@ -5,10 +5,13 @@ import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";
 import { AppBreadcrumb } from "@/components/Breadcrumb";
 import { useArticleQuery } from "../hooks/useArticleQuery";
+import { useScroll, motion } from 'framer-motion';
 
 export default function ArtigoPage() {
     const params = useParams();
     const encodedId = params?.id as string;
+
+    const { scrollYProgress } = useScroll()
 
     const id = encodedId ? decodeURIComponent(encodedId) : '';
 
@@ -49,6 +52,19 @@ export default function ArtigoPage() {
                 {titleSection}
             </div>
 
+            <motion.div
+                id="scroll-indicator"
+                style={{
+                    scaleX: scrollYProgress,
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 5,
+                    originX: 0,
+                    backgroundColor: "#3e90be",
+                }}
+            />
 
             <div className="mt-[15vw] markdown-style">
                 <MarkdownRenderer content={artigo?.content || ""} />

@@ -13,7 +13,7 @@ export const HomepageCentros = ({ }: TemplateProps) => {
     const { data, isLoading, error } = useHomepageData();
 
 
-    return <div>
+    return <>
         <div className="grid lg:grid-cols-2 items-center custom-gap-6 h-full">
             <div>
                 <h2 className="heading-6xl italic">Os Nossos Centros</h2>
@@ -29,5 +29,5 @@ export const HomepageCentros = ({ }: TemplateProps) => {
                 <Button size='large' type="primary">{data?.centros?.ctaText}</Button>
             </div>
         </div>
-    </div>
+    </>
 }
