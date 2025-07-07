@@ -3,7 +3,7 @@
 import { ProcessedEvent } from "@/types/events"
 import { CalendarXIcon, CaretCircleLeftIcon, CaretCircleRightIcon } from "@phosphor-icons/react/dist/ssr"
 import dayjs from "dayjs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { EventCard } from "./event-card"
 
 
@@ -27,7 +27,7 @@ export const EventsList: React.FC<EventsListProps> = ({ events, selectedDate, on
     const currentEvents = filteredEvents.slice(startIndex, endIndex)
 
     // Reset to first page when date changes
-    useState(() => {
+    useEffect(() => {
         setCurrentPage(1)
     }, [selectedDate])
 
