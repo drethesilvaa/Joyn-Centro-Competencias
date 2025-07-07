@@ -1,6 +1,8 @@
 import { ReactNode } from "react"
 import Image from "next/image"
 import MarkdownRenderer from "@/components/MarkdownRenderer"
+import { ProcessedEvent } from "@/types/events"
+import { EventsList } from "@/modules/eventos/components/event-list"
 
 
 interface TemplateProps {
@@ -9,10 +11,12 @@ interface TemplateProps {
     pageDescription: string,
     pageImage: string,
     pageImageAlt: string,
+    events?: { nextEvents: ProcessedEvent[], handleSignUp: any }
 }
 
-export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, pageImageAlt }: TemplateProps) => {
+export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, pageImageAlt, events }: TemplateProps) => {
 
+    console.log(events)
     return (
         <div className="min-h-[90vh] grid content-between py-16">
             <div className="custom-gap-6 relative 2xl:grid 2xl:grid-cols-12">
@@ -38,6 +42,20 @@ export const PagesLayout = ({ children, pageTitle, pageDescription, pageImage, p
                         <div className="body-xl 2xl:max-w-1/2 markdown-style ">
                             <MarkdownRenderer content={pageDescription || ""} />
                         </div>
+                    )}
+
+                    {events && events.nextEvents?.length > 0 && (
+                        <>
+                            <h3 className="text-xl font-semibold">
+                                Próximo Evento:
+                            </h3>
+                            <div className="float-left 2xl:float-none 2xl:max-w-1/2">
+                                <EventsList
+                                    events={events.nextEvents}
+                                    onSignUp={events.handleSignUp}
+                                />
+                            </div>
+                        </>
                     )}
                     <div className="clear-both 2xl:hidden"></div>
                 </div>
