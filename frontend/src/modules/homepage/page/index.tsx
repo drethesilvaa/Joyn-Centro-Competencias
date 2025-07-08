@@ -12,6 +12,7 @@ import Image from 'next/image';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { useHomepageData } from '@/providers/HomepageDataProvider';
 import { AnimatePresence, motion } from 'framer-motion';
+import { AppProgressBar } from '@/components/AppProgressBar';
 
 const homePageComponents: Record<string, JSX.Element> = {
     "nossos-centros": (
@@ -68,7 +69,7 @@ const Homepage = () => {
     const searchParams = useSearchParams();
     const { data, isLoading, error } = useHomepageData();
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <AppProgressBar />;
     if (error || !data) return <p>Erro ao carregar dados</p>;
 
     const xParam = searchParams?.get('screen');

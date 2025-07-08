@@ -13,7 +13,6 @@ export const HomepageDataProvider = ({ children }: { children: React.ReactNode }
 
     return (
         <HomepageDataContext.Provider value={query}>
-            {query.isLoading && <PageLoader />}
             {children}
         </HomepageDataContext.Provider>
     );

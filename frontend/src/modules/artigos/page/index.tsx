@@ -7,6 +7,7 @@ import { ArticleIcon } from "@phosphor-icons/react";
 import { motion } from 'framer-motion';
 import { useRouter } from "next/navigation";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
+import { AppProgressBar } from "@/components/AppProgressBar";
 
 const articlesPage = {
     title: "Artigos",
@@ -29,7 +30,7 @@ export const ArtigosPage = () => {
     } = useArtigosQuery();
 
 
-    if (isLoading) return <p>Loading</p>
+    if (isLoading) return <AppProgressBar />
 
     return (
         <PagesLayout
@@ -41,48 +42,57 @@ export const ArtigosPage = () => {
             <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 articles mt-20">
                     {data?.articles.map((artigo, k) => (
-                        <Card
+                        <motion.div
                             key={k}
-                            cover={
-                                <motion.div
-                                    className="relative cursor-pointer overflow-hidden"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    transition={{ duration: 0.2 }}
-                                    onClick={() => router.push("/artigos/" + artigo?.slug)}
-                                >
-                                    <motion.span
-                                        className="absolute w-full h-full z-[1] flex items-center justify-center"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.3 }}
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            transition={{ duration: 0.5, delay: (0.3) * k, ease: "easeOut" }}
+                        >
+                            <Card
+                                cover={
+                                    <motion.div
+                                        className="relative cursor-pointer overflow-hidden"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        transition={{ duration: 0.2 }}
+                                        onClick={() => router.push("/artigos/" + artigo?.slug)}
                                     >
-                                        <motion.div
-                                            whileHover={{ scale: 1.25 }}
+                                        <motion.span
+                                            className="absolute w-full h-full z-[1] flex items-center justify-center"
+                                            whileHover={{ scale: 1.1 }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <ArticleIcon size={56} color="#E6E6E6" />
-                                        </motion.div>
-                                    </motion.span>
-                                    <motion.img
-                                        className="brightness-75 aspect-[16/9] object-cover"
-                                        alt="example"
-                                        src={artigo?.articleImage || ""}
-                                        whileHover={{
-                                            scale: 1.05,
-                                            filter: "brightness(0.5)"
-                                        }}
-                                        transition={{ duration: 0.3 }}
-                                    />
-                                </motion.div>
-                            }
-                        >
-                            <Meta
-                                className="p-4"
-                                avatar={<Avatar src={artigo?.authorPic} />}
-                                title={<MarkdownRenderer content={artigo?.title || ""} />}
-                                description={artigo?.subTitle}
-                            />
-                        </Card>
+                                            <motion.div
+                                                whileHover={{ scale: 1.25 }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                <ArticleIcon size={56} color="#E6E6E6" />
+                                            </motion.div>
+                                        </motion.span>
+                                        <motion.img
+                                            className="brightness-75 aspect-[16/9] object-cover"
+                                            alt="example"
+                                            src={artigo?.articleImage || ""}
+                                            whileHover={{
+                                                scale: 1.05,
+                                                filter: "brightness(0.5)"
+                                            }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    </motion.div>
+                                }
+                                className="h-full"
+                            >
+                                <Meta
+                                    className="p-4"
+                                    avatar={<Avatar src={artigo?.authorPic} />}
+                                    title={<MarkdownRenderer content={artigo?.title || ""} />}
+                                    description={artigo?.subTitle}
+                                />
+                            </Card>
+
+                        </motion.div>
                     ))}
 
                 </div>
