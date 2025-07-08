@@ -33,7 +33,7 @@ export const MentoresPage = () => {
 
                             <div className="grid justify-items-center gap-6 items-baseline my-10">
                                 <MentorCard isLeader={true} person={centro.lider} />
-                                <div className="flex gap-6">
+                                <div className="flex flex-wrap items-center justify-center gap-6">
                                     {centro.mentores.map((mentor, mk) => (
                                         <MentorCard isLeader={false} key={mk} person={mentor} />
                                     ))}

@@ -64,7 +64,7 @@ export const ArtigosPage = () => {
                                         </motion.div>
                                     </motion.span>
                                     <motion.img
-                                        className="brightness-75"
+                                        className="brightness-75 aspect-[16/9] object-cover"
                                         alt="example"
                                         src={artigo?.articleImage || ""}
                                         whileHover={{

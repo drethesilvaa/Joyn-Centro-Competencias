@@ -23,7 +23,7 @@ export default function ArtigoPage() {
         <h1 className="font-bold heading-5xl text-center">
             <MarkdownRenderer content={artigo?.title || ""} />
         </h1>
-        <div className="flex">
+        <div className="flex gap-6">
             <div className="w-[10vw]">
                 <Image width={262} height={262} className="object-cover rounded-2xl" src={artigo?.authorPic || ""} alt={`${artigo?.author} photo`} />
             </div>

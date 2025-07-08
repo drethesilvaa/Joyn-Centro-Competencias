@@ -117,6 +117,50 @@
           ],
           "photo": "/mentores/brunoduarte.png",
           "description": "Power BI"
+        },
+        {
+          "name": "Maíres Souza",
+          "email": "maires.souza@landskill.com",
+          "stack": [
+            {
+              "name": "Power Platform",
+              "percent": 90
+            },
+            {
+              "name": "Power BI",
+              "percent": 90
+            },
+            {
+              "name": "Power Apps",
+              "percent": 90
+            },
+            {
+              "name": "Power Automate",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/MaíresSouza.png",
+          "description": "Microsoft Power BI (DAX and M Language), Microsoft Power Platform (Power Apps and Power Automate)"
+        },
+        {
+          "name": "Caroline Santos",
+          "email": "caroline.santos@landskill.com",
+          "stack": [
+            {
+              "name": "Power BI",
+              "percent": 90
+            },
+            {
+              "name": "Power Apps",
+              "percent": 90
+            },
+            {
+              "name": "Power Automate",
+              "percent": 90
+            }
+          ],
+          "photo": "/mentores/CarolineSantos.png",
+          "description": "Power BI, Power Apps, Power Automate"
         }
       ]
     }
