@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav className="grid grid-cols-2">
+        <nav className="grid grid-cols-3">
             <div style={{ display: "flex", alignItems: "center" }}>
                 <Image
                     height={31}
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                 />
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div className="col-span-2" style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 <Menu
                     className="basis-full"
                     mode="horizontal"

@@ -7,6 +7,7 @@ import { AppBreadcrumb } from "@/components/Breadcrumb";
 import { useArticleQuery } from "../hooks/useArticleQuery";
 import { useScroll, motion, Transition } from 'framer-motion';
 import { AppProgressBar } from "@/components/AppProgressBar";
+import { createTransition } from "@/utils/createTransition";
 
 export default function ArtigoPage() {
     const params = useParams();
@@ -18,11 +19,6 @@ export default function ArtigoPage() {
 
     const { data: artigo, isLoading } = useArticleQuery(id as string);
 
-    const createTransition = (delay: number = 0): Transition => ({
-        duration: 0.5,
-        delay: delay,
-        ease: "easeOut" as const
-    });
 
 
     if (isLoading) return <AppProgressBar />

@@ -16,15 +16,15 @@
           "stack": [
             {
               "name": "C#",
-              "percent": 90
+              "percent": 80
             },
             {
               "name": ".Net",
-              "percent": 90
+              "percent": 95
             },
             {
               "name": "MS SQL Server",
-              "percent": 90
+              "percent": 85
             }
           ],
           "photo": "/mentores/gilberto-barros.png",
@@ -36,7 +36,7 @@
           "stack": [
             {
               "name": ".Net",
-              "percent": 90
+              "percent": 75
             },
             {
               "name": "ReactJs",
@@ -44,11 +44,11 @@
             },
             {
               "name": "Angular",
-              "percent": 90
+              "percent": 85
             },
             {
               "name": "SQLServer",
-              "percent": 90
+              "percent": 88
             }
           ],
           "photo": "/mentores/pietrobottino.png",
@@ -76,15 +76,15 @@
             },
             {
               "name": "SSAS",
-              "percent": 90
+              "percent": 85
             },
             {
               "name": "Azure Data Factory",
-              "percent": 90
+              "percent": 92
             },
             {
               "name": " Power BI",
-              "percent": 90
+              "percent": 88
             }
           ],
           "photo": "/mentores/emanoellaoliveira.png",
@@ -100,19 +100,19 @@
             },
             {
               "name": "Databricks",
-              "percent": 90
+              "percent": 88
             },
             {
               "name": "Azure Synapse",
-              "percent": 90
+              "percent": 92
             },
             {
               "name": " Azure Data Lake Storage",
-              "percent": 90
+              "percent": 85
             },
             {
               "name": "Power BI",
-              "percent": 90
+              "percent": 95
             }
           ],
           "photo": "/mentores/brunoduarte.png",
@@ -128,15 +128,15 @@
             },
             {
               "name": "Power BI",
-              "percent": 90
+              "percent": 92
             },
             {
               "name": "Power Apps",
-              "percent": 90
+              "percent": 85
             },
             {
               "name": "Power Automate",
-              "percent": 90
+              "percent": 80
             }
           ],
           "photo": "/mentores/MaíresSouza.png",
@@ -148,7 +148,7 @@
           "stack": [
             {
               "name": "Power BI",
-              "percent": 90
+              "percent": 80
             },
             {
               "name": "Power Apps",
@@ -156,7 +156,7 @@
             },
             {
               "name": "Power Automate",
-              "percent": 90
+              "percent": 92
             }
           ],
           "photo": "/mentores/CarolineSantos.png",
