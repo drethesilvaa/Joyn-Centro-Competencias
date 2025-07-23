@@ -76,4 +76,3 @@ jobs:
           package: .
           publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
           clean: true
-          startup-command: "npm start"
