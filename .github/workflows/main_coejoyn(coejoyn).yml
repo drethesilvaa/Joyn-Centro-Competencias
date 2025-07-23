@@ -75,4 +75,3 @@ jobs:
           # slot-name: "coejoyn"
           package: .
           publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
-          clean: true
