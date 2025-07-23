@@ -1,14 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
-import { client } from "../../../../tina/__generated__/client";
+import { CompetenciasData } from '@/types/competencias';
+import { useQuery } from '@tanstack/react-query';
+
+const fetchCompetencias = async (): Promise<CompetenciasData> => {
+    const response = await fetch('/api/competencias');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+};
 
 export const useCentrosCompetenciaQuery = () =>
     useQuery({
         queryKey: ["centros-de-competencia"],
-        queryFn: async () => {
-            const res = await client.queries.centrosDeCompetencia({ relativePath: "centros.json" });
-
-            const data = res.data.centrosDeCompetencia;
-
-            return data;
-        },
+        queryFn: fetchCompetencias,
+        staleTime: 5 * 60 * 1000,
     });

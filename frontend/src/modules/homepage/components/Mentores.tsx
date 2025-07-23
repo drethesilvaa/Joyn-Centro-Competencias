@@ -13,7 +13,7 @@ export const HomepageMentores = ({ }: TemplateProps) => {
     const classNamesForCards = ["bg-primary lg:mb-10", "bg-accent lg:mt-10"]
 
 
-    return <div>
+    return <>
         <div className="grid lg:grid-cols-2 items-center custom-gap-6 h-full">
             <div>
                 <h2 className="heading-6xl italic">Os Líderes</h2>
@@ -41,5 +41,5 @@ export const HomepageMentores = ({ }: TemplateProps) => {
                 <Button size='large' type="primary">{data?.mentores?.ctaText}</Button>
             </div>
         </div>
-    </div>
+    </>
 }

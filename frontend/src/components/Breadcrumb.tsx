@@ -11,7 +11,7 @@ export function AppBreadcrumb() {
 
   const breadcrumbItems: BreadcrumbProps['items'] = [
     {
-      title: <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>,
+      title: <Link href="/" className="text-accent">Home</Link>,
     },
     ...pathSegments
       .filter((segment) => segment.toLowerCase() !== "edit")
@@ -25,9 +25,9 @@ export function AppBreadcrumb() {
 
         return {
           title: isLast ? (
-            <span className="font-semibold text-gray-700">{decodeURIComponent(label.replace("_", " "))}</span>
+            <span className="font-semibold text-primary">{decodeURIComponent(label.replace("_", " "))}</span>
           ) : (
-            <Link href={href} className="text-blue-600 hover:text-blue-800">
+            <Link href={href} className="text-accent ">
               {decodeURIComponent(label)}
             </Link>
           ),

@@ -3,7 +3,7 @@ import { useHomepageData } from "@/providers/HomepageDataProvider";
 import { Button } from "antd";
 import Image from "next/image";
 import { ReactNode } from "react"
-
+import { motion } from "framer-motion";
 interface TemplateProps {
 
 }
@@ -34,8 +34,7 @@ export const HomepageEventos = ({ }: TemplateProps) => {
         }
     ]
 
-    return <div>
-
+    return <>
         <div className="grid lg:grid-cols-2 items-center custom-gap-6  ">
             <div>
                 <h2 className="heading-6xl italic">Os Eventos</h2>
@@ -63,5 +62,5 @@ export const HomepageEventos = ({ }: TemplateProps) => {
                 <Button className="uppercase" size='large' type="primary">{data?.eventos?.ctaText}</Button>
             </div>
         </div>
-    </div>
+    </>
 }

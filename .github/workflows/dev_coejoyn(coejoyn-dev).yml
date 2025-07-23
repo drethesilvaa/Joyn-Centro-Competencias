@@ -1,18 +1,25 @@
-name: Build and deploy Next.js Tina CMS app to Azure Web App - coejoyn
+name: Build and deploy Node.js app to Azure Web App - coejoyn(coejoyn-dev)
 
 on:
-  push:
-    branches:
-      - dev       
-    tags:
-      - 'v*'
+  # push:
+  #   branches:
+  #     - dev
   workflow_dispatch:
+    inputs:
+      deploy_reason:
+        description: "Reason for deployment"
+        required: false
+        default: "Manual deployment"
+      confirm_deploy:
+        description: 'Type "deploy" to confirm'
+        required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: dev
     permissions:
-      contents: read
+      contents: read #This is required for actions/checkout
 
     steps:
       - uses: actions/checkout@v4
@@ -22,42 +29,23 @@ jobs:
         with:
           node-version: "22.x"
 
-      - name: Install dependencies
+      - name: npm install, build, and test
+        env:
+          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
         run: |
           cd frontend
           npm install
-
-      - name: Build Next.js app with Tina
-        env:
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          TINA_BRANCH: main
-          NEXT_PUBLIC_TINA_BRANCH: main
-        run: |
-          cd frontend
-          npm run build -- --no-lint
-
-      - name: Create deployment package
-        run: |
-          cd frontend
-          mkdir -p deployment-package
-          cp -r .next ./deployment-package/
-          cp -r public ./deployment-package/ 2>/dev/null || true
-          cp package*.json ./deployment-package/
-          cp next.config.* ./deployment-package/ 2>/dev/null || true
-
-      - name: Install production dependencies
-        run: |
-          cd frontend/deployment-package
-          npm ci --only=production
+          npm run nextbuild -- --no-lint
+          cp -r public .next/standalone/public
+          cp -r .next/static .next/standalone/.next/static
 
       - name: Zip artifact for deployment
         run: |
-          cd frontend
-          zip -r ../release.zip deployment-package/
+          cd frontend/.next/standalone
+          zip -r ../../../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -85,5 +73,5 @@ jobs:
         with:
           app-name: "coejoyn"
           slot-name: "coejoyn-dev"
-          package: ./deployment-package
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: .
+          publish-profile: ${{ secrets.__publishingprofilesecretname__ }}

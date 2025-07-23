@@ -1,12 +1,20 @@
 "use client"
+
 import { PagesLayout } from "@/layouts/PagesLayout"
-import { useArtigosInfiteQuery } from "../hooks/useArtigosQuery";
-import { usePageArtigosQuery } from "../hooks/usePageArtigosQuery";
+import { useArtigosQuery } from "../hooks/useArtigosQuery";
 import { Avatar, Card } from 'antd';
 import { ArticleIcon } from "@phosphor-icons/react";
 import { motion } from 'framer-motion';
 import { useRouter } from "next/navigation";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
+import { AppProgressBar } from "@/components/AppProgressBar";
+
+const articlesPage = {
+    title: "Artigos",
+    description: "Os nossos artigos são uma extensão natural dos Centros de Competência JOYN, criados para partilhar conhecimento especializado e insights valiosos com a comunidade tecnológica. Aqui encontrará conteúdo técnico aprofundado, análises de tendências, melhores práticas e experiências reais dos nossos consultores no desenvolvimento de soluções inovadoras.\n<br /> <br />\nCada artigo reflete o compromisso do grupo JOYN com a excelência técnica e a partilha de conhecimento. Desde implementações práticas em .NET até estratégias avançadas de gestão de dados, exploramos temas que moldam o futuro da tecnologia empresarial.\n<br /> <br />\nEsta plataforma serve como ponte entre a nossa experiência interna e a comunidade externa, promovendo o diálogo, a inovação e o crescimento coletivo no ecossistema tecnológico português.",
+    videoUrl: "https://www.youtube.com/watch?v=example-video-id",
+    imageToSwapForVideo: "/Centros%20de%20Competencia/women-7527799_1920.jpg"
+}
 
 export const ArtigosPage = () => {
 
@@ -17,81 +25,77 @@ export const ArtigosPage = () => {
 
     const {
         data,
-        fetchNextPage,
-        hasNextPage,
-        isFetchingNextPage,
-    } = useArtigosInfiteQuery(10);
+        isLoading,
+        error
+    } = useArtigosQuery();
 
-    const allArtigos = data?.pages.flatMap(page => page.data) ?? [];
 
-    const { data: pageArtigos, isLoading } = usePageArtigosQuery()
-
-    if (isLoading) return <p>Loading</p>
+    if (isLoading) return <AppProgressBar />
 
     return (
         <PagesLayout
-            pageTitle={pageArtigos?.title || ""}
-            pageDescription={pageArtigos?.description || ""}
-            pageImage={pageArtigos?.imageToSwapForVideo || ""}
+            pageTitle={articlesPage?.title || ""}
+            pageDescription={articlesPage?.description || ""}
+            pageImage={articlesPage?.imageToSwapForVideo || ""}
             pageImageAlt=""
         >
             <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 articles mt-20">
-                    {allArtigos.map(artigo => (
-                        <Card
-                            key={artigo?.id}
-                            cover={
-                                <motion.div
-                                    className="relative cursor-pointer overflow-hidden"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    transition={{ duration: 0.2 }}
-                                    onClick={() => router.push("/artigos/" + artigo?._sys?.filename)}
-                                >
-                                    <motion.span
-                                        className="absolute w-full h-full z-[1] flex items-center justify-center"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.3 }}
+                    {data?.articles.map((artigo, k) => (
+                        <motion.div
+                            key={k}
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            transition={{ duration: 0.5, delay: (0.3) * k, ease: "easeOut" }}
+                        >
+                            <Card
+                                cover={
+                                    <motion.div
+                                        className="relative cursor-pointer overflow-hidden"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        transition={{ duration: 0.2 }}
+                                        onClick={() => router.push("/artigos/" + artigo?.slug)}
                                     >
-                                        <motion.div
-                                            whileHover={{ scale: 1.25 }}
+                                        <motion.span
+                                            className="absolute w-full h-full z-[1] flex items-center justify-center"
+                                            whileHover={{ scale: 1.1 }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <ArticleIcon size={56} color="#E6E6E6" />
-                                        </motion.div>
-                                    </motion.span>
-                                    <motion.img
-                                        className="brightness-75"
-                                        alt="example"
-                                        src={artigo?.articleImage || ""}
-                                        whileHover={{
-                                            scale: 1.05,
-                                            filter: "brightness(0.5)"
-                                        }}
-                                        transition={{ duration: 0.3 }}
-                                    />
-                                </motion.div>
-                            }
-                        >
-                            <Meta
-                                className="p-4"
-                                avatar={<Avatar src={artigo?.authorPic} />}
-                                title={<MarkdownRenderer content={artigo?.title || ""} />}
-                                description={artigo?.subTitle}
-                            />
-                        </Card>
+                                            <motion.div
+                                                whileHover={{ scale: 1.25 }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                <ArticleIcon size={56} color="#E6E6E6" />
+                                            </motion.div>
+                                        </motion.span>
+                                        <motion.img
+                                            className="brightness-75 aspect-[16/9] object-cover"
+                                            alt="example"
+                                            src={artigo?.articleImage || ""}
+                                            whileHover={{
+                                                scale: 1.05,
+                                                filter: "brightness(0.5)"
+                                            }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    </motion.div>
+                                }
+                                className="h-full"
+                            >
+                                <Meta
+                                    className="p-4"
+                                    avatar={<Avatar src={artigo?.authorPic} />}
+                                    title={<MarkdownRenderer content={artigo?.title || ""} />}
+                                    description={artigo?.subTitle}
+                                />
+                            </Card>
+
+                        </motion.div>
                     ))}
 
                 </div>
-
-                {hasNextPage && (
-                    <button
-                        onClick={() => fetchNextPage()}
-                        disabled={isFetchingNextPage}
-                    >
-                        {isFetchingNextPage ? 'Loading more...' : 'Load More'}
-                    </button>
-                )}
             </>
         </PagesLayout >
     )

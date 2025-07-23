@@ -1,14 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import { client } from "../../../../tina/__generated__/client";
+import { HomepageData } from "@/types/homepage";
+
+
+const fetchHomepage = async (): Promise<HomepageData> => {
+    const response = await fetch('/api/homepage');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+};
+
 
 export const useHomepageQuery = () =>
     useQuery({
         queryKey: ["homepage"],
-        queryFn: async () => {
-            const res = await client.queries.homepage({ relativePath: "home.json" });
-
-            const data = res.data.homepage;
-
-            return data;
-        },
+        queryFn: fetchHomepage,
     });

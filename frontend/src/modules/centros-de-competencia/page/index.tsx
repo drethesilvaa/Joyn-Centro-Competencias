@@ -6,6 +6,7 @@ import { Anchor } from "antd";
 import { useEffect, useRef, useState } from "react";
 import { Objectives } from "../components/Objectives";
 import { CentroDeCompetencia } from "../components/CentroDeCompetencia";
+import { AppProgressBar } from "@/components/AppProgressBar";
 
 export const CentrosDeCompetenciaPage = () => {
 
@@ -38,7 +39,8 @@ export const CentrosDeCompetenciaPage = () => {
         }) || [])
     ];
 
-    if (query.isLoading) return <p>Loading</p>
+    if (query.isLoading) return <AppProgressBar />
+
 
     return (
         <PagesLayout

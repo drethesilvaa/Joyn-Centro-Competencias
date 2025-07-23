@@ -1,0 +1,36 @@
+{
+  "pontos": [
+    "Ser responsável por alguma dinâmica (Workshop, Talk, Webinar): 300 pontos",
+    "Ser Mentor: 400 pontos",
+    "Dar uma formação: (+10 horas): 400 pontos",
+    "Receber uma medalha: 200 Pontos",
+    "Contribuir semanalmente para as comunidades: 100 Pontos"
+  ],
+  "reconhece": {
+    "email": "coe@joyn-group.com",
+    "passos": [
+      "Nome do colega e empresa",
+      "A Medalha que queres atribuir",
+      "Motivo pelo qual o colega merece o reconhecimento. Esta mensagem vai ser enviada juntamente com a Medalha"
+    ],
+    "regras": [
+      "Tens 4 Medalhas para atribuir anualmente a qualquer colega do universo Joyn",
+      "Cada medalha tem o valor de 200 pontos",
+      "Não podes atribuir duas medalhas à mesma pessoa"
+    ]
+  },
+  "medalhas": [
+    {
+      "icon": "/gamification/disponibilidade.png",
+      "title": "**DISPONIBILIDADE** - Pela disponibilidade demonstrada em prol do desenvolvimento de competências técnicas dos colegas"
+    },
+    {
+      "icon": "/gamification/creatividade.png",
+      "title": "**CRIATIVIDADE** - Para quem fomenta o espírito crítico e promove a geração de novas ideias"
+    },
+    {
+      "icon": "/gamification/espirito_de_equipa.png",
+      "title": "**MEDALHA ESPÍRITO DE EQUIPA** - Para quem, no dia a dia, se destaca pela sua entre ajuda e atenção aos colegas"
+    }
+  ]
+}

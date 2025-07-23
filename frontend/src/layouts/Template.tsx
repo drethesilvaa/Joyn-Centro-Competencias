@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import Navbar from "../components/Navbar"
 import { AppProgressBar } from "@/components/AppProgressBar"
+import { PageTransition } from "@/components/PageTransition"
 
 
 interface TemplateProps {
@@ -16,7 +17,10 @@ export const Template = ({ children }: TemplateProps) => {
                 <header>
                     <Navbar />
                 </header>
-                <main>{children}</main>
+                <main> <PageTransition>
+                    {children}
+                </PageTransition>
+                </main>
                 {/* <footer>TODO: Add footer content here</footer> */}
             </div>
         </div>
