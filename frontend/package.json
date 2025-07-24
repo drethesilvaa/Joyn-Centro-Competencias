@@ -17,6 +17,7 @@
     "antd": "^5.26.1",
     "dayjs": "^1.11.13",
     "framer-motion": "^12.19.2",
+    "googleapis": "^154.0.0",
     "gray-matter": "^4.0.3",
     "next": "15.3.3",
     "next-auth": "^4.24.11",
