@@ -63,6 +63,7 @@ const homePageComponents: Record<string, JSX.Element> = {
 
 const Homepage = () => {
   console.log("GOOGLE_CLIENT_ID:", process.env.NEXTAUTH_URL);
+  console.log("GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
 
   const router = useRouter();
   const searchParams = useSearchParams();
