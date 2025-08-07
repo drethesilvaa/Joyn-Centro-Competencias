@@ -236,7 +236,11 @@ ol {
 }
 
 .flip-image-back {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
@@ -282,4 +286,12 @@ ol {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+:where(.css-dev-only-do-not-override-b5nvtt).ant-menu-light
+  .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-b5nvtt).ant-menu-light
+  > .ant-menu
+  .ant-menu-item-selected {
+  color: white;
 }

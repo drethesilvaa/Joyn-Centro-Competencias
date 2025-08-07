@@ -50,35 +50,12 @@ export const CentrosDeCompetenciaPage = () => {
             pageImageAlt=""
         >
             <div className="grid grid-cols-12 mt-14 gap-6">
-                <div className="xl:hidden col-span-12 mb-6 ">
-                    <Anchor
-                        className="body-xl overflow-x-auto bg-gradient-to-bl from-[#FCFCFC] to-[#F4F4F6] pt-5"
-                        replace
-                        direction="horizontal"
-                        items={anchorItems}
-                    />
-                </div>
                 <div className="col-span-12 xl:col-span-10 grid gap-20">
                     <div id="objetivos">
                         <Objectives content={query.data?.objectives} />
                     </div>
-                    {query.data?.centrosDeCompetencia?.map((centro, index) => {
-                        const id = createId(centro?.title || '', index);
-                        return (
-                            <div key={index} id={id}>
-                                <CentroDeCompetencia content={centro} />
-                            </div>
-                        );
-                    })}
                 </div>
-                <div className="hidden xl:block xl:col-span-2">
-                    <Anchor
-                        className="body-xl sticky top-10"
-                        replace
-                        direction="vertical"
-                        items={anchorItems}
-                    />
-                </div>
+            
             </div>
         </PagesLayout>
     );
