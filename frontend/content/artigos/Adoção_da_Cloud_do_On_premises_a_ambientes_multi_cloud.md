@@ -4,7 +4,7 @@ subTitle: >-
   Nos últimos anos, o mundo tem assistido a uma transformação significativa nas suas infraestruturas tecnológicas, tanto no setor privado quanto no público. Esta evolução tem sido impulsionada pela crescente adoção de tecnologias de cloud, que oferecem flexibilidade, escalabilidade e eficiência de custos. Neste artigo, exploraremos a evolução das infraestruturas e a adoção de ambientes híbridos e multi-cloud, com foco em cloud providers como Microsoft, Amazon e Google, sendo os 3 principais players no mercado da entrega de infraestruturas como serviço.
 author: Pedro Pinheiro
 authorRole: Cloud & Modern Workplace Lead
-authorPic: /autores/CC_Pedro-Pinheiro.png
+authorPic: /Autores/CC_Pedro-Pinheiro.png
 articleImage: /Artigos/cloud-computing-3385323.jpg
 content: >-
   Nos últimos anos, o mundo tem assistido a uma transformação significativa nas suas infraestruturas tecnológicas, tanto no setor privado quanto no público. Esta evolução tem sido impulsionada pela crescente adoção de tecnologias de cloud, que oferecem flexibilidade, escalabilidade e eficiência de custos. Neste artigo, exploraremos a evolução das infraestruturas e a adoção de ambientes híbridos e multi-cloud, com foco em cloud providers como Microsoft, Amazon e Google, sendo os 3 principais players no mercado da entrega de infraestruturas como serviço.
