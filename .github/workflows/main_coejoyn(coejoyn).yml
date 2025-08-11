@@ -32,8 +32,9 @@ jobs:
       - name: npm install, build, and test
         env:
           APP_ENV: prod
-          PUBLIC_BASE_URL: ${{ secrets.NEXTAUTH_URL }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+          NEXTAUTH_URL_INTERNAL: http://127.0.0.1:3000
+          PUBLIC_BASE_URL: https://coe.joyn-group.com
+          NEXTAUTH_URL: https://coe.joyn-group.com
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
