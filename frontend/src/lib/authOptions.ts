@@ -45,26 +45,6 @@ export const authOptions: NextAuthOptions = {
       (session as any).expiresAt = (token as any).expiresAt;
       return session;
     },
-
-    // ⬇️ Force all post-auth redirects to the environment's public base URL
-    async redirect({ url, baseUrl }) {
-      const customBase = getPublicBaseUrl();
-
-      if (url.startsWith(customBase)) return url;
-
-      if (url.startsWith("/")) return `${customBase}${url}`;
-
-      try {
-        const u = new URL(url);
-        const b = new URL(baseUrl);
-        if (u.origin === b.origin) {
-          return `${customBase}${u.pathname}${u.search}${u.hash}`;
-        }
-      } catch {
-      }
-
-      return customBase;
-    },
   },
   session: {
     strategy: "jwt",
@@ -72,6 +52,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
+
 
   // v4 tip: secure cookies in prod to avoid auth loops behind HTTPS
   useSecureCookies: process.env.APP_ENV === "prod",

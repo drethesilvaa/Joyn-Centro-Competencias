@@ -22,6 +22,7 @@ export const SignInPage = () => {
     if (status === "unauthenticated") {
       const safeTarget = target.startsWith("/") ? target : "/"; 
       signIn("google", { callbackUrl: safeTarget, redirect: true });
+      console.log(safeTarget)
     }
   }, [status, target]);
 
