@@ -1,37 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { signIn, getProviders, ClientSafeProvider, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/navigation";
 import PageLoader from "@/layouts/PageLoader";
 
-
 export const SignInPage = () => {
-    const [providers, setProviders] = useState<Record<string, ClientSafeProvider> | null>(null);
-    const { status } = useSession();
-    const router = useRouter();
+  const { status } = useSession();
+  const router = useRouter();
+  const search = useSearchParams();
 
-    useEffect(() => {
-        if (status === "authenticated") {
-            router.replace("/");
-        }
-    }, [status, router]);
+  const target = search.get("callbackUrl") || "/";
 
-    useEffect(() => {
-        getProviders().then((prov) => setProviders(prov));
-    }, []);
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.replace(target);
+    }
+  }, [status, router, target]);
 
-    useEffect(() => {
-        if (
-            status === "unauthenticated" &&
-            providers &&
-            providers["google"]
-        ) {
-            signIn("google");
-        }
-    }, [providers, status]);
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      const safeTarget = target.startsWith("/") ? target : "/"; 
+      signIn("google", { callbackUrl: safeTarget, redirect: true });
+    }
+  }, [status, target]);
 
-    return (
-        <PageLoader />
-    );
-}
+  return <PageLoader />;
+};
