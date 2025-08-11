@@ -295,3 +295,7 @@ ol {
   .ant-menu-item-selected {
   color: white;
 }
+
+.ant-card {
+  overflow: hidden;
+}

@@ -1,8 +1,6 @@
 import { type NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import type { JWT } from "next-auth/jwt";
-import type { Session } from "next-auth";
-import type { Account } from "next-auth";
+import { getPublicBaseUrl } from "@/lib/env";
 
 const ALLOWED_DOMAINS = ["@fyld.pt", "@joyn.pt", "@techskill.pt"];
 
@@ -35,17 +33,37 @@ export const authOptions: NextAuthOptions = {
     },
     async jwt({ token, account }) {
       if (account) {
-        token.accessToken = account.access_token;
-        token.refreshToken = account.refresh_token;
-        token.expiresAt = account.expires_at;
+        (token as any).accessToken = (account as any).access_token;
+        (token as any).refreshToken = (account as any).refresh_token;
+        (token as any).expiresAt = (account as any).expires_at;
       }
       return token;
     },
     async session({ session, token }) {
-      (session as any).accessToken = token.accessToken;
-      (session as any).refreshToken = token.refreshToken;
-      (session as any).expiresAt = token.expiresAt;
+      (session as any).accessToken = (token as any).accessToken;
+      (session as any).refreshToken = (token as any).refreshToken;
+      (session as any).expiresAt = (token as any).expiresAt;
       return session;
+    },
+
+    // ⬇️ Force all post-auth redirects to the environment's public base URL
+    async redirect({ url, baseUrl }) {
+      const customBase = getPublicBaseUrl();
+
+      if (url.startsWith(customBase)) return url;
+
+      if (url.startsWith("/")) return `${customBase}${url}`;
+
+      try {
+        const u = new URL(url);
+        const b = new URL(baseUrl);
+        if (u.origin === b.origin) {
+          return `${customBase}${u.pathname}${u.search}${u.hash}`;
+        }
+      } catch {
+      }
+
+      return customBase;
     },
   },
   session: {
@@ -54,4 +72,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
+
+  // v4 tip: secure cookies in prod to avoid auth loops behind HTTPS
+  useSecureCookies: process.env.APP_ENV === "prod",
 };

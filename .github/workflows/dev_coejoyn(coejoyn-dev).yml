@@ -31,6 +31,8 @@ jobs:
 
       - name: npm install, build, and test
         env:
+          APP_ENV: dev
+          PUBLIC_BASE_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
