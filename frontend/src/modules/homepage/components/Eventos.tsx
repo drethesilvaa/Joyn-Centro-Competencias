@@ -67,7 +67,7 @@ export const HomepageEventos = ({}: TemplateProps) => {
               <Image
                 width={imagesConfig[k].width}
                 height={imagesConfig[k].height}
-                className={`object-cover rounded-2xl `}
+                className={`object-cover rounded-2xl max-h-5/6`}
                 src={img?.src || ""}
                 alt={`${img?.alt} photo`}
               />

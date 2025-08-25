@@ -371,6 +371,7 @@ export const EventosPage = () => {
       pageDescription={""}
       pageImage={pageEventos?.imageToSwapForVideo || ""}
       pageImageAlt={pageEventos?.imageAlt || ""}
+      isEventsPage={true}
       events={{ nextEvents, handleSignUp }}
     >
       <>
