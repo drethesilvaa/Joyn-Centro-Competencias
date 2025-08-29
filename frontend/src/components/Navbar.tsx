@@ -14,6 +14,8 @@ const pathToMenuKey: Record<string, string> = {
   "/centros-de-competencia": "cc",
   "/centros-de-competencia/NET": "ccNET",
   "/centros-de-competencia/Dados": "ccDados",
+  "/centros-de-competencia/Cloud": "ccCloud",
+  "/centros-de-competencia/Human-Evolution": "ccHuman",
   "/mentores": "mentores",
   "/eventos": "eventos",
   "/politicas": "politicas",
@@ -35,6 +37,8 @@ const Navbar: React.FC = () => {
       cc: "/centros-de-competencia",
       ccNET: "/centros-de-competencia/NET",
       ccDados: "/centros-de-competencia/Dados",
+      ccHuman: "/centros-de-competencia/Human-Evolution",
+      ccCloud: "/centros-de-competencia/Cloud",
       mentores: "/mentores",
       eventos: "/eventos",
       politicas: "/politicas",
@@ -77,6 +81,14 @@ const Navbar: React.FC = () => {
             label: "Dados",
             key: "ccDados",
           },
+          {
+            label: "Human Evolution",
+            key: "ccHuman",
+          },
+          {
+            label: "Cloud Transformation",
+            key: "ccCloud",
+          },
         ],
       },
       { key: "mentores", label: "Mentores" },
@@ -107,11 +119,11 @@ const Navbar: React.FC = () => {
     <nav className="grid grid-cols-3">
       <div style={{ display: "flex", alignItems: "center" }}>
         <Image
-          height={31}
-          width={89}
+          height={329}
+          width={934}
           src="/joynLogo.png"
           alt="JOYN Logo"
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer object-cover h-[31px] w-[90px]"
           onClick={() => {
             router.push("/");
           }}

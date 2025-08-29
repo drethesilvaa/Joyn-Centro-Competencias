@@ -5,6 +5,7 @@ import MentorCard from "../components/MentorCard";
 import { useMentoresQuery } from "../hooks/useMentoresQuery";
 import { motion } from "framer-motion";
 import { createTransition } from "@/utils/createTransition";
+import Carousel from "@/components/Carousel";
 
 const pageMentores = {
   pageTitle: "Mentores",
@@ -25,10 +26,11 @@ export const MentoresPage = () => {
       pageImage={pageMentores?.imageToSwapForVideo || ""}
       pageImageAlt={pageMentores?.imageAlt || ""}
     >
-      <div className="py-14 grid gap-10">
-        {mentoresData?.centros?.map((centro, k) => {
+      <Carousel
+        className="mt-16"
+        slides={(mentoresData?.centros ?? [])?.map((centro, k) => {
           return (
-            <div key={k}>
+            <div className="w-full py-5" key={k}>
               <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -50,7 +52,7 @@ export const MentoresPage = () => {
             </div>
           );
         })}
-      </div>
+      />
     </PagesLayout>
   );
 };

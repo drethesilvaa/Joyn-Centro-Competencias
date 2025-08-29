@@ -13,7 +13,7 @@ const articlesPage = {
     title: "Artigos",
     description: "Os nossos artigos são uma extensão natural dos Centros de Competência JOYN, criados para partilhar conhecimento especializado e insights valiosos com a comunidade tecnológica. Aqui encontrará conteúdo técnico aprofundado, análises de tendências, melhores práticas e experiências reais dos nossos consultores no desenvolvimento de soluções inovadoras.\n<br /> <br />\nCada artigo reflete o compromisso do grupo JOYN com a excelência técnica e a partilha de conhecimento. Desde implementações práticas em .NET até estratégias avançadas de gestão de dados, exploramos temas que moldam o futuro da tecnologia empresarial.\n<br /> <br />\nEsta plataforma serve como ponte entre a nossa experiência interna e a comunidade externa, promovendo o diálogo, a inovação e o crescimento coletivo no ecossistema tecnológico português.",
     videoUrl: "https://www.youtube.com/watch?v=example-video-id",
-    imageToSwapForVideo: "/Centros%20de%20Competencia/women-7527799_1920.jpg"
+    imageToSwapForVideo: "/Centros%20de%20Competencia/JOYN_Office_1_2.jpg"
 }
 
 export const ArtigosPage = () => {

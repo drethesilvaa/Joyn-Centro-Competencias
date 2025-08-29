@@ -7,10 +7,12 @@ import { useCentrosCompetenciaQuery } from "../hooks/useCentrosCompetenciaQuery"
 export const CentrosDeCompetenciaSinglePage = ({
   centro,
 }: {
-  centro: ".NET" | "Dados";
+  centro: ".NET" | "Dados" | "Human Evolution" | "Cloud";
 }) => {
   const query = useCentrosCompetenciaQuery();
   if (query.isLoading) return <AppProgressBar />;
+
+  console.log(centro)
 
   return query.data?.centrosDeCompetencia
     ?.filter((c) => c.title.includes(centro))

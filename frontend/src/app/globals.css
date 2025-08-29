@@ -1,6 +1,7 @@
 @import "tailwindcss" important;
 @import "nprogress/nprogress.css";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

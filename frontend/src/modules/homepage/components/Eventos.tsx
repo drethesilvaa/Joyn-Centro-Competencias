@@ -15,23 +15,23 @@ export const HomepageEventos = ({}: TemplateProps) => {
 
   const imagesConfig = [
     {
-      width: 216,
-      height: 323,
-      className: "flex justify-end",
+      width: 5456,
+      height: 3637,
+      className: "flex justify-end items-end",
     },
     {
-      width: 238,
-      height: 220,
+      width: 5280,
+      height: 3520,
       className: "flex items-end",
     },
     {
-      width: 193,
-      height: 150,
+      width: 5472,
+      height: 3648,
       className: "flex justify-end items-start",
     },
     {
-      width: 262,
-      height: 347,
+      width: 5456,
+      height: 3637,
       className: "",
     },
   ];

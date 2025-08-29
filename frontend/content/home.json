@@ -3,13 +3,13 @@
     "title": "# Bem vindos ao  <br/><span style=\"color:#3C4249;\">Centro de Competências</span> <br/>da JOYN",
     "subtitle": "Um núcleo estratégico dentro do grupo JOYN, dedicado a promover a excelência no desenvolvimento de soluções de IT.",
     "ctaText": "Saber Mais",
-    "card1": "/HomePage/meeting-7564969_1280.jpg",
-    "card2": "20+ Alunos",
-    "card3": "200+ Horas em Materiais",
+    "card1": "/HomePage/JOYN_Office.jpg",
+    "card2": "+100 Participantes",
+    "card3": "+30 Horas em Materiais",
     "card4": "> “**EXCELÊNCIA** *TÉCNICA NASCE*  *DA* **PARTILHA** *E DA*  *PRÁTICA*  **COLABORATIVA.**”\n"
   },
   "centros": {
-    "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n<br /><br />\nAtualmente, contamos com dois centros ativos:\n\n- Centro de Competência em .NET\n- Centro de Competência em Dados\n<br /><br />\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n<br /><br />\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
+    "text": "Na JOYN, os Centros de Competência são núcleos estratégicos dedicados à excelência no desenvolvimento de soluções tecnológicas.\n<br /><br />\nAtualmente, contamos com quatro centros ativos:\n\n- Centro de Competência em .NET\n- Centro de Competência em Dados\n- Centro de Competência Cloud Transformation\n- Centro de Competência Human Evolution<br /><br />\nOnde promovemos o crescimento técnico, a colaboração entre consultores e a inovação contínua.\n<br /><br />\nEstes centros são espaços vivos de partilha de conhecimento, formação especializada e criação de boas práticas que impulsionam a entrega de soluções de alta qualidade.\n",
     "ctaText": "EXPLORAR OS CENTROS DE COMPETÊNCIA",
     "quote": "“Mais do que equipas técnicas, os Centros de Competência são **comunidades** onde se constrói **excelência**, se partilha **conhecimento** e se cultiva **inovação**.”"
   },
@@ -60,19 +60,19 @@
     "ctaText": "Explorar Eventos do Centro",
     "images": [
       {
-        "src": "/HomePage/eventos1.png",
+        "src": "/HomePage/eventos1.jpg",
         "alt": "Pc with 2 people in the background"
       },
       {
-        "src": "/HomePage/eventos3.png",
+        "src": "/HomePage/eventos3.jpg",
         "alt": "2 people on a meeting in a cafe"
       },
       {
-        "src": "/HomePage/eventos2.png",
+        "src": "/HomePage/eventos2.jpg",
         "alt": "Zoom meeting"
       },
       {
-        "src": "/HomePage/eventos4.png",
+        "src": "/HomePage/eventos4.jpg",
         "alt": "Meeting leader presenting"
       }
     ]

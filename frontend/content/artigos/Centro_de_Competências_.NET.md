@@ -5,7 +5,7 @@ subTitle: >-
 author: Ricardo Santos
 authorRole: Líder Centro de Competências de .NET
 authorPic: /HomePage/ricardosantos.png
-articleImage: /Centros%20de%20Competencia/women-7527799_1920.jpg
+articleImage: /Centros%20de%20Competencia/JOYN_Office_1_2.jpg
 content: >-
   Nos últimos anos, o mundo tem assistido a uma transformação significativa nas suas infraestruturas tecnológicas, tanto no setor privado quanto no público. Esta evolução tem sido impulsionada pela crescente adoção de tecnologias de cloud, que oferecem flexibilidade, escalabilidade e eficiência de custos. Neste artigo, exploraremos a evolução das infraestruturas e a adoção de ambientes híbridos e multi-cloud, com foco em cloud providers como Microsoft, Amazon e Google, sendo os 3 principais players no mercado da entrega de infraestruturas como serviço.
   Em resposta aos rápidos avanços tecnológicos que impactam continuamente o nosso setor, estamos a criar um Centro de Competências .NET. Este centro irá responder diretamente às necessidades da indústria, permitindo aos nossos consultores desenvolver competências relevantes e alinhados com as expectativas dos clientes e as necessidades do mercado.

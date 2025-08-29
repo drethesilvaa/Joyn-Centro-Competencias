@@ -22,7 +22,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, title, children }) => 
                 >
                     {/* Backdrop */}
                     <motion.div
-                        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                        className="absolute inset-0 backdrop-blur-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
