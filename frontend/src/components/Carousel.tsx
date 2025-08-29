@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
 import type { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
@@ -18,14 +18,15 @@ export default function Carousel({
   auto?: boolean;
   className?: string;
 }) {
-  const slideVariants = {
+  // Use a cubic-bezier easing instead of "easeOut" string
+  const slideVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: [0.16, 1, 0.3, 1], // ← was "easeOut"
         delay: i * 0.1,
       },
     }),
@@ -34,23 +35,21 @@ export default function Carousel({
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
       <Swiper
+        modules={[Pagination, Autoplay, Navigation, A11y]}
         slidesPerView={1}
         spaceBetween={16}
-        pagination={{ clickable: true }}
-        modules={[Pagination, Autoplay, Navigation]}
         loop
-        autoplay={auto ? { delay: 3500, disableOnInteraction: true } : false}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={auto ? { delay: 3500, disableOnInteraction: false } : false}
         className="mySwiper pb-10"
         breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
+          0: { slidesPerView: 1 },
         }}
       >
         {slides.map((item, index) => (
           <SwiperSlide key={index} className="pb-10">
             <motion.div
-              className=""
               custom={index}
               initial="hidden"
               whileInView="visible"
