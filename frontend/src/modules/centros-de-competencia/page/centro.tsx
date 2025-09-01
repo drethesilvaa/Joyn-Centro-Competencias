@@ -12,8 +12,6 @@ export const CentrosDeCompetenciaSinglePage = ({
   const query = useCentrosCompetenciaQuery();
   if (query.isLoading) return <AppProgressBar />;
 
-  console.log(centro)
-
   return query.data?.centrosDeCompetencia
     ?.filter((c) => c.title.includes(centro))
     .map((centro, index) => {

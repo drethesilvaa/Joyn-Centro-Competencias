@@ -299,122 +299,178 @@
       "title": "Centro de Competências Cloud Transformation",
       "mentor_img": "/Autores/CC_Pedro-Pinheiro.png",
       "mentorName": "Pedro Pinheiro",
-      "description": "O **Centro de Competências de Cloud Transformation** é uma iniciativa dedicada a promover a aprendizagem contínua, a partilha de conhecimento e o crescimento profissional de todos os consultores na área de Dados. Através de uma abordagem diversificada, eventos estruturados e discussões impulsionadas pela comunidade, o Centro de Competências tem como objetivo capacitar consultores de todos os níveis de experiência, assegurando o desenvolvimento de competências a longo prazo e a inovação no ecossistema de dados.",
+      "description": "O Centro de Competências Cloud Transformation é uma iniciativa da Joyn dedicada a acelerar a adoção da cloud, transformando a forma como desenhamos, desenvolvemos e operamos soluções tecnológicas. O objetivo é apoiar equipas de desenvolvimento, dados e infraestruturas na transição de modelos tradicionais para abordagens cloud-native, promovendo eficiência, escalabilidade, segurança e inovação contínua.",
       "charts": [
         {
-          "title": "Years of experience with data technologies ",
+          "title": "Experiência Prévia com Plataformas Cloud",
           "chartType": "pie",
           "values": [
             {
-              "name": "Less than 1 year",
-              "value": 10
+              "name": "Azure Synapse",
+              "value": 4
             },
             {
-              "name": "1-3 years",
-              "value": 11
+              "name": "Azure Data Factory",
+              "value": 5
             },
             {
-              "name": "4-7 years",
-              "value": 10
+              "name": "Power BI",
+              "value": 16
             },
             {
-              "name": "8+ years",
-              "value": 13
+              "name": "Azure Databricks",
+              "value": 8
+            },
+            {
+              "name": "Outro",
+              "value": 5
             }
           ]
         },
         {
-          "title": "Years of experience as developer",
+          "title": "Conforto na Gestão de Dados em Cloud",
           "chartType": "pie",
           "values": [
             {
-              "name": "Less than 1 year",
+              "name": "Nenhum",
+              "value": 11
+            },
+            {
+              "name": "Consulta de dados / integração simples",
+              "value": 24
+            },
+            {
+              "name": "Desenvolvimento de pipelines ETL",
               "value": 8
             },
             {
-              "name": "1-3 years",
+              "name": "Modelação e otimização de bases de dados",
               "value": 9
-            },
-            {
-              "name": "4-7 years",
-              "value": 9
-            },
-            {
-              "name": "8+ years",
-              "value": 18
             }
           ]
         },
         {
-          "title": "Overall proficiency in data",
-          "chartType": "bar",
+          "title": "Conhecimento em Backup & Disaster Recovery",
+          "chartType": "pie",
           "values": [
             {
-              "name": "Novice",
-              "value": 8
+              "name": "Já desenhei estratégias de backup",
+              "value": 9
             },
             {
-              "name": "Begginer",
-              "value": 11
+              "name": "Conheço soluções como Veeam, Azure Backup",
+              "value": 10
             },
             {
-              "name": "Intermediate",
-              "value": 11
-            },
-            {
-              "name": "Advanced",
-              "value": 11
-            },
-            {
-              "name": "Expert",
-              "value": 3
+              "name": "Sem experiência",
+              "value": 25
             }
           ]
         }
       ],
       "learning": [
         {
-          "title": "Preparação para certificações",
-          "description": "**Objetivo** Fornecer apoio aos colaboradores que desejam obter certificações técnicas através de simulações de \nexames, material de estudo e sessões de grupo. \n<br/><br/>\n**Certificações Iniciais Disponíveis**\n- AZ-900 (Microsoft Azure Fundamentals)\n- DP-900 (Microsoft Azure Data Fundamentals)\n- DP-600 (Fabric Analytics Engineer Associate)\n- Databricks Certified Data Engineer Associate\n<br/>\n**Metodologia**\n- Material de estudo disponível na plataforma\n- Simulações de exames\n- Sessões online de estudo em grupo\n"
-        },
-        {
-          "title": "Painel de Notícias",
-          "description": "**Objetivo** Manter a comunidade informada e ativa através da partilha de notícias e tendências do setor.\n<br/><br/>\n**Temas em Destaque**\n- Tendências emergentes na área de dados (exemplo: DeepSeek)\n- Inovações tecnológicas e novas abordagens\n\n"
-        },
-        {
-          "title": "Consolidação de Conhecimentos em ferramentas de data",
-          "description": "**Objetivo** Disponibilizar formações e recursos sobre ferramentas essenciais para a análise e engenharia de dados.\n<br/><br/>\n**Foco em**\n- Databricks                     \n- DataFactory/Azure Synapse                      \n- Python/SQL                      \n- Dashboards\n<br/>\n\n**Propósito** Aumentar a maturidade no uso dessas ferramentas/linguagens através da aprendizagem prática.\n"
-        },
-        {
-          "title": "Coaching e Mentoria",
-          "description": "**Objetivo** Apoiar os colaboradores no desenvolvimento de competências específicas através de acompanhamento\n individualizado por um mentor a ser definido, dependendo do tema de trabalho. Pode haver participação do\n mentor na reunião de Personal Development Plan. \n<br /><br />\n**Metodologia**\n- Avaliação inicial para identificação de necessidades\n- Atribuição de um mentor especializado\n- Avaliação final para medir o progresso\n<br />\n**Métrica de Sucesso** Percentagem de progresso dos participantes ao final do programa.\n"
-        },
-        {
-          "title": "Métodos de Partilha de Conhecimento Preferidos & Abordagem de Entrega",
+          "title": "Serviços Estratégicos em Cloud",
           "topics": [
             {
-              "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
+              "iconName": "CloudArrowUp",
+              "title": "Azure App Services para alojamento ágil e escalável de aplicações web"
+            },
+            {
+              "iconName": "Database",
+              "title": "Database as a Service (Azure SQL, Cosmos DB) com gestão simplificada e alta disponibilidade"
+            },
+            {
+              "iconName": "Function",
+              "title": "Azure Functions para lógica de negócio desacoplada e orientada a eventos"
+            },
+            {
+              "iconName": "GitBranch",
+              "title": "Pipelines CI/CD integrados com GitHub ou Azure DevOps"
+            },
+            {
+              "iconName": "Cube",
+              "title": "Containers e Kubernetes para orquestração e portabilidade de aplicações"
+            }
+          ]
+        },
+        {
+          "title": "Cultura de Partilha e Melhoria Contínua",
+          "topics": [
+            {
+              "iconName": "UsersThree",
+              "title": "Promover uma cultura de capacitação e inovação"
+            },
+            {
+              "iconName": "Handshake",
+              "title": "Incentivar a colaboração entre diferentes áreas tecnológicas"
+            },
+            {
+              "iconName": "BookOpen",
+              "title": "Disponibilizar recursos e boas práticas já enraizadas na Joyn"
+            }
+          ]
+        },
+        {
+          "title": "Desafios Técnicos & Casos de Estudo",
+          "description": "O centro fomenta a aprendizagem prática através da resolução de desafios reais, em formato de fórum e colaboração comunitária.",
+          "topics": [
+            {
+              "topicTitle": "Migração de Aplicações para Azure",
               "topicDetails": [
                 {
-                  "iconName": "WhatsappLogo",
-                  "description": "Comunidade WhatsApp",
-                  "url": "https://chat.whatsapp.com/EYsX0eHzOdgDYzE95y2RMb"
-                },
+                  "iconName": "CloudArrowUp",
+                  "description": "Estratégias de migração de aplicações on-premises para Azure com alta disponibilidade e escalabilidade automática."
+                }
+              ]
+            },
+            {
+              "topicTitle": "Disaster Recovery em Cloud",
+              "topicDetails": [
                 {
-                  "iconName": "Chalkboard",
-                  "description": "JOYN Academy",
-                  "url": "https://academy.joyn-group.com/login/index.php"
-                },
+                  "iconName": "ShieldCheck",
+                  "description": "Implementação de planos de Disaster Recovery com RTO e RPO agressivos, integrados com ambientes existentes."
+                }
+              ]
+            },
+            {
+              "topicTitle": "Escalabilidade em E-Commerce",
+              "topicDetails": [
                 {
-                  "iconName": "DiscordLogo",
-                  "description": "Discord",
-                  "url": "URL"
+                  "iconName": "ShoppingCartSimple",
+                  "description": "Estratégias de escalabilidade automática em períodos de elevado tráfego (ex.: campanhas sazonais)."
                 }
               ]
             }
           ]
         }
-      ]
+      ],
+      "feedback": {
+        "description": "Para garantir a evolução contínua do centro, serão recolhidos contributos frequentes dos membros.",
+        "topics": [
+          {
+            "iconName": "Poll",
+            "title": "Inquéritos de Satisfação"
+          },
+          {
+            "iconName": "ChatsCircle",
+            "title": "Sessões Interativas em Tempo Real"
+          },
+          {
+            "iconName": "ChartLine",
+            "title": "Partilha Regular de Resultados e Insights"
+          }
+        ]
+      },
+      "incentivos": {
+        "description": "Para estimular a participação ativa, os membros mais envolvidos serão reconhecidos e valorizados.",
+        "topics": [
+          {
+            "iconName": "Trophy",
+            "title": "Reconhecimento por Contributos e Gamificação"
+          }
+        ]
+      }
     },
     {
       "title": "Centro de Competências Human Evolution",
@@ -423,72 +479,62 @@
       "description": "O **Centro de Competências de Human Evolution** promove o desenvolvimento individual de cada colaborador pois compreendemos o impacto que cada um tem na empresa como um todo. Empresas são feitas de pessoas, pessoas felizes criam empresas felizes, e empresas felizes fazem clientes felizes. Aqui aprimoramos as competências humanas para que as competências técnicas possam brilhar ainda mais.",
       "charts": [
         {
-          "title": "Years of experience with data technologies ",
+          "title": "Áreas de Evolução Pessoal",
           "chartType": "pie",
           "values": [
             {
-              "name": "Less than 1 year",
-              "value": 10
+              "name": "Liderança",
+              "value": 33
             },
             {
-              "name": "1-3 years",
-              "value": 11
+              "name": "Comunicação",
+              "value": 31
             },
             {
-              "name": "4-7 years",
-              "value": 10
+              "name": "Gestão de tempo",
+              "value": 26
             },
             {
-              "name": "8+ years",
-              "value": 13
+              "name": "Inteligência emocional",
+              "value": 21
+            },
+            {
+              "name": "Assertividade",
+              "value": 26
+            },
+            {
+              "name": "Outros",
+              "value": 12
             }
           ]
         },
         {
-          "title": "Years of experience as developer",
-          "chartType": "pie",
-          "values": [
-            {
-              "name": "Less than 1 year",
-              "value": 8
-            },
-            {
-              "name": "1-3 years",
-              "value": 9
-            },
-            {
-              "name": "4-7 years",
-              "value": 9
-            },
-            {
-              "name": "8+ years",
-              "value": 18
-            }
-          ]
-        },
-        {
-          "title": "Overall proficiency in data",
+          "title": "Circunstâncias de Maior Dificuldade",
           "chartType": "bar",
           "values": [
             {
-              "name": "Novice",
-              "value": 8
+              "name": "Reuniões com clientes",
+              "value": 15
             },
             {
-              "name": "Begginer",
-              "value": 11
+              "name": "Reuniões de equipa",
+              "value": 18
             },
             {
-              "name": "Intermediate",
-              "value": 11
+              "name": "Apresentações",
+              "value": 22
             },
             {
-              "name": "Advanced",
-              "value": 11
+              "name": "Lidar com colegas / managers",
+              "value": 19
             },
             {
-              "name": "Expert",
-              "value": 3
+              "name": "Motivação",
+              "value": 12
+            },
+            {
+              "name": "Outros",
+              "value": 10
             }
           ]
         }
@@ -496,7 +542,32 @@
       "learning": [
         {
           "title": "Competências a Desenvolver",
-          "description": "\n- Comunicação\n- Liderança\n- Assertividade\n- Inteligência Emocional\n- Gestão de Tempo\n- Gestão de Conflitos\n<br/>\n"
+          "topics": [
+            {
+              "iconName": "ChatsCircle",
+              "title": "Comunicação"
+            },
+            {
+              "iconName": "UsersThree",
+              "title": "Liderança"
+            },
+            {
+              "iconName": "Target",
+              "title": "Assertividade"
+            },
+            {
+              "iconName": "Brain",
+              "title": "Inteligência Emocional"
+            },
+            {
+              "iconName": "Timer",
+              "title": "Gestão de Tempo"
+            },
+            {
+              "iconName": "Handshake",
+              "title": "Gestão de Conflitos"
+            }
+          ]
         },
         {
           "title": "Canais de Comunicação e Partilha",

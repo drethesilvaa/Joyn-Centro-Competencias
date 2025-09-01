@@ -25,6 +25,8 @@ interface learningtype {
   description?: string | null;
   topics?: Array<{
     topicTitle: string;
+    iconName?: string;
+    title?: string;
     topicDetails?: Array<{
       iconName: string;
       description?: string | null;
@@ -125,51 +127,80 @@ export const CentroDeCompetencia = ({ content }: ObjectivesProps) => {
                         <MarkdownRenderer content={l.description || ""} />
                       </motion.div>
                     )}
-                    {l.topics && l.topics?.length > 0 && (
+                    {(l.topics && l.topics?.length > 0) && (
                       <ul>
-                        {l.topics.map((topic) => (
-                          <Fragment key={topic?.topicTitle}>
-                            <motion.p
-                              initial={{ opacity: 0 }}
-                              whileInView={{ opacity: 1 }}
-                              transition={createTransition(0.1)}
-                              viewport={{ once: true, amount: 0.3 }}
-                              className="font-semibold mt-6"
-                            >
-                              {topic?.topicTitle}
-                            </motion.p>
-                            <div className="flex gap-6 py-6 justify-evenly">
-                              {topic?.topicDetails?.map((detail, i) => {
-                                const Icon = getPhosphorIcon(detail?.iconName);
-                                return (
-                                  <motion.div
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={createTransition(0.1)}
-                                    viewport={{ once: true, amount: 0.3 }}
-                                    className="grid items-start justify-items-center gap-3"
-                                    key={i}
-                                  >
-                                    <Icon size={32} />
-                                    <p className="text-center">
-                                      {detail?.description}
-                                    </p>
-                                    {detail?.url && (
-                                      <Button
-                                        onClick={() =>
-                                          openInNewTab(detail?.url || "")
-                                        }
-                                        color="primary"
-                                        variant="solid"
-                                        icon={<ArrowRightIcon />}
-                                      />
-                                    )}
-                                  </motion.div>
-                                );
-                              })}
-                            </div>
-                          </Fragment>
-                        ))}
+                        {l.topics.map((topic) => {
+                          // Branch: topic with details list
+                          if (topic?.topicDetails?.length) {
+                            return (
+                              <li key={topic?.topicTitle ?? topic?.title}>
+                                <motion.p
+                                  initial={{ opacity: 0 }}
+                                  whileInView={{ opacity: 1 }}
+                                  transition={createTransition(0.1)}
+                                  viewport={{ once: true, amount: 0.3 }}
+                                  className="font-semibold mt-6"
+                                >
+                                  {topic?.topicTitle}
+                                </motion.p>
+
+                                <div className="flex gap-6 py-6 justify-evenly">
+                                  {topic.topicDetails.map((detail, i) => {
+                                    const Icon = getPhosphorIcon(
+                                      detail?.iconName
+                                    );
+                                    return (
+                                      <motion.div
+                                        key={detail?.description ?? i}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={createTransition(0.1)}
+                                        viewport={{ once: true, amount: 0.3 }}
+                                        className="grid items-start justify-items-center gap-3"
+                                      >
+                                        <Icon size={32} />
+                                        <p className="text-center">
+                                          {detail?.description}
+                                        </p>
+
+                                        {detail?.url && (
+                                          <Button
+                                            onClick={() =>
+                                              openInNewTab(detail.url!)
+                                            }
+                                            color="primary"
+                                            variant="solid"
+                                            icon={<ArrowRightIcon />}
+                                          />
+                                        )}
+                                      </motion.div>
+                                    );
+                                  })}
+                                </div>
+                              </li>
+                            );
+                          }
+
+                          // Branch: simple topic (no details)
+                          const Icon = getPhosphorIcon(topic?.iconName);
+                          return (
+                            <li key={topic?.title ?? topic?.topicTitle} className="mt-4 list-none">
+                              <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={createTransition(0.1)}
+                                viewport={{ once: true, amount: 0.3 }}
+                                className="flex gap-3 rounded-md items-center"
+                              >
+                                <span className="flex items-center p-2 bg-accent text-white rounded-xl">
+                                  <Icon size={24} />
+                                </span>
+
+                                <p className="body-xl">{topic?.title}</p>
+                              </motion.div>
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </div>

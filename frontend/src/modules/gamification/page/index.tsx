@@ -6,6 +6,8 @@ import { useGamificationQuery } from "../hooks/useGamificationQuery";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { motion } from "framer-motion";
 import { createTransition } from "@/utils/createTransition";
+import Podium from "@/components/Podium";
+import Carousel from "@/components/Carousel";
 
 const pageGamification = {
   pageTitle: "Gamification",
@@ -14,6 +16,65 @@ const pageGamification = {
   videoUrl: "https://www.youtube.com/watch?v=example-video-id",
   imageToSwapForVideo: "/gamification/pexels-rdne-7005687.jpg",
   imageAlt: "alt",
+  classificationNET: [
+    {
+      name: "Assis Ferreira",
+      empresa: "Fyld",
+      points: 300,
+    },
+    {
+      name: "Bruno Duarte",
+      empresa: "Fyld",
+      points: 100,
+    },
+    {
+      name: "Cátia Castro",
+      empresa: "Growin",
+      points: 500,
+    },
+    {
+      name: "Lucas Santos",
+      empresa: "Growin",
+      points: 100,
+    },
+    {
+      name: "Pietro Bottino",
+      empresa: "Fyld",
+      points: 100,
+    },
+  ],
+  classificationDados: [
+    {
+      name: "Emanoella Oliveira",
+      empresa: "Fyld",
+      points: 100,
+    },
+    {
+      name: "Cátia Castro",
+      empresa: "Growin",
+      points: 300,
+    },
+    {
+      name: "João Espirito Santo",
+      empresa: "Landskill",
+      points: 100,
+    },
+    {
+      name: "Maíres Sousa",
+      empresa: "Landskill",
+      points: 300,
+    },
+    {
+      name: "Douglas Silva",
+      empresa: "Landskill",
+      points: 300,
+    },
+    {
+      name: "Ana Catololi ",
+      empresa: "Fyld",
+      points: 100,
+    },
+  ],
 };
 
 export const GamificationPage = () => {
@@ -25,9 +86,49 @@ export const GamificationPage = () => {
       pageDescription={pageGamification?.pageDescription || ""}
       pageImage={pageGamification?.imageToSwapForVideo || ""}
       pageImageAlt={pageGamification?.imageAlt || ""}
+      alwaysShowHeader={true}
     >
       <>
         <div className="grid gap-6 py-6">
+          <Carousel
+            slides={[
+              <div className="flex flex-col gap-10 items-center justify-center">
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={createTransition(0)}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="heading-5xl font-semibold"
+                >
+                  Podium .NET
+                </motion.h2>
+                <div className="w-2/3">
+                  <Podium
+                    data={pageGamification.classificationNET}
+                    title="Podium .NET"
+                  />
+                </div>
+              </div>,
+              <div className="flex flex-col gap-10 items-center justify-center">
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={createTransition(0)}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="heading-5xl font-semibold"
+                >
+                  Podium Dados
+                </motion.h2>
+                <div className="w-2/3">
+                  <Podium
+                    data={pageGamification.classificationDados}
+                    title="Podium Dados"
+                  />
+                </div>
+              </div>,
+            ]}
+          />
+
           <div>
             <motion.h2
               initial={{ opacity: 0 }}

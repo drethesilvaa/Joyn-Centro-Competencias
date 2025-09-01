@@ -14,6 +14,7 @@ interface TemplateProps {
   pageImageAlt: string;
   events?: { nextEvents: ProcessedEvent[]; handleSignUp: any };
   isEventsPage?: boolean;
+  alwaysShowHeader?: boolean; // 👈 new prop
 }
 
 const titleVariants = {
@@ -42,20 +43,22 @@ export const PagesLayout = ({
   pageImageAlt,
   events,
   isEventsPage = false,
+  alwaysShowHeader = false,
 }: TemplateProps) => {
-
   return (
     <div className="min-h-[90vh] grid content-between py-16">
       <div className="custom-gap-6 relative 2xl:grid 2xl:grid-cols-12">
         {/* Title - responsive positioning */}
-        {pageTitle && (
+        {(pageTitle || alwaysShowHeader) && (
           <motion.div
             className="mb-6 2xl:mb-0 2xl:col-span-4 2xl:max-w-none"
             variants={titleVariants}
             initial="hidden"
             animate="visible"
           >
-            <h1 className="heading-6xl font-bold max-w-md ">{pageTitle}</h1>
+            <h1 className="heading-6xl font-bold max-w-md ">
+              {pageTitle || ""}
+            </h1>
           </motion.div>
         )}
 
@@ -66,6 +69,7 @@ export const PagesLayout = ({
           initial="hidden"
           animate="visible"
         >
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -74,14 +78,19 @@ export const PagesLayout = ({
             <Image
               width={654}
               height={435}
-              className="object-cover w-[35vw] max-w-[400px] rounded-2xl
+              className={`object-cover w-[35vw] max-w-[400px] rounded-2xl
                                       float-right ml-6 mb-4
-                                      2xl:absolute 2xl:top-0 2xl:right-0 2xl:float-none 2xl:ml-0 2xl:mb-0 2xl:max-w-[30vw] brightness-90"
+                                     ${
+                                       alwaysShowHeader
+                                         ? ""
+                                         : "2xl:absolute 2xl:top-0 2xl:right-0 2xl:float-none 2xl:ml-0 2xl:mb-0 2xl:max-w-[30vw]"
+                                     }  brightness-90`}
               src={pageImage || ""}
               alt={`${pageImageAlt} photo`}
             />
           </motion.div>
 
+          {/* Description */}
           {pageDescription && (
             <motion.div
               className="body-xl 2xl:max-w-1/2 markdown-style"
@@ -92,23 +101,23 @@ export const PagesLayout = ({
               <MarkdownRenderer content={pageDescription || ""} />
             </motion.div>
           )}
+
+          {/* Events */}
           {isEventsPage &&
             (events && events.nextEvents.length > 0 ? (
-              events.nextEvents?.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  <h3 className="text-xl font-semibold">Próximo Evento:</h3>
-                  <div className="float-left 2xl:float-none 2xl:max-w-1/2">
-                    <EventsList
-                      events={events.nextEvents}
-                      onSignUp={events.handleSignUp}
-                    />
-                  </div>
-                </motion.div>
-              )
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <h3 className="text-xl font-semibold">Próximo Evento:</h3>
+                <div className="float-left 2xl:float-none 2xl:max-w-1/2">
+                  <EventsList
+                    events={events.nextEvents}
+                    onSignUp={events.handleSignUp}
+                  />
+                </div>
+              </motion.div>
             ) : (
               <div className="float-left 2xl:float-none 2xl:max-w-1/2 text-center py-8">
                 <CalendarXIcon
@@ -122,7 +131,7 @@ export const PagesLayout = ({
                 </p>
               </div>
             ))}
-          <div className="clear-both 2xl:hidden"></div>
+          <div className={`clear-both ${alwaysShowHeader ? "" : "2xl:hidden"} `}></div>
         </motion.div>
       </div>
 
