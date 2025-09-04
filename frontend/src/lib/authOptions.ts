@@ -1,6 +1,43 @@
+// lib/authOptions.ts
 import { type NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { getPublicBaseUrl } from "@/lib/env";
+
+async function refreshAccessToken(token: any) {
+  try {
+    if (!token.refreshToken) {
+      // No refresh token available; user needs to sign in again with consent
+      return { ...token, error: "NoRefreshToken" as const };
+    }
+
+    const params = new URLSearchParams({
+      client_id: process.env.GOOGLE_CLIENT_ID!,
+      client_secret: process.env.GOOGLE_CLIENT_SECRET!,
+      grant_type: "refresh_token",
+      refresh_token: token.refreshToken,
+    });
+
+    const res = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw data;
+
+    // Google often does NOT return refresh_token on refresh; keep the old one
+    return {
+      ...token,
+      accessToken: data.access_token,
+      expiresAt: Date.now() + data.expires_in * 1000, // ms
+      refreshToken: data.refresh_token ?? token.refreshToken,
+      error: undefined,
+    };
+  } catch (e) {
+    console.error("Failed to refresh Google access token", e);
+    return { ...token, error: "RefreshAccessTokenError" as const };
+  }
+}
 
 const ALLOWED_DOMAINS = ["@fyld.pt", "@joyn.pt", "@techskill.pt"];
 
@@ -11,10 +48,12 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope:
-            "openid email profile https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar.events",
+          // Ensure we can get a refresh_token and the right scopes
           access_type: "offline",
           prompt: "consent",
+          include_granted_scopes: "true",
+          scope:
+            "openid email profile https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar.events",
         },
       },
     }),
@@ -24,36 +63,50 @@ export const authOptions: NextAuthOptions = {
       if (
         user.email &&
         ALLOWED_DOMAINS.some((domain) =>
-          user.email?.toLowerCase().endsWith(domain)
+          user?.email?.toLowerCase().endsWith(domain)
         )
       ) {
         return true;
       }
       return "/auth/signin?error=WrongDomain";
     },
+
     async jwt({ token, account }) {
+      // Initial sign-in: stash tokens and normalize expiry to ms
       if (account) {
-        (token as any).accessToken = (account as any).access_token;
-        (token as any).refreshToken = (account as any).refresh_token;
-        (token as any).expiresAt = (account as any).expires_at;
+        (token as any).accessToken = account.access_token;
+        (token as any).refreshToken = account.refresh_token; // may be undefined on subsequent logins
+        // Google gives seconds since epoch in `expires_at`
+        const expiresSec = (account as any).expires_at as number | undefined;
+        (token as any).expiresAt = expiresSec
+          ? expiresSec * 1000
+          : Date.now() + ((account as any).expires_in ?? 3600) * 1000;
       }
-      return token;
+
+      // If we have a token and it hasn't expired, return it
+      if (
+        (token as any).accessToken &&
+        (token as any).expiresAt &&
+        Date.now() < (token as any).expiresAt - 60_000
+      ) {
+        return token;
+      }
+
+      // Otherwise refresh
+      return await refreshAccessToken(token);
     },
+
     async session({ session, token }) {
       (session as any).accessToken = (token as any).accessToken;
       (session as any).refreshToken = (token as any).refreshToken;
       (session as any).expiresAt = (token as any).expiresAt;
+      (session as any).error = (token as any).error;
       return session;
     },
   },
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/auth/signin",
-  },
+  session: { strategy: "jwt" },
+  pages: { signIn: "/auth/signin" },
 
-
-  // v4 tip: secure cookies in prod to avoid auth loops behind HTTPS
+  // keep your cookie setting
   useSecureCookies: process.env.APP_ENV === "prod",
 };

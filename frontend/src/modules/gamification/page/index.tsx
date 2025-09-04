@@ -30,7 +30,7 @@ const pageGamification = {
     {
       name: "Cátia Castro",
       empresa: "Growin",
-      points: 500,
+      points: 600,
     },
     {
       name: "Lucas Santos",
@@ -89,7 +89,7 @@ export const GamificationPage = () => {
       alwaysShowHeader={true}
     >
       <>
-        <div className="grid gap-6 py-6">
+        <div className="grid gap-6 pt-15 pb-6">
           <Carousel
             slides={[
               <div className="flex flex-col gap-10 items-center justify-center">
@@ -129,88 +129,92 @@ export const GamificationPage = () => {
             ]}
           />
 
-          <div>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="heading-5xl font-semibold"
-            >
-              Pontos
-            </motion.h2>
-            <motion.ul
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="pt-4"
-            >
-              {data?.pontos.map((content, k) => (
-                <li key={k}>{content}</li>
-              ))}
-            </motion.ul>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="bg-accent rounded-2xl text-white p-6">
+              <motion.h2
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="heading-5xl font-semibold"
+              >
+                Pontos
+              </motion.h2>
+              <motion.ul
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="pt-4"
+              >
+                {data?.pontos.map((content, k) => (
+                  <li key={k}>{content}</li>
+                ))}
+              </motion.ul>
+            </div>
+            <div className="bg-[#6e5050] rounded-2xl text-white p-6">
+              <motion.h2
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="heading-5xl font-semibold"
+              >
+                Reconhece quem merece
+              </motion.h2>
+              <motion.h3
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="heading-2xl font-semibold pt-4"
+              >
+                Como atribuir medalhas:
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="pt-4"
+              >
+                Envia um e-mail para {data?.reconhece.email}:
+              </motion.p>
+              <motion.ul
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {data?.reconhece.passos.map((content, k) => (
+                  <li key={k}>{content}</li>
+                ))}
+              </motion.ul>
+              <motion.h3
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="heading-2xl font-semibold pt-4"
+              >
+                Regras:
+              </motion.h3>
+              <motion.ul
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={createTransition(0)}
+                viewport={{ once: true, amount: 0.3 }}
+                className="pt-4"
+              >
+                {data?.reconhece.regras.map((content, k) => (
+                  <li key={k}>{content}</li>
+                ))}
+              </motion.ul>
+            </div>
           </div>
-          <div>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="heading-5xl font-semibold"
-            >
-              Reconhece quem merece
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="heading-2xl font-semibold pt-4"
-            >
-              Como atribuir medalhas:
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="pt-4"
-            >
-              Envia um e-mail para {data?.reconhece.email}:
-            </motion.p>
-            <motion.ul
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {data?.reconhece.passos.map((content, k) => (
-                <li key={k}>{content}</li>
-              ))}
-            </motion.ul>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="heading-2xl font-semibold pt-4"
-            >
-              Regras:
-            </motion.h3>
-            <motion.ul
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={createTransition(0)}
-              viewport={{ once: true, amount: 0.3 }}
-              className="pt-4"
-            >
-              {data?.reconhece.regras.map((content, k) => (
-                <li key={k}>{content}</li>
-              ))}
-            </motion.ul>
-          </div>
-          <div>
+          
+
+          <div className="p-6 bg-[#454555] rounded-2xl text-white">
             <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -230,7 +234,7 @@ export const GamificationPage = () => {
                   key={k}
                   className="flex gap-4 items-center"
                 >
-                  <span className="flex items-center p-2 bg-secondary text-white rounded-xl">
+                  <span className="flex items-center p-2 bg-[#f9f8ff] text-white rounded-xl">
                     <Image
                       width={26}
                       height={26}

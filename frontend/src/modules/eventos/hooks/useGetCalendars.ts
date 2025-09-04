@@ -1,23 +1,37 @@
 import { useQuery } from "@tanstack/react-query";
 import { Session } from "next-auth";
 
-const fetchCalendars = async () => {
-  try {
-    const response = await fetch("/api/calendars");
-    console.log(response)
-    const data = await response.json();
-
-    if (data.success) {
-      console.log("Calendars:", data.calendars);
-    }
-  } catch (error) {
-    console.error("Error fetching calendars:", error);
-  }
+type FetchCalendarsArgs = {
+  calendarId: string;
+  timezone?: string;
+  from?: string;
+  to?: string;
 };
 
-export const useGetCalendars = (session: Session | null) =>
+const fetchCalendars = async ({
+  calendarId,
+  timezone,
+  from,
+  to,
+}: FetchCalendarsArgs) => {
+  const params = new URLSearchParams();
+  if (calendarId) params.set("calendarId", calendarId);
+  if (timezone) params.set("timezone", timezone);
+  if (from) params.set("from", from);
+  if (to) params.set("to", to);
+
+  const res = await fetch(`/api/calendar/events?${params.toString()}`);
+  if (!res.ok) throw new Error("Failed to fetch calendar events");
+
+  return res.json();
+};
+
+export const useGetCalendars = (
+  session: Session | null,
+  args: FetchCalendarsArgs
+) =>
   useQuery({
-    queryKey: ["Calendars"],
-    queryFn: fetchCalendars,
-    enabled: !!session,
+    queryKey: ["Calendars", args], 
+    queryFn: () => fetchCalendars(args),
+    enabled: !!session && !!args.calendarId,
   });
