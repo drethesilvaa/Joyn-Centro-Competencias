@@ -146,7 +146,7 @@ export const EventosPage = () => {
     <PagesLayout
       pageTitle="Eventos"
       pageDescription=""
-      pageImage="/eventos/pexels-zhuhehuai-716276.jpg"
+      pageImage="/eventos/default-event.jpg"
       pageImageAlt="alt"
       isEventsPage={true}
       events={{ nextEvents, handleSignUp }}

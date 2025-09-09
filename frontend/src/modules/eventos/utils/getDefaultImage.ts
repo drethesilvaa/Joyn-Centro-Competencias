@@ -8,5 +8,5 @@ export const getDefaultImage = (category: string): string => {
         'Webinar': '/eventos/webinar-default.jpg',
         'Reunião': '/eventos/meeting-default.jpg'
     }
-    return imageMap[category] || '/eventos/pexels-zhuhehuai-716276.jpg'
+    return imageMap[category] || '/eventos/default-event.jpg'
 }

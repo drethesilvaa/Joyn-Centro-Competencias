@@ -1,5 +1,6 @@
 "use client";
 
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { ProcessedEvent } from "@/types/events";
 import { Button } from "antd";
 
@@ -67,7 +68,7 @@ export const EventCard: React.FC<EventCardProps> = ({ event, onSignUp }) => {
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-2 ">{event.title}</h3>
         <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-          {event.description}
+          <MarkdownRenderer content={event.description} />
         </p>
 
         <div className="space-y-2 mb-4">

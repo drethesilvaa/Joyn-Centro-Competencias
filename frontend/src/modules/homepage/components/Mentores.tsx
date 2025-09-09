@@ -15,6 +15,7 @@ export const HomepageMentores = ({}: TemplateProps) => {
 
   const ctaButton = (
     <Button
+      className="text-wrap"
       onClick={() => {
         status === "authenticated" && session?.user
           ? router.push("/mentores")

@@ -178,7 +178,7 @@ const Homepage = () => {
                 transition={{ duration: 0.5, delay: 0.07, ease: "easeOut" }}
                 className="row-span-5 p-0 rounded-2xl overflow-hidden "
               >
-                <Card className="h-full bg-accent flex items-end p-6 text-white heading-2xl font-light">
+                <Card className="h-full bg-accent flex items-end p-4 md:p-6 text-white quote font-light">
                   <MarkdownRenderer content={data.home?.card4 || ""} />
                 </Card>
               </motion.div>

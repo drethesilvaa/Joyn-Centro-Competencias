@@ -27,6 +27,7 @@ export const MentoresPage = () => {
       pageImageAlt={pageMentores?.imageAlt || ""}
     >
       <Carousel
+        auto={false}
         className="mt-16"
         slides={(mentoresData?.centros ?? [])?.map((centro, k) => {
           return (

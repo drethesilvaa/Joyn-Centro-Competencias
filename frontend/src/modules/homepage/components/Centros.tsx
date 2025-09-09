@@ -15,6 +15,7 @@ export const HomepageCentros = ({}: TemplateProps) => {
 
   const ctaButton = (
     <Button
+      className="text-wrap py-10 sm:py-0"
       onClick={() => {
         status === "authenticated" && session?.user
           ? router.push("/centros-de-competencia")

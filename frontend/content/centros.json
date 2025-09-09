@@ -584,11 +584,6 @@
                   "iconName": "Chalkboard",
                   "description": "JOYN Academy",
                   "url": "https://academy.joyn-group.com/login/index.php"
-                },
-                {
-                  "iconName": "DiscordLogo",
-                  "description": "Discord",
-                  "url": "URL"
                 }
               ]
             }

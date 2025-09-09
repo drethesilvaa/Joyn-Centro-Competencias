@@ -42,7 +42,7 @@ export default function Carousel({
         navigation
         pagination={{ clickable: true }}
         autoplay={auto ? { delay: 3500, disableOnInteraction: false } : false}
-        className="mySwiper pb-10"
+        className="mySwiper pb-10 cursor-grab active:scale-95 active:cursor-grabbing"
         breakpoints={{
           0: { slidesPerView: 1 },
         }}

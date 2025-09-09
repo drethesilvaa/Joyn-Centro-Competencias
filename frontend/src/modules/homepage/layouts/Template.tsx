@@ -70,8 +70,8 @@ export const HomepageTemplate = ({ children }: TemplateProps) => {
 
                                     <div className="
                                     absolute w-full z-10 right-0
-                                    opacity-0 max-h-0 overflow-hidden 
-                                    group-hover:opacity-100 group-hover:max-h-40
+                                    md:opacity-0 md:max-h-0 overflow-hidden 
+                                    md:group-hover:opacity-100 md:group-hover:max-h-40
                                     transition-all duration-300 px-4
                                 ">
                                         <div className='flex justify-end'>
