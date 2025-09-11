@@ -149,6 +149,7 @@ export const EventosPage = () => {
       pageImage="/eventos/default-event.jpg"
       pageImageAlt="alt"
       isEventsPage={true}
+      alwaysShowHeader
       events={{ nextEvents, handleSignUp }}
     >
       <>

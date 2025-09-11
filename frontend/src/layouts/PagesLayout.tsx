@@ -111,7 +111,7 @@ export const PagesLayout = ({
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <h3 className="text-xl font-semibold">Próximo Evento:</h3>
-                <div className="float-left 2xl:float-none 2xl:max-w-1/2">
+                <div className="float-left lg:max-w-1/2 2xl:float-none 2xl:max-w-1/2">
                   <EventsList
                     events={events.nextEvents}
                     onSignUp={events.handleSignUp}

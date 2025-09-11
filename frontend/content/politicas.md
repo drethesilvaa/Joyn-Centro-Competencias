@@ -14,21 +14,24 @@ exclusivamente através destes canais para garantir clareza, rastreabilidade e v
 institucional.
 
 ### 2. Canais Não Oficiais: WhatsApp e Discord
-Os seguintes canais são considerados não oficiais:
-- WhatsApp
-- Discord
 Estes meios são usados como apoio complementar e informal à comunicação entre membros
-da comunidade dos Centros de Competência. São úteis para:
+da comunidade dos Centros de Competência. 
+
+São úteis para:
 - Discussões rápidas e interações em tempo real
 - Perguntas e respostas informais
 - Atualizações imediatas ou alertas sobre eventos
+
+Os seguintes canais são considerados não oficiais:
+- WhatsApp
+- Discord
 
 <ins>Importante:</ins><br />
 Qualquer decisão ou informação crítica discutida nestes canais deve ser reconfirmada e
 formalizada nos canais oficiais.
 
 ### 3. Boas Práticas de Utilização
-Para garantir um uso adequado dos canais não oficiais:
+Para garantir um uso adequado dos canais:
 - Evitar partilha de dados sensíveis ou confidenciais.
 - Não considerar mensagens nestes canais como aprovações formais.
 - Garantir que materiais e decisões são documentados no Google Classroom ou via e-

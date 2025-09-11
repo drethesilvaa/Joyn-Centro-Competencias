@@ -1,7 +1,6 @@
 @import "tailwindcss" important;
 @import "nprogress/nprogress.css";
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -106,9 +105,8 @@ ol {
   @apply text-base md:text-2xl;
 }
 
-.quote{
-    @apply text-xs md:text-2xl;
-
+.quote {
+  @apply text-xs md:text-2xl;
 }
 
 .lineHeight-2rem {
@@ -304,4 +302,25 @@ ol {
 
 .ant-card {
   overflow: hidden;
+}
+
+.ant-picker-calendar-date-today{
+  background: #e99b26;
+  border-color: #e99b26;
+}
+
+.ant-picker-calendar-date-today::before{
+  border:1px solid #e99b26 !important;
+}
+
+/* shadow boxes */
+
+.custom-shadow-box {
+  border-top: 1px solid var(--Desert-Storm, #f5f5f4);
+  box-shadow: 0 -3px 8.7px 0 rgba(0, 0, 0, 0.06);
+}
+
+
+.perspective {
+  perspective: 1000px;
 }

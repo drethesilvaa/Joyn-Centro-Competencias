@@ -118,8 +118,8 @@ const Homepage = () => {
               </Button>
             </motion.div>
           </div>
-          <div className="grid grid-cols-2 custom-gap-6">
-            <div className="grid grid-rows-9 custom-gap-6 pt-16">
+          <div className="grid grid-cols-2 custom-gap-6 mt-5 sm:mt-0">
+            <div className="grid grid-rows-9 custom-gap-6 sm:pt-16">
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -154,7 +154,7 @@ const Homepage = () => {
                 </Card>
               </motion.div>
             </div>
-            <div className="grid grid-rows-9 custom-gap-6 pb-16">
+            <div className="grid grid-rows-9 custom-gap-6 sm:pb-16">
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

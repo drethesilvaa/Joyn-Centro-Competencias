@@ -7,6 +7,7 @@ import { SignInIcon } from "@phosphor-icons/react/dist/ssr";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
+import { getInitials } from "@/utils/getInitials";
 
 const pathToMenuKey: Record<string, string> = {
   "/": "home",
@@ -97,7 +98,7 @@ const Navbar: React.FC = () => {
       { key: "politicas", label: "Políticas" },
       {
         key: "user",
-        label: session.user.name,
+        label: getInitials(session.user.name || ""),
         children: [
           {
             label: (
