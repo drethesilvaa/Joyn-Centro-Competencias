@@ -304,9 +304,11 @@ ol {
   overflow: hidden;
 }
 
-.ant-picker-calendar-date-today{
-  background: #e99b26;
-  border-color: #e99b26;
+
+
+.ant-picker-cell-selected .ant-picker-calendar-date-today, .ant-picker-calendar-date-today{
+  background: #e99b26 !important;
+  border-color: #e99b26 !important;
 }
 
 .ant-picker-calendar-date-today::before{

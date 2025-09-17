@@ -10,7 +10,7 @@ subTitle: >-
 author: Yvonne Pacheco
 authorRole: HR Learning & Development
 authorPic: /Autores/CC_Yvonne.png
-articleImage: /artigos/community.jpg
+articleImage: /Artigos/community.jpg
 content: >-
   Num setor onde a transformação tecnológica é constante, a capacidade de
   evoluir não pode ser uma resposta reativa — tem de ser parte da estratégia. É

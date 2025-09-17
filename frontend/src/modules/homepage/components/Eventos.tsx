@@ -63,7 +63,13 @@ export const HomepageEventos = ({}: TemplateProps) => {
         </div>
         <div className="grid grid-cols-2 custom-gap-6">
           {data?.eventos?.images?.map((img, k) => (
-            <div className={`${imagesConfig[k].className}`} key={k}>
+            <motion.div
+              key={k}
+              className={`${imagesConfig[k].className}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: k * 0.3 }}
+            >
               <Image
                 width={imagesConfig[k].width}
                 height={imagesConfig[k].height}
@@ -71,7 +77,7 @@ export const HomepageEventos = ({}: TemplateProps) => {
                 src={img?.src || ""}
                 alt={`${img?.alt} photo`}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="block lg:hidden mt-4">{ctaButton}</div>

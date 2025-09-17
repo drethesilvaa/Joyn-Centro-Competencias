@@ -27,26 +27,27 @@ export const EventCard: React.FC<EventCardProps> = ({ event, onSignUp }) => {
     ? (event.attendeesCount / event.maxAttendees) * 100
     : 0;
 
+  const getImageSrc = (eventTitle: string) => {
+    if (eventTitle.includes("Human Evolution")) {
+      return "/Artigos/human-evolution.jpg";
+    } else if (eventTitle.includes("CoE Data")) {
+      return "/Artigos/ai-generated-9045622.jpg";
+    } else if (eventTitle.includes("CoE .NET")) {
+      return "/Artigos/dot_NET_services.png";
+    } else if (eventTitle.includes("CoE Cloud Transformation") || eventTitle.includes("Coe Cloud Transformation")) {
+      return "/Artigos/cloud-computing-3385323.jpg";
+    } else {
+      return "/eventos/event-image.jpg"; // Default image
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative">
         <img
-          src={event.image}
+          src={getImageSrc(event.title)}
           alt={event.title}
           className="w-full h-48 object-cover"
-          onError={(e) => {
-            if (event.title.includes("Human Evolution"))
-              return (e.currentTarget.src = "/eventos/default-event.jpg");
-            if (event.title.includes("CoE Data"))
-              return (e.currentTarget.src = "/eventos/default-event.jpg");
-            if (event.title.includes("CoE Cloud Transformation"))
-              return (e.currentTarget.src = "/eventos/default-event.png");
-            if (event.title.includes("CoE .NET"))
-              return (e.currentTarget.src = "/eventos/default-event.jpg");
-            else {
-              return (e.currentTarget.src = "/eventos/default-event.jpg");
-            }
-          }}
         />
         <div className="absolute top-2 right-2 flex gap-2">
           <span className="px-2 py-1 bg-secondary text-white text-xs font-medium rounded-full">

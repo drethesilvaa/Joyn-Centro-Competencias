@@ -19,6 +19,8 @@ const pageMentores = {
 export const MentoresPage = () => {
   const { data: mentoresData, isLoading } = useMentoresQuery();
 
+  if(isLoading) return <></>
+
   return (
     <PagesLayout
       pageTitle={pageMentores?.pageTitle || ""}
