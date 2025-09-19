@@ -140,7 +140,7 @@
                 {
                   "iconName": "DiscordLogo",
                   "description": "Discord",
-                  "url": "URL"
+                  "url": "https://discord.gg/2cQqJ4Ra"
                 }
               ]
             }
@@ -287,7 +287,7 @@
                 {
                   "iconName": "DiscordLogo",
                   "description": "Discord",
-                  "url": "URL"
+                  "url": "https://discord.gg/NRcNCpQE"
                 }
               ]
             }
@@ -443,6 +443,31 @@
               ]
             }
           ]
+        },
+        {
+          "title": "Canais de Comunicação e Partilha",
+          "topics": [
+            {
+              "topicTitle": "Envolvimento da Comunidade & Partilha de Conhecimento",
+              "topicDetails": [
+                {
+                  "iconName": "WhatsappLogo",
+                  "description": "Comunidade WhatsApp",
+                  "url": ""
+                },
+                {
+                  "iconName": "Chalkboard",
+                  "description": "JOYN Academy",
+                  "url": ""
+                },
+                {
+                  "iconName": "DiscordLogo",
+                  "description": "Discord",
+                  "url": "https://discord.gg/A4QCAYBc"
+                }
+              ]
+            }
+          ]
         }
       ],
       "feedback": {
@@ -584,6 +609,11 @@
                   "iconName": "Chalkboard",
                   "description": "JOYN Academy",
                   "url": "https://academy.joyn-group.com/login/index.php"
+                },
+                {
+                  "iconName": "DiscordLogo",
+                  "description": "Discord",
+                  "url": "https://discord.gg/gpktgsmG"
                 }
               ]
             }

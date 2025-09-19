@@ -51,7 +51,7 @@ export default function MentorCard({
         {/* Back Side */}
         <div className={`absolute inset-0 backface-hidden rotate-y-180 grid justify-items-center gap-2 rounded-2xl p-4`}>
           <h1 className="heading-xl font-semibold">Mais Informação</h1>
-          <p className="text-sm text-white">
+          <p className="text-lg text-white">
             {mentor?.subtitle || "No additional info"}
           </p>
         </div>
