@@ -19,7 +19,7 @@ export const BottomNavigation = ({}: BottomNavigationProps) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         role="navigation"
-        className="fixed sm:hidden bottom-0 left-0 right-0 bg-white px-2 py-2 flex justify-evenly gap-2 custom-shadow-box"
+        className="fixed sm:hidden bottom-0 left-0 right-0 px-2 py-2 flex justify-evenly gap-2 custom-shadow-box glass-bg glass-bg--whitter"
       >
         {cardData.map((item, k) => {
           const isActive = xParam === homePageScreens[item.key];

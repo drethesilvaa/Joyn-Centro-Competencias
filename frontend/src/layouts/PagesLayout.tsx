@@ -64,7 +64,7 @@ export const PagesLayout = ({
 
         {/* Content container - responsive layout */}
         <motion.div
-          className="p-6 bg-box-grey rounded-2xl 2xl:col-span-11"
+          className="p-6 glass-bg--white glass-bg glass-bg--no-backdrop  rounded-2xl 2xl:col-span-11"
           variants={contentVariants}
           initial="hidden"
           animate="visible"
