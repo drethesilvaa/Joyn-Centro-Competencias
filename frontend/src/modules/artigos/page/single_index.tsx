@@ -5,9 +5,11 @@ import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Image from "next/image";
 import { AppBreadcrumb } from "@/components/Breadcrumb";
 import { useArticleQuery } from "../hooks/useArticleQuery";
-import { useScroll, motion, Transition } from "framer-motion";
+import { useScroll, motion } from "framer-motion";
 import { AppProgressBar } from "@/components/AppProgressBar";
 import { createTransition } from "@/utils/createTransition";
+import { useEffect, useState } from "react";
+import { ArrowUpIcon } from "@phosphor-icons/react/dist/ssr";
 
 export default function ArtigoPage() {
   const params = useParams();
@@ -18,6 +20,18 @@ export default function ArtigoPage() {
   const id = encodedId ? decodeURIComponent(encodedId) : "";
 
   const { data: artigo, isLoading } = useArticleQuery(id as string);
+
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (isLoading) return <AppProgressBar />;
 
@@ -53,6 +67,10 @@ export default function ArtigoPage() {
       </motion.div>
     </>
   );
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="py-16">
@@ -97,6 +115,24 @@ export default function ArtigoPage() {
       >
         <MarkdownRenderer content={artigo?.content || ""} />
       </motion.div>
+
+      {/* Button to Scroll to Top */}
+      {!isAtTop && (
+        <motion.button
+          role="button"
+          aria-label="Go to the top of the page"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={createTransition(0.5)}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 bg-accent text-white rounded-full shadow-lg cursor-pointer active:scale-95 "
+          style={{
+            zIndex: 1000,
+          }}
+        >
+          <ArrowUpIcon weight="bold" />
+        </motion.button>
+      )}
     </div>
   );
 }

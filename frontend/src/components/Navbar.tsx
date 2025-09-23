@@ -12,6 +12,7 @@ import { getInitials } from "@/utils/getInitials";
 const pathToMenuKey: Record<string, string> = {
   "/": "home",
   "/artigos": "artigos",
+  "/artigos/*": "artigos",
   "/centros-de-competencia": "cc",
   "/centros-de-competencia/NET": "ccNET",
   "/centros-de-competencia/Dados": "ccDados",
@@ -27,7 +28,22 @@ const pathToMenuKey: Record<string, string> = {
 const Navbar: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const selectedKey = pathToMenuKey[pathname || "home"] || "home";
+
+  const getMenuKeyForPath = (path: string) => {
+  for (const [key, value] of Object.entries(pathToMenuKey)) {
+    if (key.endsWith('*')) {
+      const basePath = key.slice(0, -1); // Remove the wildcard character
+      if (path.startsWith(basePath)) {
+        return value;
+      }
+    } else if (path === key) {
+      return value;
+    }
+  }
+  return null;
+};
+
+  const selectedKey =  getMenuKeyForPath(pathname) || "home";
 
   const { data: session, status } = useSession();
 

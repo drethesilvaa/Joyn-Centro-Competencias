@@ -30,12 +30,12 @@ const pageGamification = {
     {
       name: "Cátia Castro",
       empresa: "Growin",
-      points: 600,
+      points: 700,
     },
     {
       name: "Lucas Santos",
       empresa: "Growin",
-      points: 100,
+      points: 200,
     },
     {
       name: "Pietro Bottino",
@@ -67,7 +67,7 @@ const pageGamification = {
     {
       name: "Douglas Silva",
       empresa: "Landskill",
-      points: 300,
+      points: 400,
     },
     {
       name: "Ana Catololi ",
