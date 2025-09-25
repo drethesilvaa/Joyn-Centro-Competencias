@@ -66,7 +66,7 @@ const pageGamification = {
     },
     {
       name: "Douglas Silva",
-      empresa: "Landskill",
+      empresa: "Fyld",
       points: 400,
     },
     {
