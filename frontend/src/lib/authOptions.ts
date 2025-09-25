@@ -39,7 +39,15 @@ async function refreshAccessToken(token: any) {
   }
 }
 
-const ALLOWED_DOMAINS = ["@fyld.pt", "@joyn.pt", "@techskill.pt"];
+const ALLOWED_DOMAINS = [
+  "@fyld.pt",
+  "@joyn.pt",
+  "@techskill.pt",
+  "@growin.com",
+  "@growin.pt",
+  "@landskill.pt",
+  "@landskill.com",
+];
 
 export const authOptions: NextAuthOptions = {
   providers: [
