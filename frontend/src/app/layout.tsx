@@ -3,6 +3,7 @@ import { Karla, Lato } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 import { Template } from "../layouts/Template";
+import { Toaster } from 'react-hot-toast';
 
 const karla = Karla({
   variable: "--font-karla",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Providers>
           <Template>
             {children}
+            <Toaster />
           </Template>
         </Providers>
       </body>

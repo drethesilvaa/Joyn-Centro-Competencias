@@ -41,8 +41,10 @@ async function refreshAccessToken(token: any) {
 
 const ALLOWED_DOMAINS = [
   "@fyld.pt",
-  "@joyn.pt",
-  "@techskill.pt",
+  "@joyn-group.com",
+  "@uniksystem.com",
+  "@docdigitizer.com",
+  "@infosistema.com",
   "@growin.com",
   "@growin.pt",
   "@landskill.pt",
