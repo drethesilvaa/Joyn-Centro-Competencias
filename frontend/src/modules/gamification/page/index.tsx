@@ -25,12 +25,17 @@ const pageGamification = {
     {
       name: "Bruno Duarte",
       empresa: "Fyld",
-      points: 100,
+      points: 200,
     },
     {
       name: "Cátia Castro",
       empresa: "Growin",
       points: 700,
+    },
+    {
+      name: "Ricardo Pereira",
+      empresa: "Growin",
+      points: 100,
     },
     {
       name: "Lucas Santos",
@@ -65,9 +70,14 @@ const pageGamification = {
       points: 300,
     },
     {
+      name: "André Winkler ",
+      empresa: "Landskill",
+      points: 100,
+    },
+    {
       name: "Douglas Silva",
       empresa: "Fyld",
-      points: 400,
+      points: 500,
     },
     {
       name: "Ana Catololi ",
@@ -212,7 +222,6 @@ export const GamificationPage = () => {
               </motion.ul>
             </div>
           </div>
-          
 
           <div className="p-6 bg-[#454555] rounded-2xl text-white">
             <motion.h2
