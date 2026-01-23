@@ -14,6 +14,7 @@ interface TemplateProps {
   pageImageAlt: string;
   events?: { nextEvents: ProcessedEvent[]; handleSignUp: any };
   isEventsPage?: boolean;
+  formPage?: boolean;
   alwaysShowHeader?: boolean; // 👈 new prop
 }
 
@@ -43,6 +44,7 @@ export const PagesLayout = ({
   pageImageAlt,
   events,
   isEventsPage = false,
+  formPage = false,
   alwaysShowHeader = false,
 }: TemplateProps) => {
   return (
@@ -131,11 +133,24 @@ export const PagesLayout = ({
                 </p>
               </div>
             ))}
-          <div className={`clear-both ${alwaysShowHeader ? "" : "2xl:hidden"} `}></div>
+          {formPage && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >          
+              <div className="float-left lg:max-w-1/2 2xl:float-none 2xl:max-w-1/2">
+                {children}
+              </div>
+            </motion.div>
+          )}
+          <div
+            className={`clear-both ${alwaysShowHeader ? "" : "2xl:hidden"} `}
+          ></div>
         </motion.div>
       </div>
 
-      {children}
+      {!formPage && children}
     </div>
   );
 };

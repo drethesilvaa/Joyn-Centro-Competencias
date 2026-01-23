@@ -23,6 +23,7 @@ const pathToMenuKey: Record<string, string> = {
   "/politicas": "politicas",
   "/gamification": "gamification",
   "/auth/signin": "login",
+  "/sugestoes": "sugestoes",
 };
 
 const Navbar: React.FC = () => {
@@ -30,20 +31,20 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const getMenuKeyForPath = (path: string) => {
-  for (const [key, value] of Object.entries(pathToMenuKey)) {
-    if (key.endsWith('*')) {
-      const basePath = key.slice(0, -1); // Remove the wildcard character
-      if (path.startsWith(basePath)) {
+    for (const [key, value] of Object.entries(pathToMenuKey)) {
+      if (key.endsWith("*")) {
+        const basePath = key.slice(0, -1); // Remove the wildcard character
+        if (path.startsWith(basePath)) {
+          return value;
+        }
+      } else if (path === key) {
         return value;
       }
-    } else if (path === key) {
-      return value;
     }
-  }
-  return null;
-};
+    return null;
+  };
 
-  const selectedKey =  getMenuKeyForPath(pathname) || "home";
+  const selectedKey = getMenuKeyForPath(pathname) || "home";
 
   const { data: session, status } = useSession();
 
@@ -61,6 +62,7 @@ const Navbar: React.FC = () => {
       politicas: "/politicas",
       gamification: "/gamification",
       login: "/auth/signin",
+      sugestoes: "/sugestoes",
     };
 
     const destination = keyToPath[e.key];
@@ -72,11 +74,14 @@ const Navbar: React.FC = () => {
   const items: MenuProps["items"] = [{ key: "home", label: "Home" }];
 
   if (status === "unauthenticated" || status === "loading") {
-    items.push({
-      key: "login",
-      icon: <SignInIcon size={18} weight="bold" />,
-      label: "Entrar",
-    });
+    items.push(
+      {
+        key: "login",
+        icon: <SignInIcon size={18} weight="bold" />,
+        label: "Entrar",
+      },
+      { key: "sugestoes", label: "Sugestões" },
+    );
   }
 
   if (status === "authenticated" && session?.user) {
@@ -111,6 +116,7 @@ const Navbar: React.FC = () => {
       { key: "mentores", label: "Mentores" },
       { key: "gamification", label: "Gamification" },
       { key: "eventos", label: "Eventos" },
+
       { key: "politicas", label: "Políticas" },
       {
         key: "user",
@@ -128,7 +134,7 @@ const Navbar: React.FC = () => {
             key: "LogOut",
           },
         ],
-      }
+      },
     );
   }
 
