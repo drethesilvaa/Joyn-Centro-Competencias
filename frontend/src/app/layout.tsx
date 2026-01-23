@@ -1,9 +1,11 @@
+import "@ant-design/v5-patch-for-react-19";
 import type { Metadata } from "next";
 import { Karla, Lato } from "next/font/google";
 import { Providers } from "./providers";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import { Template } from "../layouts/Template";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -32,12 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${karla.variable} ${lato.variable} antialiased`}>
-        <Providers>
-          <Template>
-            {children}
-            <Toaster />
-          </Template>
-        </Providers>
+        <AntdRegistry>
+          <Providers>
+            <Template>
+              {children}
+              <Toaster />
+            </Template>
+          </Providers>
+        </AntdRegistry>
       </body>
     </html>
   );
