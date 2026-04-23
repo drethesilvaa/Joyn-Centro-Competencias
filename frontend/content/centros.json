@@ -178,7 +178,7 @@
       "title": "Centro de Competências Dados",
       "mentor_img": "/HomePage/brunoduarte.png",
       "mentorName": "Bruno Duarte",
-      "description": "O **Centro de Competências de Dados** é uma iniciativa dedicada a promover a aprendizagem contínua, a partilha de conhecimento e o crescimento profissional de todos os consultores na área de Dados. Através de uma abordagem diversificada, eventos estruturados e discussões impulsionadas pela comunidade, o Centro de Competências tem como objetivo capacitar consultores de todos os níveis de experiência, assegurando o desenvolvimento de competências a longo prazo e a inovação no ecossistema de dados.",
+      "description": "O **Centro de Competências de Dados** foca-se na valorização e no aperfeiçoamento constante dos nossos especialistas. Ao promover o intercâmbio de experiências, formações estruturadas e discussões ativas, asseguramos que o conhecimento circula e que cada consultor tem as ferramentas necessárias para crescer profissionalmente. \n \n Através desta partilha colaborativa e de uma aprendizagem prática, criamos um ambiente que estimula a inovação e fortalece o futuro do nosso ecossistema, garantindo que todos os consultores estão capacitados para entregar soluções de excelência e liderar as tendências do setor a longo prazo.",
       "charts": [
         {
           "title": "Years of experience with data technologies ",
@@ -254,7 +254,7 @@
       "learning": [
         {
           "title": "Preparação para certificações",
-          "description": "**Objetivo** Fornecer apoio aos colaboradores que desejam obter certificações técnicas através de simulações de \nexames, material de estudo e sessões de grupo. \n<br/><br/>\n**Certificações Iniciais Disponíveis**\n- AZ-900 (Microsoft Azure Fundamentals)\n- DP-900 (Microsoft Azure Data Fundamentals)\n- DP-600 (Fabric Analytics Engineer Associate)\n- Databricks Certified Data Engineer Associate\n<br/>\n**Metodologia**\n- Material de estudo disponível na plataforma\n- Simulações de exames\n- Sessões online de estudo em grupo\n"
+          "description": "**Objetivo** Fornecer apoio aos colaboradores que desejam obter certificações técnicas através de simulações de \nexames, material de estudo e sessões de grupo. \n<br/><br/>\n**Certificações Iniciais Disponíveis**\n- AZ-900 (Microsoft Azure Fundamentals)\n- PL-300 (Power BI Data Analyst Associate)\n- DP-900 (Microsoft Azure Data Fundamentals)\n- DP-600 (Fabric Analytics Engineer Associate)\n- Databricks Certified Data Engineer Associate\n- DP-700 (Fabric Analytics Enginner Associate)<br/><br/>\n**Metodologia**\n- Material de estudo disponível na plataforma\n- Simulações de exames\n"
         },
         {
           "title": "Painel de Notícias",
@@ -262,11 +262,15 @@
         },
         {
           "title": "Consolidação de Conhecimentos em ferramentas de data",
-          "description": "**Objetivo** Disponibilizar formações e recursos sobre ferramentas essenciais para a análise e engenharia de dados.\n<br/><br/>\n**Foco em**\n- Databricks                     \n- DataFactory/Azure Synapse                      \n- Python/SQL                      \n- Dashboards\n<br/>\n\n**Propósito** Aumentar a maturidade no uso dessas ferramentas/linguagens através da aprendizagem prática.\n"
+          "description": "**Objetivo** Disponibilizar formações e recursos sobre ferramentas essenciais para a análise e engenharia de dados.\n<br/><br/>\n**Foco em**\n- Databricks                     \n- DataFactory/Azure Synapse                      \n- Python/SQL                      \n- Power BI\n<br/><br/>\n\n**Propósito** Aumentar a maturidade no uso dessas ferramentas/linguagens através da aprendizagem prática.\n"
+        },
+          {
+          "title": "Crónicas sobre Dados",
+          "description": "**Objetivo** Artigos de dissecação de carácter opinativo sobre notícias e tendências da área.\n<br/><br/>\n**Temas em Destaque:**\n- Tendências emergentes na área de dados (exemplo: mudanças constantes em AI)                     \n- Inovações tecnológicas e novas abordagens  "
         },
         {
           "title": "Coaching e Mentoria",
-          "description": "**Objetivo** Apoiar os colaboradores no desenvolvimento de competências específicas através de acompanhamento\n individualizado por um mentor a ser definido, dependendo do tema de trabalho. Pode haver participação do\n mentor na reunião de Personal Development Plan. \n<br /><br />\n**Metodologia**\n- Avaliação inicial para identificação de necessidades\n- Atribuição de um mentor especializado\n- Avaliação final para medir o progresso\n<br />\n**Métrica de Sucesso** Percentagem de progresso dos participantes ao final do programa.\n"
+          "description": "**Objetivo** Apoiar os colaboradores no desenvolvimento de competências específicas através de acompanhamento\n individualizado por um mentor a ser definido, dependendo do tema de trabalho. Pode haver participação do\n mentor na reunião de Personal Development Plan. \n<br /><br />\n**Metodologia**\n- Avaliação inicial para identificação de necessidades\n- Atribuição de um mentor especializado\n- Avaliação final para medir o progresso\n<br /><br />\n**Métrica de Sucesso** Percentagem de progresso dos participantes ao final do programa.\n"
         },
         {
           "title": "Métodos de Partilha de Conhecimento Preferidos & Abordagem de Entrega",
