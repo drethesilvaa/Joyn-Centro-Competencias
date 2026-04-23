@@ -61,7 +61,7 @@ export const SugestoesPage = () => {
       formPage={true}
     >
       <div className="max-w-3xl mx-auto p-6">
-        <h3 className="text-xl font-semibold">INspirational text to make people write</h3>
+        <h3 className="text-xl font-semibold">Inspirational text to make people write</h3>
         <Form
           className="mt-4"
           form={form}

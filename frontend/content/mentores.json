@@ -59,10 +59,10 @@
     {
       "title": "Centro de Competência de Dados",
       "lider": {
-        "name": "Daniel Guarino",
-        "email": "Lider do Centro de Dados / daniel.guarino@fyld.pt",
+        "name": "Bruno Duarte",
+        "email": "Lider do Centro de Dados / bruno.duarte@fyld.pt",
         "stack": [],
-        "photo": "/HomePage/danielguarino.png",
+        "photo": "/HomePage/brunoduarte.png",
         "description": ""
       },
       "mentores": [
@@ -89,34 +89,6 @@
           ],
           "photo": "/mentores/emanoellaoliveira.png",
           "description": "Storytelling de dados com Power BI"
-        },
-        {
-          "name": "Bruno Duarte",
-          "email": "963518047 / bruno.duarte@fyld.pt",
-          "stack": [
-            {
-              "name": "Azure Data Factory",
-              "percent": 90
-            },
-            {
-              "name": "Databricks",
-              "percent": 88
-            },
-            {
-              "name": "Azure Synapse",
-              "percent": 92
-            },
-            {
-              "name": " Azure Data Lake Storage",
-              "percent": 85
-            },
-            {
-              "name": "Power BI",
-              "percent": 95
-            }
-          ],
-          "photo": "/mentores/brunoduarte.png",
-          "description": "Power BI"
         },
         {
           "name": "Maíres Souza",
