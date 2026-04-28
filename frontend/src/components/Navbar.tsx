@@ -118,6 +118,7 @@ const Navbar: React.FC = () => {
       { key: "eventos", label: "Eventos" },
 
       { key: "politicas", label: "Políticas" },
+      { key: "sugestoes", label: "Sugestões" },
       {
         key: "user",
         label: getInitials(session.user.name || ""),
