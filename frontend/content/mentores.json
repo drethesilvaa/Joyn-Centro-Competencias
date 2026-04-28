@@ -53,6 +53,22 @@
           ],
           "photo": "/mentores/pietrobottino.png",
           "description": ".Net, SQL Server, ReactJs, Lógica"
+        },
+        {
+          "name": "Bruno Lança",
+          "email": "bruno.lanca@fyld.pt",
+          "stack": [
+            {
+              "name": ".Net",
+              "percent": 75
+            },
+            {
+              "name": "SQLServer",
+              "percent": 88
+            }
+          ],
+          "photo": "/mentores/BrunoLanca.png",
+          "description": "Estou disponível para ajudar em .NET"
         }
       ]
     },
