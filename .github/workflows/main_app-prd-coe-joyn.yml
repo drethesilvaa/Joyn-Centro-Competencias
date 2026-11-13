@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure Web App - coejoyn prod
+name: Build and deploy Node.js app to Azure Web App - app-prd-coe-joyn prod
 
 on:
   # push:
@@ -74,7 +74,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "coejoyn"
-          # slot-name: "coejoyn"
+          app-name: "app-prd-coe-joyn"
+          # slot-name: "app-prd-coe-joyn"
           package: .
           publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
